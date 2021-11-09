@@ -3,7 +3,7 @@
   <cd:Description>EarthCARE products</cd:Description>
   <cd:ProductType name="MSI_NOM_0">
     <cd:Description>Annotated MSI Instrument Source Packets</cd:Description>
-    <cd:ProductDefinition id="MSI_NOM_0" format="binary" version="0">
+    <cd:ProductDefinition id="MSI_NOM_0_" format="binary" version="0">
       <cd:DetectionRule>
         <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
         <cd:MatchFilename offset="9">MSI_NOM_0_</cd:MatchFilename>
