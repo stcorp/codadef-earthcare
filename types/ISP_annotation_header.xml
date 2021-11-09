@@ -1,15 +1,74 @@
 <?xml version="1.0"?>
 <cd:Record xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10" format="binary" last-modified="2020-02-25" name="ISP_annotation_header">
   <cd:Description>ISP Annotation header</cd:Description>
-
   <cd:Field name="sensing_time">
-    <cd:NamedType id="modified_julian_days_2000"/>
+    <cd:Time timeformat="float(./days) * 86400 + float(./seconds) + float(./microseconds) / 1000000">
+      <cd:Record>
+        <cd:Description>Source packet acquisition time (UTC)</cd:Description>
+        <cd:Field name="days">
+          <cd:Integer>
+            <cd:Description>days since January 1st, 2000 (may be negative)</cd:Description>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>int32</cd:NativeType>
+            <cd:Unit>days since 2000-01-01</cd:Unit>
+          </cd:Integer>
+          <cd:BitOffset>0</cd:BitOffset>
+        </cd:Field>
+        <cd:Field name="seconds">
+          <cd:Integer>
+            <cd:Description>seconds since start of day</cd:Description>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:Unit>s</cd:Unit>
+          </cd:Integer>
+          <cd:BitOffset>32</cd:BitOffset>
+        </cd:Field>
+        <cd:Field name="microseconds">
+          <cd:Integer>
+            <cd:Description>microseconds since start of second</cd:Description>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:Unit>1e-6 s</cd:Unit>
+          </cd:Integer>
+          <cd:BitOffset>64</cd:BitOffset>
+        </cd:Field>
+      </cd:Record>
+    </cd:Time>
   </cd:Field>
-
   <cd:Field name="downlink_time">
-    <cd:NamedType id="modified_julian_days_2000"/>
+    <cd:Time timeformat="float(./days) * 86400 + float(./seconds) + float(./microseconds) / 1000000">
+      <cd:Record>
+        <cd:Description>Source packet downlink time (G/S time)</cd:Description>
+        <cd:Field name="days">
+          <cd:Integer>
+            <cd:Description>days since January 1st, 2000 (may be negative)</cd:Description>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>int32</cd:NativeType>
+            <cd:Unit>days since 2000-01-01</cd:Unit>
+          </cd:Integer>
+          <cd:BitOffset>0</cd:BitOffset>
+        </cd:Field>
+        <cd:Field name="seconds">
+          <cd:Integer>
+            <cd:Description>seconds since start of day</cd:Description>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:Unit>s</cd:Unit>
+          </cd:Integer>
+          <cd:BitOffset>32</cd:BitOffset>
+        </cd:Field>
+        <cd:Field name="microseconds">
+          <cd:Integer>
+            <cd:Description>microseconds since start of second</cd:Description>
+            <cd:ByteSize>4</cd:ByteSize>
+            <cd:NativeType>uint32</cd:NativeType>
+            <cd:Unit>1e-6 s</cd:Unit>
+          </cd:Integer>
+          <cd:BitOffset>64</cd:BitOffset>
+        </cd:Field>
+      </cd:Record>
+    </cd:Time>
   </cd:Field>
-
   <cd:Field name="packet_length">
     <cd:Integer>
       <cd:Description>ISP length (minus one)</cd:Description>
@@ -17,7 +76,6 @@
       <cd:NativeType>uint16</cd:NativeType>
     </cd:Integer>
   </cd:Field>
-
   <cd:Field name="number_of_VCDUs">
     <cd:Integer>
       <cd:Description>Number of VCDUs containing the current ISP</cd:Description>
@@ -25,7 +83,6 @@
       <cd:NativeType>uint16</cd:NativeType>
     </cd:Integer>
   </cd:Field>
-
   <cd:Field name="number_of_corrected_VCDUs">
     <cd:Integer>
       <cd:Description>Number of VCDUs containing the current ISP that were corrected with Reed-Solomon</cd:Description>
@@ -33,7 +90,6 @@
       <cd:NativeType>uint16</cd:NativeType>
     </cd:Integer>
   </cd:Field>
-
   <cd:Field name="number_of_incorrigible_VCDUs">
     <cd:Integer>
       <cd:Description>Number of VCDUs containing the current ISP that were incorrigible with Reed-Solomon</cd:Description>
@@ -41,7 +97,6 @@
       <cd:NativeType>uint16</cd:NativeType>
     </cd:Integer>
   </cd:Field>
-
   <cd:Field name="number_of_missing_VCDUs">
     <cd:Integer>
       <cd:Description>Number of missing VCDUs containing the current ISP</cd:Description>
@@ -49,7 +104,6 @@
       <cd:NativeType>uint16</cd:NativeType>
     </cd:Integer>
   </cd:Field>
-
   <cd:Field name="number_of_corrected_symbols_CADU">
     <cd:Integer>
       <cd:Description>Number of symbols corrected by Reed-Solomon in CADUs containing the current ISP</cd:Description>
@@ -57,7 +111,6 @@
       <cd:NativeType>uint16</cd:NativeType>
     </cd:Integer>
   </cd:Field>
-
   <cd:Field name="CRC_error_flag">
     <cd:Integer>
       <cd:Description>CRC error flag</cd:Description>
@@ -65,12 +118,10 @@
       <cd:NativeType>int8</cd:NativeType>
     </cd:Integer>
   </cd:Field>
-
   <cd:Field name="spare">
     <cd:Raw>
       <cd:BitSize>3*8</cd:BitSize>
     </cd:Raw>
     <cd:Hidden/>
   </cd:Field>
-
 </cd:Record>
