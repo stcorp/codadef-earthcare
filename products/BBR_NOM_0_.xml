@@ -32,7 +32,7 @@
                   <cd:NativeType>uint16</cd:NativeType>
                 </cd:Integer>
               </cd:Field>
-              <cd:Field name="fixed_field_delimiter">
+              <cd:Field name="delimiter_0">
                 <cd:Integer>
                   <cd:Description>Fixed Field Delimiter</cd:Description>
                   <cd:BitSize>16</cd:BitSize>
@@ -42,6 +42,7 @@
               </cd:Field>
               <cd:Field name="view_parameters">
                 <cd:Array>
+                  <cd:Description>View parameters for each acquisition</cd:Description>
                   <cd:Dimension>8</cd:Dimension>
                   <cd:Record format="binary">
                     <cd:Field name="aft_start_time">
@@ -111,13 +112,20 @@
                   </cd:Record>
                 </cd:Array>
               </cd:Field>
-
+              <cd:Field name="delimiter_1">
+                <cd:Integer>
+                  <cd:Description>Fixed Field Delimiter</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+                <cd:Hidden/>
+              </cd:Field>
             </cd:Record>
           </cd:Field>
 
           <cd:Field name="raw_data">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
 
