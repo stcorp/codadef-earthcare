@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<cd:ProductClass xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" name="EARTHCARE" last-modified="2021-05-21">
+  <cd:Description>EarthCARE products</cd:Description>
+  <cd:ProductType name="MSI_NOM_0">
+    <cd:Description>Annotated MSI Instrument Source Packets</cd:Description>
+    <cd:ProductDefinition id="MSI_NOM_0" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
+        <cd:MatchFilename offset="9">MSI_NOM_0_</cd:MatchFilename>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+</cd:ProductClass>

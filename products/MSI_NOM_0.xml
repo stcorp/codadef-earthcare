@@ -1,0 +1,430 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10" id="MSI_NOM_0" format="binary" last-modified="2020-02-25">
+  <cd:Array>
+    <cd:Dimension><![CDATA[$num_dsr]]></cd:Dimension>
+    <cd:Record format="binary">
+      <cd:Description>Annotated Instrument Source Packet</cd:Description>
+      <cd:Field name="ISP_annotation_header">
+        <cd:NamedType id="ISP_annotation_header"/>
+      </cd:Field>
+      <cd:Field name="ISP">
+        <cd:Record format="binary">
+          <cd:Description>Instrument Source Packet</cd:Description>
+          <cd:Field name="packet_header">
+            <cd:Record format="binary">
+              <cd:Field name="packet_ID">
+                <cd:Record format="binary">
+                  <cd:Field name="version">
+                    <cd:Integer>
+                      <cd:Description>Version</cd:Description>
+                      <cd:BitSize>3</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="type">
+                    <cd:Integer>
+                      <cd:Description>Type</cd:Description>
+                      <cd:BitSize>1</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="DFH_flag">
+                    <cd:Integer>
+                      <cd:Description>DFH Flag</cd:Description>
+                      <cd:BitSize>1</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="APID_PRID">
+                    <cd:Integer>
+                      <cd:Description>APID/PRID</cd:Description>
+                      <cd:BitSize>7</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="APID_PCAT">
+                    <cd:Integer>
+                      <cd:Description>APID/PCAT</cd:Description>
+                      <cd:BitSize>4</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                </cd:Record>
+              </cd:Field>
+              <cd:Field name="packet_sequence_control">
+                <cd:Record format="binary">
+                  <cd:Field name="grouping_flags">
+                    <cd:Integer>
+                      <cd:Description>Grouping Flags</cd:Description>
+                      <cd:BitSize>2</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="sequence_count">
+                    <cd:Integer>
+                      <cd:Description>APID/PCAT</cd:Description>
+                      <cd:BitSize>14</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                </cd:Record>
+              </cd:Field>
+              <cd:Field name="packet_length">
+                <cd:Integer>
+                  <cd:Description>Packet data field length</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="data_field_header">
+             <cd:Record format="binary">
+              <cd:Field name="spare_1">
+                <cd:Raw>
+                  <cd:BitSize>1</cd:BitSize>
+                </cd:Raw>
+                <cd:Hidden/>
+              </cd:Field>
+              <cd:Field name="PUS_version">
+                <cd:Integer>
+                  <cd:Description>PUS version number</cd:Description>
+                  <cd:BitSize>3</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="spare_2">
+                <cd:Raw>
+                  <cd:BitSize>4</cd:BitSize>
+                </cd:Raw>
+                <cd:Hidden/>
+              </cd:Field>
+              <cd:Field name="service_type">
+                <cd:Integer>
+                  <cd:Description>Service type</cd:Description>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="service_subtype">
+                <cd:Integer>
+                  <cd:Description>Service sub-type</cd:Description>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="destination_ID">
+                <cd:Integer>
+                  <cd:Description>Destination ID</cd:Description>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="time">
+                <cd:Record format="binary">
+                  <cd:Field name="coarse">
+                    <cd:Integer>
+                      <cd:Description>Coarse time (integer seconds)</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>uint32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="fine">
+                    <cd:Integer>
+                      <cd:Description>Fine time (LSB = 1/2^24 seconds)</cd:Description>
+                      <cd:BitSize>24</cd:BitSize>
+                      <cd:NativeType>uint32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                </cd:Record>
+              </cd:Field>
+              <cd:Field name="sync_time_quality">
+                <cd:Integer>
+                  <cd:Description>Sync/Time quality</cd:Description>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="data_field">
+             <cd:Record format="binary">
+                <cd:Field name="header">
+                  <cd:Record format="binary">
+                    <cd:Field name="SC_state_vector_quality">
+                      <cd:Integer>
+                        <cd:Description>S/C State Vector Quality</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="ISP_format_version">
+                      <cd:Integer>
+                        <cd:Description>ISP Format Version</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                  </cd:Record>
+                </cd:Field>
+                <cd:Field name="header_extension">
+                  <cd:Record format="binary">
+                    <cd:Field name="data_source">
+                      <cd:Integer>
+                        <cd:Description>Data Source</cd:Description>
+                        <cd:BitSize>5</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="test_data_type">
+                      <cd:Integer>
+                        <cd:Description>Test Data Type</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="spare_1">
+                      <cd:Integer>
+                        <cd:Description>Spare</cd:Description>
+                        <cd:BitSize>8</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                      <cd:Hidden/>
+                    </cd:Field>
+                    <cd:Field name="MSI_quality_vector">
+                      <cd:Integer>
+                        <cd:Description>MSI Quality Vector</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="spare_2">
+                      <cd:Integer>
+                        <cd:Description>Spare</cd:Description>
+                        <cd:BitSize>7</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                      <cd:Hidden/>
+                    </cd:Field>
+                    <cd:Field name="raw_line">
+                      <cd:Integer>
+                        <cd:Description>Raw Line</cd:Description>
+                        <cd:BitSize>9</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="instrument_mode">
+                      <cd:Integer>
+                        <cd:Description>Instrument Mode</cd:Description>
+                        <cd:BitSize>8</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="instrument_submode">
+                      <cd:Integer>
+                        <cd:Description>Instrument Sub Mode</cd:Description>
+                        <cd:BitSize>8</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="VNS_pointing_direction">
+                      <cd:Integer>
+                        <cd:Description>VNS Pointing Direction</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="VNS_flat_field_offset_ID">
+                      <cd:Integer>
+                        <cd:Description>VNS Flat Field Offset ID</cd:Description>
+                        <cd:BitSize>5</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="TIR_pointing_direction">
+                      <cd:Integer>
+                        <cd:Description>TIR Pointing Direction</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="TIR_flat_field_offset_ID">
+                      <cd:Integer>
+                        <cd:Description>TIR Flat Field Offset ID</cd:Description>
+                        <cd:BitSize>5</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+                    <cd:Field name="B1_truncation_factor">
+                      <cd:Integer>
+                        <cd:Description>B1 Truncation Factor</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="B2_truncation_factor">
+                      <cd:Integer>
+                        <cd:Description>B2 Truncation Factor</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="B3_truncation_factor">
+                      <cd:Integer>
+                        <cd:Description>B3 Truncation Factor</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="B4_truncation_factor">
+                      <cd:Integer>
+                        <cd:Description>B4 Truncation Factor</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="B7_truncation_factor">
+                      <cd:Integer>
+                        <cd:Description>B7 Truncation Factor</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="B8_truncation_factor">
+                      <cd:Integer>
+                        <cd:Description>B8 Truncation Factor</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="B9_truncation_factor">
+                      <cd:Integer>
+                        <cd:Description>B9 Truncation Factor</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="REF_truncation_factor">
+                      <cd:Integer>
+                        <cd:Description>REF Truncation Factor</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="spare_3">
+                      <cd:Integer>
+                        <cd:Description>Spare</cd:Description>
+                        <cd:BitSize>8</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                      <cd:Hidden/>
+                    </cd:Field>
+                  </cd:Record>
+                </cd:Field>
+
+                <cd:Field name="data">
+                  <cd:Union format="binary">
+
+                    <cd:FieldExpression><![CDATA[if(int(../../../packet_header/packet_length) == 801, if(int(../../../data_field/header_extension/data_source) == 15, 1, 2), 0)]]></cd:FieldExpression>
+
+                    <cd:Field name="raw_data">
+                        <cd:Raw>
+                          <cd:BitSize><![CDATA[(int(../../../packet_header/packet_length) + 1 - 34) * 8]]></cd:BitSize>
+                        </cd:Raw>
+                    </cd:Field>
+
+                    <cd:Field name="aux_data">
+                      <cd:Record>
+                        <cd:Field name="buffer_E">
+                          <cd:Array>
+                            <cd:Dimension>64</cd:Dimension>
+                            <cd:Integer>
+                              <cd:Description>Buffer E (ADC1)</cd:Description>
+                              <cd:BitSize>16</cd:BitSize>
+                              <cd:NativeType>uint16</cd:NativeType>
+                            </cd:Integer>
+                          </cd:Array>
+                        </cd:Field>
+                        <cd:Field name="buffer_F">
+                          <cd:Array>
+                            <cd:Dimension>64</cd:Dimension>
+                            <cd:Integer>
+                              <cd:Description>Buffer F (ADC2)</cd:Description>
+                              <cd:BitSize>16</cd:BitSize>
+                              <cd:NativeType>uint16</cd:NativeType>
+                            </cd:Integer>
+                          </cd:Array>
+                        </cd:Field>
+                        <cd:Field name="buffer_G">
+                          <cd:Array>
+                            <cd:Dimension>64</cd:Dimension>
+                            <cd:Integer>
+                              <cd:Description>Buffer G (ADC3)</cd:Description>
+                              <cd:BitSize>16</cd:BitSize>
+                              <cd:NativeType>uint16</cd:NativeType>
+                            </cd:Integer>
+                          </cd:Array>
+                        </cd:Field>
+                        <cd:Field name="buffer_H">
+                          <cd:Array>
+                            <cd:Dimension>64</cd:Dimension>
+                            <cd:Integer>
+                              <cd:Description>Buffer H</cd:Description>
+                              <cd:BitSize>16</cd:BitSize>
+                              <cd:NativeType>uint16</cd:NativeType>
+                            </cd:Integer>
+                          </cd:Array>
+                        </cd:Field>
+
+                        <cd:Field name="spare">
+                          <cd:Array>
+                            <cd:Dimension>128</cd:Dimension>
+                            <cd:Integer>
+                              <cd:Description>Spare</cd:Description>
+                              <cd:BitSize>16</cd:BitSize>
+                              <cd:NativeType>uint16</cd:NativeType>
+                            </cd:Integer>
+                          </cd:Array>
+                          <cd:Hidden/>
+                        </cd:Field>
+
+                      </cd:Record>
+
+                    </cd:Field>
+
+                    <cd:Field name="pixel_data">
+                      <cd:Array>
+                        <cd:Dimension>384</cd:Dimension>
+                        <cd:Integer>
+                          <cd:Description>Pixel Data</cd:Description>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Array>
+                    </cd:Field>
+
+                  </cd:Union>
+                </cd:Field>
+
+             </cd:Record>
+          </cd:Field>
+          <cd:Field name="footer">
+            <cd:Record format="binary">
+              <cd:Field name="CRC">
+                <cd:Integer>
+                  <cd:Description>Packet Error Control (CRC)</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+        </cd:Record>
+      </cd:Field>
+    </cd:Record>
+  </cd:Array>
+  <cd:ProductVariable name="num_dsr">
+    <cd:Init><![CDATA[$num_dsr = unboundindex(/, byteoffset(.) >= filesize())]]></cd:Init>
+  </cd:ProductVariable>
+</cd:ProductDefinition>

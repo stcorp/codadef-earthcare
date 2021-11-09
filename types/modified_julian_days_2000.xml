@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<cd:Time timeformat="float(./days) * 86400 + float(./seconds) + float(./microseconds) / 1000000" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10" format="binary" last-modified="2020-02-25" name="modified_julian_days_2000">
+  <cd:Record>
+    <cd:Description>ENVISAT binary datetime</cd:Description>
+    <cd:Field name="days">
+      <cd:Integer>
+        <cd:Description>days since January 1st, 2000 (may be negative)</cd:Description>
+        <cd:ByteSize>4</cd:ByteSize>
+        <cd:NativeType>int32</cd:NativeType>
+        <cd:Unit>days since 2000-01-01</cd:Unit>
+      </cd:Integer>
+      <cd:BitOffset>0</cd:BitOffset>
+    </cd:Field>
+    <cd:Field name="seconds">
+      <cd:Integer>
+        <cd:Description>seconds since start of day</cd:Description>
+        <cd:ByteSize>4</cd:ByteSize>
+        <cd:NativeType>uint32</cd:NativeType>
+        <cd:Unit>s</cd:Unit>
+      </cd:Integer>
+      <cd:BitOffset>32</cd:BitOffset>
+    </cd:Field>
+    <cd:Field name="microseconds">
+      <cd:Integer>
+        <cd:Description>microseconds since start of second</cd:Description>
+        <cd:ByteSize>4</cd:ByteSize>
+        <cd:NativeType>uint32</cd:NativeType>
+        <cd:Unit>1e-6 s</cd:Unit>
+      </cd:Integer>
+      <cd:BitOffset>64</cd:BitOffset>
+    </cd:Field>
+  </cd:Record>
+</cd:Time>

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<cd:Record xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10" format="binary" last-modified="2020-02-25" name="ISP_annotation_header">
+  <cd:Description>ISP Annotation header</cd:Description>
+
+  <cd:Field name="sensing_time">
+    <cd:NamedType id="modified_julian_days_2000"/>
+  </cd:Field>
+
+  <cd:Field name="downlink_time">
+    <cd:NamedType id="modified_julian_days_2000"/>
+  </cd:Field>
+
+  <cd:Field name="packet_length">
+    <cd:Integer>
+      <cd:Description>ISP length (minus one)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+
+  <cd:Field name="number_of_VCDUs">
+    <cd:Integer>
+      <cd:Description>Number of VCDUs containing the current ISP</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+
+  <cd:Field name="number_of_corrected_VCDUs">
+    <cd:Integer>
+      <cd:Description>Number of VCDUs containing the current ISP that were corrected with Reed-Solomon</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+
+  <cd:Field name="number_of_incorrigible_VCDUs">
+    <cd:Integer>
+      <cd:Description>Number of VCDUs containing the current ISP that were incorrigible with Reed-Solomon</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+
+  <cd:Field name="number_of_missing_VCDUs">
+    <cd:Integer>
+      <cd:Description>Number of missing VCDUs containing the current ISP</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+
+  <cd:Field name="number_of_corrected_symbols_CADU">
+    <cd:Integer>
+      <cd:Description>Number of symbols corrected by Reed-Solomon in CADUs containing the current ISP</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+
+  <cd:Field name="CRC_error_flag">
+    <cd:Integer>
+      <cd:Description>CRC error flag</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+
+  <cd:Field name="spare">
+    <cd:Raw>
+      <cd:BitSize>3*8</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+
+</cd:Record>
