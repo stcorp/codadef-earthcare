@@ -13,17 +13,17 @@
           <cd:Field name="packet_header">
             <cd:NamedType id="ISP_packet_header"/>
           </cd:Field>
-
+          <cd:Field name="data_field_header">
+            <cd:NamedType id="ISP_data_field_header"/>
+          </cd:Field>
           <cd:Field name="raw_data">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
-
         </cd:Record>
       </cd:Field>
     </cd:Record>
-
   </cd:Array>
   <cd:ProductVariable name="num_dsr">
     <cd:Init><![CDATA[$num_dsr = unboundindex(/, byteoffset(.) >= filesize())]]></cd:Init>
