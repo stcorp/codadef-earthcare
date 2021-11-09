@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10" id="BBR_NOM_0_" format="binary" last-modified="2020-02-25">
+  <cd:Array>
+    <cd:Dimension><![CDATA[$num_dsr]]></cd:Dimension>
+    <cd:Record format="binary">
+      <cd:Description>Annotated Instrument Source Packet</cd:Description>
+      <cd:Field name="ISP_annotation_header">
+        <cd:NamedType id="ISP_annotation_header"/>
+      </cd:Field>
+      <cd:Field name="ISP">
+        <cd:Record format="binary">
+          <cd:Description>Instrument Source Packet</cd:Description>
+          <cd:Field name="packet_header">
+            <cd:Record format="binary">
+              <cd:Field name="version">
+                <cd:Integer>
+                  <cd:Description>Version</cd:Description>
+                  <cd:BitSize>3</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="type">
+                <cd:Integer>
+                  <cd:Description>Type</cd:Description>
+                  <cd:BitSize>1</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="DFH_flag">
+                <cd:Integer>
+                  <cd:Description>DFH Flag</cd:Description>
+                  <cd:BitSize>1</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="APID_PRID">
+                <cd:Integer>
+                  <cd:Description>APID/PRID</cd:Description>
+                  <cd:BitSize>7</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="APID_PCAT">
+                <cd:Integer>
+                  <cd:Description>APID/PCAT</cd:Description>
+                  <cd:BitSize>4</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="grouping_flags">
+                <cd:Integer>
+                  <cd:Description>Grouping Flags</cd:Description>
+                  <cd:BitSize>2</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="sequence_count">
+                <cd:Integer>
+                  <cd:Description>APID/PCAT</cd:Description>
+                  <cd:BitSize>14</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="packet_length">
+                <cd:Integer>
+                  <cd:Description>Packet data field length</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Field>
+
+
+          <cd:Field name="raw_data">
+              <cd:Raw>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1) * 8]]></cd:BitSize>
+              </cd:Raw>
+          </cd:Field>
+
+        </cd:Record>
+      </cd:Field>
+    </cd:Record>
+
+  </cd:Array>
+  <cd:ProductVariable name="num_dsr">
+    <cd:Init><![CDATA[$num_dsr = unboundindex(/, byteoffset(.) >= filesize())]]></cd:Init>
+  </cd:ProductVariable>
+</cd:ProductDefinition>
