@@ -16,11 +16,111 @@
           <cd:Field name="data_field_header">
             <cd:NamedType id="ISP_data_field_header"/>
           </cd:Field>
+          <cd:Field name="data_field">
+            <cd:Record format="binary">
+              <cd:Field name="SC_state_vector_quality">
+                <cd:Integer>
+                  <cd:Description>S/C State Vector Quality</cd:Description>
+                  <cd:BitSize>32</cd:BitSize>
+                  <cd:NativeType>uint32</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="ISP_format_version">
+                <cd:Integer>
+                  <cd:Description>ISP Format Version</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="fixed_field_delimiter">
+                <cd:Integer>
+                  <cd:Description>Fixed Field Delimiter</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+                <cd:Hidden/>
+              </cd:Field>
+              <cd:Field name="view_parameters">
+                <cd:Array>
+                  <cd:Dimension>8</cd:Dimension>
+                  <cd:Record format="binary">
+                    <cd:Field name="aft_start_time">
+                      <cd:Time timeformat="float(./coarse) + float(./fine) / 65536">
+                        <cd:Record>
+                          <cd:Description>Aft telescope ordered acquisition time</cd:Description>
+                          <cd:Field name="coarse">
+                            <cd:Integer>
+                              <cd:BitSize>32</cd:BitSize>
+                              <cd:NativeType>uint32</cd:NativeType>
+                            </cd:Integer>
+                          </cd:Field>
+                          <cd:Field name="fine">
+                            <cd:Integer>
+                              <cd:BitSize>16</cd:BitSize>
+                              <cd:NativeType>uint16</cd:NativeType>
+                            </cd:Integer>
+                          </cd:Field>
+                        </cd:Record>
+                      </cd:Time>
+                    </cd:Field>
+                    <cd:Field name="nadir_start_time">
+                      <cd:Time timeformat="float(./coarse) + float(./fine) / 65536">
+                        <cd:Record>
+                          <cd:Description>Nadir telescope ordered acquisition start time</cd:Description>
+                          <cd:Field name="coarse">
+                            <cd:Integer>
+                              <cd:BitSize>32</cd:BitSize>
+                              <cd:NativeType>uint32</cd:NativeType>
+                            </cd:Integer>
+                          </cd:Field>
+                          <cd:Field name="fine">
+                            <cd:Integer>
+                              <cd:BitSize>16</cd:BitSize>
+                              <cd:NativeType>uint16</cd:NativeType>
+                            </cd:Integer>
+                          </cd:Field>
+                        </cd:Record>
+                      </cd:Time>
+                    </cd:Field>
+                    <cd:Field name="fore_start_time">
+                      <cd:Time timeformat="float(./coarse) + float(./fine) / 65536">
+                        <cd:Record>
+                          <cd:Description>Fore telescope ordered acquisition start time</cd:Description>
+                          <cd:Field name="coarse">
+                            <cd:Integer>
+                              <cd:BitSize>32</cd:BitSize>
+                              <cd:NativeType>uint32</cd:NativeType>
+                            </cd:Integer>
+                          </cd:Field>
+                          <cd:Field name="fine">
+                            <cd:Integer>
+                              <cd:BitSize>16</cd:BitSize>
+                              <cd:NativeType>uint16</cd:NativeType>
+                            </cd:Integer>
+                          </cd:Field>
+                        </cd:Record>
+                      </cd:Time>
+                    </cd:Field>
+                    <cd:Field name="cal_drum_position">
+                      <cd:Integer>
+                        <cd:Description>Cal drum positional encoder value at time of aft telescope acquisition</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                  </cd:Record>
+                </cd:Array>
+              </cd:Field>
+
+            </cd:Record>
+          </cd:Field>
+
           <cd:Field name="raw_data">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
+
         </cd:Record>
       </cd:Field>
     </cd:Record>
