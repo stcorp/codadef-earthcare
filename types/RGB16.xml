@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<cd:Record xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10" format="binary" last-modified="2020-02-25" name="RGB16">
+  <cd:Description>RGB Values</cd:Description>
+  <cd:Field name="R">
+    <cd:Integer>
+      <cd:Description>Signal output of the telescope red photodiode</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="G">
+    <cd:Integer>
+      <cd:Description>Signal output of the telescope green photodiode</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="B">
+    <cd:Integer>
+      <cd:Description>Signal output of the telescope blue photodiode</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>
