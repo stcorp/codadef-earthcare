@@ -251,7 +251,7 @@
       </cd:DetectionRule>
     </cd:ProductDefinition>
   </cd:ProductType>
-  <cd:ProductType name="MSI_NOM_0">
+  <cd:ProductType name="MSI_NOM_0_">
     <cd:Description>Annotated MSI Instrument Source Packets</cd:Description>
     <cd:ProductDefinition id="MSI_NOM_0_" format="binary" version="0">
       <cd:DetectionRule>
@@ -260,7 +260,7 @@
       </cd:DetectionRule>
     </cd:ProductDefinition>
   </cd:ProductType>
-  <cd:ProductType name="BBR_NOM_0">
+  <cd:ProductType name="BBR_NOM_0_">
     <cd:Description>Annotated BBR Instrument Source Packets</cd:Description>
     <cd:ProductDefinition id="BBR_NOM_0_" format="binary" version="0">
       <cd:DetectionRule>
