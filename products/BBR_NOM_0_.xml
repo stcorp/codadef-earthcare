@@ -216,6 +216,49 @@
                     </cd:Integer>
                   </cd:Field>
 
+                  <cd:Field name="aft_A_PRT_base">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the 'A' PRT mounted on the baseplate of the aft telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="nadir_A_PRT_base">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the 'A' PRT mounted on the baseplate of the nadir telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="fore_A_PRT_base">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the 'A' PRT mounted on the baseplate of the fore telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="aft_B_PRT_base">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the 'B' PRT mounted on the baseplate of the aft telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="nadir_B_PRT_base">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the 'B' PRT mounted on the baseplate of the nadir telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="fore_B_PRT_base">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the 'B' PRT mounted on the baseplate of the fore telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+
 
                 </cd:Record>
               </cd:Field>
@@ -226,7 +269,7 @@
           </cd:Field>
           <cd:Field name="raw_data">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16-12) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
         </cd:Record>
