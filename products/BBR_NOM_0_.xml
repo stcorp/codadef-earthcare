@@ -157,11 +157,76 @@
                 </cd:Integer>
                 <cd:Hidden/>
               </cd:Field>
+              <cd:Field name="OU">
+                <cd:Record format="binary">
+                  <cd:Field name="blackbody_1_PRT_base">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the PRT mounted in the base of BlackBody 1</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="blackbody_1_PRT_sidewall">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the PRT mounted in the sidewall of BlackBody 1</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="blackbody_2_PRT_base">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the PRT mounted in the base of BlackBody 2</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="blackbody_2_PRT_sidewall">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the PRT mounted in the sidewall of BlackBody 2</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="blackbody_3_PRT_base">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the PRT mounted in the base of BlackBody 3</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="blackbody_3_PRT_sidewall">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the PRT mounted in the sidewall of BlackBody 3</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="blackbody_4_PRT_base">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the PRT mounted in the base of BlackBody 4</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="blackbody_4_PRT_sidewall">
+                    <cd:Integer>
+                      <cd:Description>Signal output (temperature) for the PRT mounted in the sidewall of BlackBody 4</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+
+
+                </cd:Record>
+              </cd:Field>
+
+
+
             </cd:Record>
           </cd:Field>
           <cd:Field name="raw_data">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
         </cd:Record>
