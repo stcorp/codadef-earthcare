@@ -403,7 +403,6 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="nadir_pixel_30_temp">
                     <cd:Integer>
                       <cd:Description>Temperature as read by the unreleased pixel #30 of the aft telescope</cd:Description>
@@ -418,7 +417,6 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="fore_pixel_30_temp">
                     <cd:Integer>
                       <cd:Description>Temperature as read by the unreleased pixel #30 of the aft telescope</cd:Description>
@@ -433,6 +431,40 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
+
+                  <cd:Field name="current_monitor_telescope">
+                    <cd:Integer>
+                      <cd:Description>Current monitor for telescope PRTs</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="current_monitor_blackbody">
+                    <cd:Integer>
+                      <cd:Description>Current monitor for BlackBody PRTs</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="spare">
+                    <cd:Integer>
+                      <cd:Description>Spare</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                    <cd:Hidden/>
+                  </cd:Field>
+                  <cd:Field name="spare2">
+                    <cd:Integer>
+                      <cd:Description>Spare</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                    <cd:Hidden/>
+                  </cd:Field>
+
+
+
                 </cd:Record>
               </cd:Field>
 
@@ -442,7 +474,7 @@
           </cd:Field>
           <cd:Field name="raw_data">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16-12-10-26-12) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16-12-10-26-12-8) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
         </cd:Record>
