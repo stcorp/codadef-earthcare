@@ -215,7 +215,6 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="aft_A_PRT_base">
                     <cd:Integer>
                       <cd:Description>Signal output (temperature) for the 'A' PRT mounted on the baseplate of the aft telescope</cd:Description>
@@ -258,7 +257,6 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="voltage_monitor_P12">
                     <cd:Integer>
                       <cd:Description>The output from the voltage monitor monitoring the +12V rail</cd:Description>
@@ -294,7 +292,6 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="processor_board_temp">
                     <cd:Integer>
                       <cd:Description>The processor board temperature</cd:Description>
@@ -330,7 +327,6 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="voltage_monitor_nadir_0">
                     <cd:Integer>
                       <cd:Description>Monitor of voltage supply to the DAC 0 on the nadir telescope</cd:Description>
@@ -388,7 +384,6 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="aft_pixel_30_temp">
                     <cd:Integer>
                       <cd:Description>Temperature as read by the unreleased pixel #30 of the aft telescope</cd:Description>
@@ -431,7 +426,6 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="current_monitor_telescope">
                     <cd:Integer>
                       <cd:Description>Current monitor for telescope PRTs</cd:Description>
@@ -462,7 +456,6 @@
                     </cd:Integer>
                     <cd:Hidden/>
                   </cd:Field>
-
                   <cd:Field name="wga_table_ID">
                     <cd:Integer>
                       <cd:Description>Table ID for ROIC waveform generator table</cd:Description>
@@ -533,11 +526,8 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
-
                 </cd:Record>
               </cd:Field>
-
               <cd:Field name="delimiter_3">
                 <cd:Integer>
                   <cd:Description>Fixed Field Delimiter</cd:Description>
@@ -546,10 +536,8 @@
                 </cd:Integer>
                 <cd:Hidden/>
               </cd:Field>
-
               <cd:Field name="ICU">
                 <cd:Record format="binary">
-
                   <cd:Field name="temp_CDM_winding">
                     <cd:Integer>
                       <cd:Description>Temperature of the CDM winding</cd:Description>
@@ -746,14 +734,12 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="spare3">
                     <cd:Raw>
                       <cd:BitSize>64</cd:BitSize>
                     </cd:Raw>
                     <cd:Hidden/>
                   </cd:Field>
-
                   <cd:Field name="voltage_monitor_P12">
                     <cd:Integer>
                       <cd:Description>Voltage monitor for the +12V supply</cd:Description>
@@ -853,21 +839,16 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="spare5">
                     <cd:Raw>
                       <cd:BitSize>288</cd:BitSize>
                     </cd:Raw>
                     <cd:Hidden/>
                   </cd:Field>
-
-
                 </cd:Record>
               </cd:Field>
-
               <cd:Field name="HK">
                 <cd:Record format="binary">
-
                   <cd:Field name="SID">
                     <cd:Integer>
                       <cd:Description>The SID of the programmable area</cd:Description>
@@ -875,7 +856,6 @@
                       <cd:NativeType>uint8</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="CDM_speed_MSB">
                     <cd:Integer>
                       <cd:Description>The top 8 bits of the 24 bits wide waveform table readout period.</cd:Description>
@@ -883,7 +863,6 @@
                       <cd:NativeType>uint8</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="CDM_speed">
                     <cd:Integer>
                       <cd:Description>The bottom 16 bits of the 24 bits wide waveform table readout period.</cd:Description>
@@ -891,25 +870,23 @@
                       <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
-
                   <cd:Field name="spare6">
                     <cd:Raw>
                       <cd:BitSize>224</cd:BitSize>
                     </cd:Raw>
                     <cd:Hidden/>
                   </cd:Field>
-
-
                 </cd:Record>
               </cd:Field>
-
             </cd:Record>
           </cd:Field>
+
           <cd:Field name="raw_data">
               <cd:Raw>
                 <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16-12-10-26-12-8-20-2-128-32) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
+
         </cd:Record>
       </cd:Field>
     </cd:Record>
