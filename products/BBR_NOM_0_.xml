@@ -105,9 +105,52 @@
                       <cd:Field name="view_parameters">
                         <cd:NamedType id="ISP_BBR_view_parameters"/>
                       </cd:Field>
-
-
-
+                      <cd:Field name="delimiter_1">
+                        <cd:Integer>
+                          <cd:Description>Fixed Field Delimiter</cd:Description>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                        <cd:Hidden/>
+                      </cd:Field>
+                      <cd:Field name="detector_voltage">
+                        <cd:Array>
+                          <cd:Dimension>78</cd:Dimension>
+                          <cd:Array>
+                            <cd:Dimension>32</cd:Dimension>
+                            <cd:Integer>
+                              <cd:Description>Raw subsampled detector voltage</cd:Description>
+                              <cd:BitSize>12</cd:BitSize>
+                              <cd:NativeType>uint16</cd:NativeType>
+                            </cd:Integer>
+                          </cd:Array>
+                        </cd:Array>
+                      </cd:Field>
+                      <cd:Field name="view_processed">
+                        <cd:Record format="binary">
+                         <cd:Field name="aft_voltage">
+                            <cd:NamedType id="asymptotic_detector_voltage"/>
+                          </cd:Field>
+                          <cd:Field name="nadir_voltage">
+                            <cd:NamedType id="asymptotic_detector_voltage"/>
+                          </cd:Field>
+                          <cd:Field name="fore_voltage">
+                            <cd:NamedType id="asymptotic_detector_voltage"/>
+                          </cd:Field>
+                          <cd:Field name="mpd_aft_output">
+                            <cd:NamedType id="RGB16"/>
+                          </cd:Field>
+                          <cd:Field name="mpd_nadir_output">
+                            <cd:NamedType id="RGB16"/>
+                          </cd:Field>
+                          <cd:Field name="mpd_fore_output">
+                            <cd:NamedType id="RGB16"/>
+                          </cd:Field>
+                          <cd:Field name="spare">
+                            <cd:NamedType id="RGB16"/>
+                          </cd:Field>
+                        </cd:Record>
+                      </cd:Field>
                       <cd:Field name="OU">
                         <cd:NamedType id="ISP_BBR_OU"/>
                       </cd:Field>
@@ -116,11 +159,6 @@
                       </cd:Field>
                       <cd:Field name="HK">
                         <cd:NamedType id="ISP_BBR_HK"/>
-                      </cd:Field>
-                      <cd:Field name="rest">
-                        <cd:Raw>
-                          <cd:BitSize>33086</cd:BitSize>
-                        </cd:Raw>
                       </cd:Field>
                     </cd:Record>
                   </cd:Field>
