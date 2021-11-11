@@ -754,6 +754,114 @@
                     <cd:Hidden/>
                   </cd:Field>
 
+                  <cd:Field name="voltage_monitor_P12">
+                    <cd:Integer>
+                      <cd:Description>Voltage monitor for the +12V supply</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_M5">
+                    <cd:Integer>
+                      <cd:Description>Voltage monitor for the -5V supply</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_M12">
+                    <cd:Integer>
+                      <cd:Description>Voltage monitor for the -12V supply</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_P3_3">
+                    <cd:Integer>
+                      <cd:Description>Voltage monitor for the +3.3V supply</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="spare4">
+                    <cd:Integer>
+                      <cd:Description>Spare voltage monitor</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                    <cd:Hidden/>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_ADC_1">
+                    <cd:Integer>
+                      <cd:Description>Voltage monitor for the ADC reference 1</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_ADC_2">
+                    <cd:Integer>
+                      <cd:Description>Voltage monitor for the ADC reference 2</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="current_monitor_CTM_motor">
+                    <cd:Integer>
+                      <cd:Description>Current monitor for the CTM motor</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="current_monitor_CDM_motor">
+                    <cd:Integer>
+                      <cd:Description>Current monitor for the CDM motor</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="current_monitor_heaters">
+                    <cd:Integer>
+                      <cd:Description>Current monitor for the heaters</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_CDM_encoder">
+                    <cd:Integer>
+                      <cd:Description>Voltage monitor for the CDM encoder</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_CTM_encoder">
+                    <cd:Integer>
+                      <cd:Description>Voltage monitor for the CTM encoder</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_motor_supply">
+                    <cd:Integer>
+                      <cd:Description>Voltage monitor for the 24V motor supply rail</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_heater_supply">
+                    <cd:Integer>
+                      <cd:Description>Voltage monitor for the 20V heater supply rail</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+
+                  <cd:Field name="spare5">
+                    <cd:Raw>
+                      <cd:BitSize>288</cd:BitSize>
+                    </cd:Raw>
+                    <cd:Hidden/>
+                  </cd:Field>
+
+
                 </cd:Record>
               </cd:Field>
 
@@ -762,7 +870,7 @@
           </cd:Field>
           <cd:Field name="raw_data">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16-12-10-26-12-8-20-2-64) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16-12-10-26-12-8-20-2-128) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
         </cd:Record>
