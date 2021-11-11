@@ -1,0 +1,379 @@
+<?xml version="1.0"?>
+<cd:Record xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10" format="binary" last-modified="2020-02-25" name="ISP_BBR_OU">
+  <cd:Description>ISP BBR OU data</cd:Description>
+  <cd:Field name="delimiter_2">
+    <cd:Integer>
+      <cd:Description>Fixed Field Delimiter</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="blackbody_1_PRT_base">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the PRT mounted in the base of BlackBody 1</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="blackbody_1_PRT_sidewall">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the PRT mounted in the sidewall of BlackBody 1</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="blackbody_2_PRT_base">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the PRT mounted in the base of BlackBody 2</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="blackbody_2_PRT_sidewall">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the PRT mounted in the sidewall of BlackBody 2</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="blackbody_3_PRT_base">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the PRT mounted in the base of BlackBody 3</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="blackbody_3_PRT_sidewall">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the PRT mounted in the sidewall of BlackBody 3</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="blackbody_4_PRT_base">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the PRT mounted in the base of BlackBody 4</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="blackbody_4_PRT_sidewall">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the PRT mounted in the sidewall of BlackBody 4</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="aft_A_PRT_base">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the 'A' PRT mounted on the baseplate of the aft telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="nadir_A_PRT_base">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the 'A' PRT mounted on the baseplate of the nadir telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="fore_A_PRT_base">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the 'A' PRT mounted on the baseplate of the fore telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="aft_B_PRT_base">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the 'B' PRT mounted on the baseplate of the aft telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="nadir_B_PRT_base">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the 'B' PRT mounted on the baseplate of the nadir telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="fore_B_PRT_base">
+    <cd:Integer>
+      <cd:Description>Signal output (temperature) for the 'B' PRT mounted on the baseplate of the fore telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_P12">
+    <cd:Integer>
+      <cd:Description>The output from the voltage monitor monitoring the +12V rail</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_M12">
+    <cd:Integer>
+      <cd:Description>The output from the voltage monitor monitoring the -12V rail</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_P5">
+    <cd:Integer>
+      <cd:Description>The output from the voltage monitor monitoring the +5V rail</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_P3_3">
+    <cd:Integer>
+      <cd:Description>The output from the voltage monitor monitoring the +3.3V rail</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_P1_5">
+    <cd:Integer>
+      <cd:Description>The output from the voltage monitor monitoring the +1.5V rail</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="processor_board_temp">
+    <cd:Integer>
+      <cd:Description>The processor board temperature</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_aft_0">
+    <cd:Integer>
+      <cd:Description>Monitor of voltage supply to the DAC 0 on the aft telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_aft_1">
+    <cd:Integer>
+      <cd:Description>Monitor of voltage supply to the DAC 1 on the aft telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_aft_2">
+    <cd:Integer>
+      <cd:Description>Monitor of voltage supply to the DAC 2 on the aft telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_aft_3">
+    <cd:Integer>
+      <cd:Description>Monitor of voltage supply to the DAC 3 on the aft telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_nadir_0">
+    <cd:Integer>
+      <cd:Description>Monitor of voltage supply to the DAC 0 on the nadir telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_nadir_1">
+    <cd:Integer>
+      <cd:Description>Monitor of voltage supply to the DAC 1 on the nadir telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_nadir_2">
+    <cd:Integer>
+      <cd:Description>Monitor of voltage supply to the DAC 2 on the nadir telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_nadir_3">
+    <cd:Integer>
+      <cd:Description>Monitor of voltage supply to the DAC 3 on the nadir telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+
+  <cd:Field name="voltage_monitor_fore_0">
+    <cd:Integer>
+      <cd:Description>Monitor of voltage supply to the DAC 0 on the fore telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_fore_1">
+    <cd:Integer>
+      <cd:Description>Monitor of voltage supply to the DAC 1 on the fore telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_fore_2">
+    <cd:Integer>
+      <cd:Description>Monitor of voltage supply to the DAC 2 on the fore telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_fore_3">
+    <cd:Integer>
+      <cd:Description>Monitor of voltage supply to the DAC 3 on the fore telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="aft_pixel_30_temp">
+    <cd:Integer>
+      <cd:Description>Temperature as read by the unreleased pixel #30 of the aft telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="aft_pixel_31_temp">
+    <cd:Integer>
+      <cd:Description>Temperature as read by the unreleased pixel #31 of the aft telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="nadir_pixel_30_temp">
+    <cd:Integer>
+      <cd:Description>Temperature as read by the unreleased pixel #30 of the aft telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="nadir_pixel_31_temp">
+    <cd:Integer>
+      <cd:Description>Temperature as read by the unreleased pixel #31 of the aft telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="fore_pixel_30_temp">
+    <cd:Integer>
+      <cd:Description>Temperature as read by the unreleased pixel #30 of the aft telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="fore_pixel_31_temp">
+    <cd:Integer>
+      <cd:Description>Temperature as read by the unreleased pixel #31 of the aft telescope</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="current_monitor_telescope">
+    <cd:Integer>
+      <cd:Description>Current monitor for telescope PRTs</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="current_monitor_blackbody">
+    <cd:Integer>
+      <cd:Description>Current monitor for BlackBody PRTs</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare">
+    <cd:Integer>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="spare2">
+    <cd:Integer>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="wga_table_ID">
+    <cd:Integer>
+      <cd:Description>Table ID for ROIC waveform generator table</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="hk_sequence_counter">
+    <cd:Integer>
+      <cd:Description>Housekeeping sequence counter</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="command_counter">
+    <cd:Integer>
+      <cd:Description>Command counter</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="test_ID">
+    <cd:Integer>
+      <cd:Description>Test ID (if used)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ADC_ROIC_latch_up_flags">
+    <cd:Integer>
+      <cd:Description>Number of OU ADC and ROIC latch up flags (one current limiter per detector)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FPGA_error_flags">
+    <cd:Integer>
+      <cd:Description>FPGA error flags</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FPGA_sampling">
+    <cd:Integer>
+      <cd:Description>Samples per integration</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FPGA_configuration">
+    <cd:Integer>
+      <cd:Description>FPGA configuration</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="lut_checksum">
+    <cd:Integer>
+      <cd:Description>Version number of LUT used by DSP algorithm</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="FPGA_version_number">
+    <cd:Integer>
+      <cd:Description>Build version of FPGA</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<cd:Record xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10" format="binary" last-modified="2020-02-25" name="ISP_BBR_ICU">
+  <cd:Description>ISP BBR ICU data</cd:Description>
+  <cd:Field name="delimiter_3">
+    <cd:Integer>
+      <cd:Description>Fixed Field Delimiter</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="temp_CDM_winding">
+    <cd:Integer>
+      <cd:Description>Temperature of the CDM winding</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_CTM_winding">
+    <cd:Integer>
+      <cd:Description>Temperature of the CTM winding</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_CTM_encoder">
+    <cd:Integer>
+      <cd:Description>Temperature of the CTM encoder</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_MA_radiator">
+    <cd:Integer>
+      <cd:Description>Temperature of the MA radiator</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_MA_thermostates">
+    <cd:Integer>
+      <cd:Description>Temperature of the MA thermostates</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_CDM_encoder">
+    <cd:Integer>
+      <cd:Description>Temperature of the CDM encoder</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_fore_baseplate">
+    <cd:Integer>
+      <cd:Description>Temperature of the Fore telescope baseplate</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_nadir_baseplate">
+    <cd:Integer>
+      <cd:Description>Temperature of the Nadir telescope baseplate</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_aft_baseplate">
+    <cd:Integer>
+      <cd:Description>Temperature of the Aft telescope baseplate</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_FOA_baseplate">
+    <cd:Integer>
+      <cd:Description>Temperature of the Fixed Optics Assembly baseplate</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_aft_baffle">
+    <cd:Integer>
+      <cd:Description>Temperature of the Aft telescope foreoptics baffle</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_cal_drum_1">
+    <cd:Integer>
+      <cd:Description>Temperature of the Calibration drum (position 1)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_cal_drum_2">
+    <cd:Integer>
+      <cd:Description>Temperature of the Calibration drum (position 2)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_viscal_1">
+    <cd:Integer>
+      <cd:Description>Temperature of the VisCal (position 1)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_viscal_2">
+    <cd:Integer>
+      <cd:Description>Temperature of the VisCal (position 2)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_main_radiator_1">
+    <cd:Integer>
+      <cd:Description>Temperature of the main radiator (position 1)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_main_radiator_2">
+    <cd:Integer>
+      <cd:Description>Temperature of the main radiator (position 2)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_MX_panel">
+    <cd:Integer>
+      <cd:Description>Temperature of the -X panel internal</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_PY_panel">
+    <cd:Integer>
+      <cd:Description>Temperature of the +Y panel internal</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_MY_panel">
+    <cd:Integer>
+      <cd:Description>Temperature of the -Y panel internal</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_PZ_panel">
+    <cd:Integer>
+      <cd:Description>Temperature of the +Z panel internal</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_decontamination_plate">
+    <cd:Integer>
+      <cd:Description>Temperature of the chopper decontamination plate</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_ICU_AAM">
+    <cd:Integer>
+      <cd:Description>Temperature of the ICU analog acquisitions module</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_ICU_processor">
+    <cd:Integer>
+      <cd:Description>Temperature of the ICU processor module</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_ICU_chassis">
+    <cd:Integer>
+      <cd:Description>Temperature of the ICU chassis</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_ICU_PDM_1">
+    <cd:Integer>
+      <cd:Description>Temperature of the ICU power and drive module (position 1)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_ICU_PDM_2">
+    <cd:Integer>
+      <cd:Description>Temperature of the ICU power and drive module (position 2)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_ICU_PDM_3">
+    <cd:Integer>
+      <cd:Description>Temperature of the ICU power and drive module (position 3)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare3">
+    <cd:Raw>
+      <cd:BitSize>64</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_P12">
+    <cd:Integer>
+      <cd:Description>Voltage monitor for the +12V supply</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_M5">
+    <cd:Integer>
+      <cd:Description>Voltage monitor for the -5V supply</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_M12">
+    <cd:Integer>
+      <cd:Description>Voltage monitor for the -12V supply</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_P3_3">
+    <cd:Integer>
+      <cd:Description>Voltage monitor for the +3.3V supply</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare4">
+    <cd:Integer>
+      <cd:Description>Spare voltage monitor</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_ADC_1">
+    <cd:Integer>
+      <cd:Description>Voltage monitor for the ADC reference 1</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_ADC_2">
+    <cd:Integer>
+      <cd:Description>Voltage monitor for the ADC reference 2</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="current_monitor_CTM_motor">
+    <cd:Integer>
+      <cd:Description>Current monitor for the CTM motor</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="current_monitor_CDM_motor">
+    <cd:Integer>
+      <cd:Description>Current monitor for the CDM motor</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="current_monitor_heaters">
+    <cd:Integer>
+      <cd:Description>Current monitor for the heaters</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_CDM_encoder">
+    <cd:Integer>
+      <cd:Description>Voltage monitor for the CDM encoder</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_CTM_encoder">
+    <cd:Integer>
+      <cd:Description>Voltage monitor for the CTM encoder</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_motor_supply">
+    <cd:Integer>
+      <cd:Description>Voltage monitor for the 24V motor supply rail</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="voltage_monitor_heater_supply">
+    <cd:Integer>
+      <cd:Description>Voltage monitor for the 20V heater supply rail</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare5">
+    <cd:Raw>
+      <cd:BitSize>288</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+</cd:Record>
