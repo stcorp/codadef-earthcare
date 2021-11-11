@@ -184,12 +184,7 @@
                 </cd:Field>
                 <cd:Field name="data">
                   <cd:Union format="binary">
-                    <cd:FieldExpression><![CDATA[if(int(../../../packet_header/packet_length) == 801, if(int(../../data_source) == 15, 1, 2), 0)]]></cd:FieldExpression>
-                    <cd:Field name="raw_data">
-                        <cd:Raw>
-                          <cd:BitSize><![CDATA[(int(../../../packet_header/packet_length) + 1 - 34) * 8]]></cd:BitSize>
-                        </cd:Raw>
-                    </cd:Field>
+                    <cd:FieldExpression><![CDATA[if(int(../../data_source) == 15, 0, 1)]]></cd:FieldExpression>
                     <cd:Field name="aux_data">
                       <cd:Record>
                         <cd:Field name="buffer_E">
