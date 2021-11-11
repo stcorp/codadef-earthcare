@@ -865,12 +865,49 @@
                 </cd:Record>
               </cd:Field>
 
+              <cd:Field name="HK">
+                <cd:Record format="binary">
+
+                  <cd:Field name="SID">
+                    <cd:Integer>
+                      <cd:Description>The SID of the programmable area</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+
+                  <cd:Field name="CDM_speed_MSB">
+                    <cd:Integer>
+                      <cd:Description>The top 8 bits of the 24 bits wide waveform table readout period.</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+
+                  <cd:Field name="CDM_speed">
+                    <cd:Integer>
+                      <cd:Description>The bottom 16 bits of the 24 bits wide waveform table readout period.</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+
+                  <cd:Field name="spare6">
+                    <cd:Raw>
+                      <cd:BitSize>224</cd:BitSize>
+                    </cd:Raw>
+                    <cd:Hidden/>
+                  </cd:Field>
+
+
+                </cd:Record>
+              </cd:Field>
 
             </cd:Record>
           </cd:Field>
           <cd:Field name="raw_data">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16-12-10-26-12-8-20-2-128) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16-12-10-26-12-8-20-2-128-32) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
         </cd:Record>
