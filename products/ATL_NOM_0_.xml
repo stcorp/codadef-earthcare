@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10" id="ATL_NOM_0_" format="binary" last-modified="2020-02-25">
+  <cd:Array>
+    <cd:Dimension><![CDATA[$num_dsr]]></cd:Dimension>
+    <cd:Record format="binary">
+      <cd:Description>Annotated Instrument Source Packet</cd:Description>
+      <cd:Field name="ISP_annotation_header">
+        <cd:NamedType id="ISP_annotation_header"/>
+      </cd:Field>
+      <cd:Field name="ISP">
+        <cd:Record format="binary">
+          <cd:Description>Instrument Source Packet</cd:Description>
+          <cd:Field name="packet_header">
+            <cd:NamedType id="ISP_packet_header"/>
+          </cd:Field>
+          <cd:Field name="data_field_header">
+            <cd:NamedType id="ISP_data_field_header"/>
+          </cd:Field>
+
+          <cd:Field name="blabla">
+              <cd:Raw>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12) * 8]]></cd:BitSize>
+              </cd:Raw>
+          </cd:Field>
+
+        </cd:Record>
+      </cd:Field>
+    </cd:Record>
+  </cd:Array>
+  <cd:ProductVariable name="num_dsr">
+    <cd:Init><![CDATA[$num_dsr = unboundindex(/, byteoffset(.) >= filesize())]]></cd:Init>
+  </cd:ProductVariable>
+</cd:ProductDefinition>
