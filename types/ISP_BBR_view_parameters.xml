@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<cd:Record xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10" format="binary" last-modified="2020-02-25" name="ISP_BBR_view_parameters">
+    <cd:Field name="aft_start_time">
+      <cd:Time timeformat="float(./coarse) + float(./fine) / 65536">
+        <cd:Record>
+          <cd:Description>Aft telescope ordered acquisition time</cd:Description>
+          <cd:Field name="coarse">
+            <cd:Integer>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>uint32</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="fine">
+            <cd:Integer>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+        </cd:Record>
+      </cd:Time>
+    </cd:Field>
+    <cd:Field name="nadir_start_time">
+      <cd:Time timeformat="float(./coarse) + float(./fine) / 65536">
+        <cd:Record>
+          <cd:Description>Nadir telescope ordered acquisition start time</cd:Description>
+          <cd:Field name="coarse">
+            <cd:Integer>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>uint32</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="fine">
+            <cd:Integer>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+        </cd:Record>
+      </cd:Time>
+    </cd:Field>
+    <cd:Field name="fore_start_time">
+      <cd:Time timeformat="float(./coarse) + float(./fine) / 65536">
+        <cd:Record>
+          <cd:Description>Fore telescope ordered acquisition start time</cd:Description>
+          <cd:Field name="coarse">
+            <cd:Integer>
+              <cd:BitSize>32</cd:BitSize>
+              <cd:NativeType>uint32</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="fine">
+            <cd:Integer>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+        </cd:Record>
+      </cd:Time>
+    </cd:Field>
+    <cd:Field name="cal_drum_position">
+      <cd:Integer>
+        <cd:Description>Cal drum positional encoder value at time of aft telescope acquisition</cd:Description>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Field>
+</cd:Record>
