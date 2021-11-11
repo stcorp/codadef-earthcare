@@ -463,6 +463,76 @@
                     <cd:Hidden/>
                   </cd:Field>
 
+                  <cd:Field name="wga_table_ID">
+                    <cd:Integer>
+                      <cd:Description>Table ID for ROIC waveform generator table</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="hk_sequence_counter">
+                    <cd:Integer>
+                      <cd:Description>Housekeeping sequence counter</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="command_counter">
+                    <cd:Integer>
+                      <cd:Description>Command counter</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="test_ID">
+                    <cd:Integer>
+                      <cd:Description>Test ID (if used)</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="ADC_ROIC_latch_up_flags">
+                    <cd:Integer>
+                      <cd:Description>Number of OU ADC and ROIC latch up flags (one current limiter per detector)</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="FPGA_error_flags">
+                    <cd:Integer>
+                      <cd:Description>FPGA error flags</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="FPGA_sampling">
+                    <cd:Integer>
+                      <cd:Description>Samples per integration</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="FPGA_configuration">
+                    <cd:Integer>
+                      <cd:Description>FPGA configuration</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="lut_checksum">
+                    <cd:Integer>
+                      <cd:Description>Version number of LUT used by DSP algorithm</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="FPGA_version_number">
+                    <cd:Integer>
+                      <cd:Description>Build version of FPGA</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
 
 
                 </cd:Record>
@@ -474,7 +544,7 @@
           </cd:Field>
           <cd:Field name="raw_data">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16-12-10-26-12-8) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16-12-10-26-12-8-20) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
         </cd:Record>
