@@ -259,6 +259,135 @@
                     </cd:Integer>
                   </cd:Field>
 
+                  <cd:Field name="voltage_monitor_P12">
+                    <cd:Integer>
+                      <cd:Description>The output from the voltage monitor monitoring the +12V rail</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_M12">
+                    <cd:Integer>
+                      <cd:Description>The output from the voltage monitor monitoring the -12V rail</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_P5">
+                    <cd:Integer>
+                      <cd:Description>The output from the voltage monitor monitoring the +5V rail</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_P3_3">
+                    <cd:Integer>
+                      <cd:Description>The output from the voltage monitor monitoring the +3.3V rail</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_P1_5">
+                    <cd:Integer>
+                      <cd:Description>The output from the voltage monitor monitoring the +1.5V rail</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+
+                  <cd:Field name="processor_board_temp">
+                    <cd:Integer>
+                      <cd:Description>The processor board temperature</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_aft_0">
+                    <cd:Integer>
+                      <cd:Description>Monitor of voltage supply to the DAC 0 on the aft telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_aft_1">
+                    <cd:Integer>
+                      <cd:Description>Monitor of voltage supply to the DAC 1 on the aft telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_aft_2">
+                    <cd:Integer>
+                      <cd:Description>Monitor of voltage supply to the DAC 2 on the aft telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_aft_3">
+                    <cd:Integer>
+                      <cd:Description>Monitor of voltage supply to the DAC 3 on the aft telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+
+                  <cd:Field name="voltage_monitor_nadir_0">
+                    <cd:Integer>
+                      <cd:Description>Monitor of voltage supply to the DAC 0 on the nadir telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_nadir_1">
+                    <cd:Integer>
+                      <cd:Description>Monitor of voltage supply to the DAC 1 on the nadir telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_nadir_2">
+                    <cd:Integer>
+                      <cd:Description>Monitor of voltage supply to the DAC 2 on the nadir telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_nadir_3">
+                    <cd:Integer>
+                      <cd:Description>Monitor of voltage supply to the DAC 3 on the nadir telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+
+                  <cd:Field name="voltage_monitor_fore_0">
+                    <cd:Integer>
+                      <cd:Description>Monitor of voltage supply to the DAC 0 on the fore telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_fore_1">
+                    <cd:Integer>
+                      <cd:Description>Monitor of voltage supply to the DAC 1 on the fore telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_fore_2">
+                    <cd:Integer>
+                      <cd:Description>Monitor of voltage supply to the DAC 2 on the fore telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="voltage_monitor_fore_3">
+                    <cd:Integer>
+                      <cd:Description>Monitor of voltage supply to the DAC 3 on the fore telescope</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
 
                 </cd:Record>
               </cd:Field>
@@ -269,7 +398,7 @@
           </cd:Field>
           <cd:Field name="raw_data">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16-12) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 8 - 8*20 - 2 - 3072 - 2 - 16-12-10-26) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
         </cd:Record>
