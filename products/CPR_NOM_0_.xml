@@ -384,9 +384,179 @@
                        </cd:Field>
 
 
+                       <cd:Field name="data_sample_num">
+                         <cd:Integer>
+                           <cd:Description>PRF Parameter: Data Sample Number</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="RCV_A_temp">
+                         <cd:Integer>
+                           <cd:Description>Redundant RCV Temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="RCV_B_temp">
+                         <cd:Integer>
+                           <cd:Description>Nominal RCV Temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="noise_diode_A_temp">
+                         <cd:Integer>
+                           <cd:Description>Redundant Noise Diode Temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="noise_diode_B_temp">
+                         <cd:Integer>
+                           <cd:Description>Nominal Noise Diode Temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="QOF_detector_1_temp">
+                         <cd:Integer>
+                           <cd:Description>MD1 Tx</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="QOF_detector_2_temp">
+                         <cd:Integer>
+                           <cd:Description>MD1 Tx</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+
+                       <cd:Field name="QOF_temp_1">
+                         <cd:Integer>
+                           <cd:Description>QOFE</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="QOF_temp_2">
+                         <cd:Integer>
+                           <cd:Description>Sub-Reflector</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="QOF_temp_3">
+                         <cd:Integer>
+                           <cd:Description>FH Tx - Main</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="QOF_temp_4">
+                         <cd:Integer>
+                           <cd:Description>FH Tx - Red</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="QOF_temp_5">
+                         <cd:Integer>
+                           <cd:Description>QOF TRP</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="STR_temp_3">
+                         <cd:Integer>
+                           <cd:Description>TRUSS -Y</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="STR_temp_4">
+                         <cd:Integer>
+                           <cd:Description>TRUSS +Y</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="STR_temp_5">
+                         <cd:Integer>
+                           <cd:Description>DPM +Y</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="STR_temp_6">
+                         <cd:Integer>
+                           <cd:Description>HPT</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+
+                       <cd:Field name="HPT_body_current">
+                         <cd:Integer>
+                           <cd:Description>HPT-A(-B) Body Current</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="HPT_beam_current">
+                         <cd:Integer>
+                           <cd:Description>HPT-A(-B) BEAM Current</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="HPT_status">
+                         <cd:Integer>
+                           <cd:Description>HPT Status</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="LPE_status">
+                         <cd:Integer>
+                           <cd:Description>LPE-A(-B) Status</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="QOF_status">
+                         <cd:Integer>
+                           <cd:Description>QOF Status</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
           <cd:Field name="blabla">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12 - 29) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12 - 29 - 14 - 18 -7) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
 
