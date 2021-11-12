@@ -53,6 +53,159 @@
                            <cd:NativeType>uint32</cd:NativeType>
                          </cd:Integer>
                        </cd:Field>
+
+                       <cd:Field name="CPR_fine_time">
+                         <cd:Integer>
+                           <cd:Description>CPR Fine Time</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="CPR_offset_time">
+                         <cd:Integer>
+                           <cd:Description>CPR Offset Time</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="operational_mode">
+                         <cd:Integer>
+                           <cd:Description>Operational Mode</cd:Description>
+                           <cd:BitSize>4</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="obs_sub_mode">
+                         <cd:Integer>
+                           <cd:Description>Obs Sub Mode</cd:Description>
+                           <cd:BitSize>3</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="transition_status">
+                         <cd:Integer>
+                           <cd:Description>Transition Status</cd:Description>
+                           <cd:BitSize>1</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SC_state_vector_quality">
+                         <cd:Integer>
+                           <cd:Description>S/C State Vector Quality</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="coarse_time">
+                         <cd:Integer>
+                           <cd:Description>Coarse satellite orbital time (local)</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="spare">
+                         <cd:Integer>
+                           <cd:Description>Spare</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                         <cd:Hidden/>
+                       </cd:Field>
+
+                       <cd:Field name="fine_time">
+                         <cd:Integer>
+                           <cd:Description>Fine satellite orbital time (local)</cd:Description>
+                           <cd:BitSize>24</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="pos_X">
+                         <cd:Integer>
+                           <cd:Description>Position X</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="pos_Y">
+                         <cd:Integer>
+                           <cd:Description>Position Y</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="pos_Z">
+                         <cd:Integer>
+                           <cd:Description>Position Z</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="velocity_X">
+                         <cd:Integer>
+                           <cd:Description>Velocity X</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="velocity_Y">
+                         <cd:Integer>
+                           <cd:Description>Velocity Y</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="velocity_Z">
+                         <cd:Integer>
+                           <cd:Description>Velocity Z</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="geodetic_altitude">
+                         <cd:Integer>
+                           <cd:Description>Geodetic Altitude</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="geodetic_latitude_argument">
+                         <cd:Integer>
+                           <cd:Description>Geodetic Argument of Latitude</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="geocentric_latitude">
+                         <cd:Integer>
+                           <cd:Description>Geocentric Latitude</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+
+          <cd:Field name="blabla">
+              <cd:Raw>
+                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12) * 8]]></cd:BitSize>
+              </cd:Raw>
+          </cd:Field>
+
                      </cd:Record>
                    </cd:Field>
 
@@ -65,17 +218,19 @@
                            <cd:NativeType>uint32</cd:NativeType>
                          </cd:Integer>
                        </cd:Field>
+
+          <cd:Field name="blabla">
+              <cd:Raw>
+                <cd:BitSize><![CDATA[(2363 + 1 - 12 - 10 - 4) * 8]]></cd:BitSize>
+              </cd:Raw>
+          </cd:Field>
+
                      </cd:Record>
                    </cd:Field>
 
                  </cd:Union>
                </cd:Field>
 
-          <cd:Field name="blabla">
-              <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../../packet_header/packet_length) + 1 - 12 - 10 - 4) * 8]]></cd:BitSize>
-              </cd:Raw>
-          </cd:Field>
 
 
             </cd:Record>
