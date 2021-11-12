@@ -289,7 +289,7 @@
 
                        <cd:Field name="RF_on_off">
                          <cd:Integer>
-                           <cd:Description>Offset Voltage Status Qch</cd:Description>
+                           <cd:Description>RF ON/OFF</cd:Description>
                            <cd:BitSize>8</cd:BitSize>
                            <cd:NativeType>uint8</cd:NativeType>
                          </cd:Integer>
@@ -554,9 +554,43 @@
                          </cd:Integer>
                        </cd:Field>
 
+
+                       <cd:Field name="doppler_on_off">
+                         <cd:Integer>
+                           <cd:Description>Doppler ON/OFF</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="LOG_detector_temp">
+                         <cd:Integer>
+                           <cd:Description>SPU (IFU) LOG Detector temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="IQ_detector_temp">
+                         <cd:Integer>
+                           <cd:Description>SPU (IFU) IQ Detector temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="IQ_ADC_temp">
+                         <cd:Integer>
+                           <cd:Description>SPU IQ AD Converter temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+
           <cd:Field name="blabla">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12 - 29 - 14 - 18 -7) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12 - 29 - 14 - 18 - 7 - 7) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
 
