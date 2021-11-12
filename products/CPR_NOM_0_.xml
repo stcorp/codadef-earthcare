@@ -588,9 +588,52 @@
                        </cd:Field>
 
 
+                       <cd:Field name="component_select_status_SPU">
+                         <cd:Integer>
+                           <cd:Description>Component Select Table Status SPU Select</cd:Description>
+                           <cd:BitSize>1</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="component_select_status_component">
+                         <cd:Integer>
+                           <cd:Description>Component Select Table Status Component Select</cd:Description>
+                           <cd:BitSize>7</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="offset_function_status">
+                         <cd:Integer>
+                           <cd:Description>Offset Function Status</cd:Description>
+                           <cd:BitSize>1</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="offset_temp_select_status">
+                         <cd:Integer>
+                           <cd:Description>Offset Function Status: Offset Temp Select Status</cd:Description>
+                           <cd:BitSize>2</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="spare2">
+                         <cd:Integer>
+                           <cd:Description>Spare</cd:Description>
+                           <cd:BitSize>5</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                         <cd:Hidden/>
+                       </cd:Field>
+
+
+
           <cd:Field name="blabla">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12 - 29 - 14 - 18 - 7 - 7) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12 - 29 - 14 - 18 - 7 - 7 - 2) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
 
