@@ -717,12 +717,200 @@
                          </cd:Integer>
                        </cd:Field>
 
+                       <cd:Field name="obs_height_selection_table_version">
+                         <cd:Integer>
+                           <cd:Description>Observation height selection Table Version</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
 
-          <cd:Field name="blabla">
-              <cd:Raw>
-                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12 - 29 - 14 - 18 - 7 - 7 - 2 - 22 - 2) * 8]]></cd:BitSize>
-              </cd:Raw>
-          </cd:Field>
+                       <cd:Field name="PRF_table_version">
+                         <cd:Integer>
+                           <cd:Description>PRF Table Version</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SPU_variable_table_version">
+                         <cd:Integer>
+                           <cd:Description>SPU Variable Table Version</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="dynamic_offset_table_version">
+                         <cd:Integer>
+                           <cd:Description>Dynamic Offset Table Version</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="data_position_table_version">
+                         <cd:Integer>
+                           <cd:Description>Data Position Table Version</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="program_version">
+                         <cd:Integer>
+                           <cd:Description>Program Version</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="fixed_offset_voltage_status_Ich">
+                         <cd:Integer>
+                           <cd:Description>Fixed Offset Voltage Status Ich</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="fixed_offset_voltage_status_Qch">
+                         <cd:Integer>
+                           <cd:Description>Fixed Offset Voltage Status Qch</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="LPE_A_temp">
+                         <cd:Integer>
+                           <cd:Description>Redundant LPE temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="LPE_B_temp">
+                         <cd:Integer>
+                           <cd:Description>Nominal LPE temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="LPT_A_temp">
+                         <cd:Integer>
+                           <cd:Description>Redundant LPT temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="LPT_B_temp">
+                         <cd:Integer>
+                           <cd:Description>Nominal LPT temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="EIK_A_temp">
+                         <cd:Integer>
+                           <cd:Description>Redundant HPT EIK temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="EIK_B_temp">
+                         <cd:Integer>
+                           <cd:Description>Nominal HPT EIK temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="MREF_center_temp">
+                         <cd:Integer>
+                           <cd:Description>MRF Center temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+                       <cd:Field name="MREF_upper_temp">
+                         <cd:Integer>
+                           <cd:Description>MRF Upper temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+                       <cd:Field name="MREF_lower_temp">
+                         <cd:Integer>
+                           <cd:Description>MRF Lower temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+                       <cd:Field name="MREF_left_temp">
+                         <cd:Integer>
+                           <cd:Description>MRF Left temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+                       <cd:Field name="MREF_right_temp">
+                         <cd:Integer>
+                           <cd:Description>MRF Right temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="EPC_A_temp">
+                         <cd:Integer>
+                           <cd:Description>Redundant HPT EPC temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+                       <cd:Field name="EPC_B_temp">
+                         <cd:Integer>
+                           <cd:Description>Nominal HPT EPC temperature</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="PHS_status">
+                         <cd:Integer>
+                           <cd:Description>SPU Phase Shifter Status (for internal CAL)</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="ATT_status_3">
+                         <cd:Integer>
+                           <cd:Description>SPU Calibration ATT Status 3 (for internal CAL)</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="ATT_status_2">
+                         <cd:Integer>
+                           <cd:Description>SPU Calibration ATT Status 2 (for internal CAL)</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="ATT_status_1">
+                         <cd:Integer>
+                           <cd:Description>SPU Calibration ATT Status 1 (for internal CAL)</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
 
                      </cd:Record>
                    </cd:Field>
