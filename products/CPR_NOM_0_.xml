@@ -199,10 +199,74 @@
                          </cd:Integer>
                        </cd:Field>
 
+                       <cd:Field name="PRF_table_number">
+                         <cd:Integer>
+                           <cd:Description>PRF Table Number</cd:Description>
+                           <cd:BitSize>4</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="PRF_parameter_number">
+                         <cd:Integer>
+                           <cd:Description>PRF Parameter Number</cd:Description>
+                           <cd:BitSize>12</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="PRI">
+                         <cd:Integer>
+                           <cd:Description>PRF Parameter Number</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="CAL_data0_hot">
+                         <cd:Integer>
+                           <cd:Description>PRF Parameter Number</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="CAL_data0_normal">
+                         <cd:Integer>
+                           <cd:Description>PRF Parameter Number</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="CAL_data0_log_amp_temp">
+                         <cd:Integer>
+                           <cd:Description>PRF Parameter Number</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="ATT_status_doppler_REF">
+                         <cd:Integer>
+                           <cd:Description>ATT status for Doppler REF</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="ATT_status_echo">
+                         <cd:Integer>
+                           <cd:Description>ATT status echo</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
 
           <cd:Field name="blabla">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
 
