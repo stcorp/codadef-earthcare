@@ -720,7 +720,7 @@
 
           <cd:Field name="blabla">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12 - 29 - 14 - 18 - 7 - 7 - 2 - 22) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12 - 29 - 14 - 18 - 7 - 7 - 2 - 22 - 2) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
 
@@ -739,7 +739,7 @@
 
           <cd:Field name="blabla">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(2363 + 1 - 12 - 10 - 4) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(2363 + 1 - 12 - 10 - 4 - 2) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
 
@@ -751,6 +751,17 @@
 
 
 
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="footer">
+            <cd:Record format="binary">
+              <cd:Field name="CRC">
+                <cd:Integer>
+                  <cd:Description>Packet Error Control (CRC)</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
             </cd:Record>
           </cd:Field>
         </cd:Record>
