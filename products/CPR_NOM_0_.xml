@@ -16,13 +16,70 @@
           <cd:Field name="data_field_header">
             <cd:NamedType id="ISP_data_field_header"/>
           </cd:Field>
+          <cd:Field name="data_field">
+             <cd:Record format="binary">
+               <cd:Field name="SC_state_vector_quality">
+                 <cd:Integer>
+                   <cd:Description>S/C State Vector Quality</cd:Description>
+                   <cd:BitSize>32</cd:BitSize>
+                   <cd:NativeType>uint32</cd:NativeType>
+                 </cd:Integer>
+               </cd:Field>
+               <cd:Field name="ISP_format_version">
+                 <cd:Integer>
+                   <cd:Description>ISP Format Version</cd:Description>
+                   <cd:BitSize>16</cd:BitSize>
+                   <cd:NativeType>uint16</cd:NativeType>
+                 </cd:Integer>
+               </cd:Field>
+               <cd:Field name="CPR_offset_time">
+                 <cd:Integer>
+                   <cd:Description>CPR Offset Time</cd:Description>
+                   <cd:BitSize>32</cd:BitSize>
+                   <cd:NativeType>uint32</cd:NativeType>
+                 </cd:Integer>
+               </cd:Field>
+               <cd:Field name="data">
+                 <cd:Union format="binary">
+                   <cd:FieldExpression><![CDATA[if(int(../../../data_field_header/service_subtype) == 1, 0, 1)]]></cd:FieldExpression>
+
+
+                   <cd:Field name="status_data">
+                     <cd:Record format="binary">
+                       <cd:Field name="EC_coarse_time">
+                         <cd:Integer>
+                           <cd:Description>EC Coarse Time</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+                     </cd:Record>
+                   </cd:Field>
+
+                   <cd:Field name="data">
+                     <cd:Record format="binary">
+                       <cd:Field name="frame_number">
+                         <cd:Integer>
+                           <cd:Description>Frame number</cd:Description>
+                           <cd:BitSize>32</cd:BitSize>
+                           <cd:NativeType>uint32</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+                     </cd:Record>
+                   </cd:Field>
+
+                 </cd:Union>
+               </cd:Field>
 
           <cd:Field name="blabla">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(int(../../packet_header/packet_length) + 1 - 12 - 10 - 4) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
 
+
+            </cd:Record>
+          </cd:Field>
         </cd:Record>
       </cd:Field>
     </cd:Record>
