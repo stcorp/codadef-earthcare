@@ -629,11 +629,98 @@
                          <cd:Hidden/>
                        </cd:Field>
 
+                       <cd:Field name="avg_0_noise_diode">
+                         <cd:Integer>
+                           <cd:Description>Average number of #0 Noise Diode</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="avg_0_log_amp_term">
+                         <cd:Integer>
+                           <cd:Description>Average number of #0 Log Amp Term</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="avg_system_noise">
+                         <cd:Integer>
+                           <cd:Description>Average number of System Noise</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="avg_pulse_pair">
+                         <cd:Integer>
+                           <cd:Description>Average number of Pulse Pair</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="datapos_echo_log">
+                         <cd:Integer>
+                           <cd:Description>Data position of Echo Log</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="datapos_echo_pulse_pair">
+                         <cd:Integer>
+                           <cd:Description>Data position of Echo Pulse Pair</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="datapos_system_noise">
+                         <cd:Integer>
+                           <cd:Description>Data position of System Noise</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="datapos_noise_diode">
+                         <cd:Integer>
+                           <cd:Description>Data position of Noise Diode</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="datapos_system_log_amp_term">
+                         <cd:Integer>
+                           <cd:Description>Data position of Log Amp Term</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="datapos_doppler_ref_log">
+                         <cd:Integer>
+                           <cd:Description>Data position of Doppler Ref Log</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="datapos_Tx_monitor">
+                         <cd:Integer>
+                           <cd:Description>Data position of Tx Monitor</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
 
 
           <cd:Field name="blabla">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12 - 29 - 14 - 18 - 7 - 7 - 2) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12 - 29 - 14 - 18 - 7 - 7 - 2 - 22) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
 
