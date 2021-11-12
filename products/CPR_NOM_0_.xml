@@ -155,7 +155,7 @@
                          <cd:Integer>
                            <cd:Description>Velocity X</cd:Description>
                            <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
+                           <cd:NativeType>int32</cd:NativeType>
                          </cd:Integer>
                        </cd:Field>
 
@@ -163,7 +163,7 @@
                          <cd:Integer>
                            <cd:Description>Velocity Y</cd:Description>
                            <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
+                           <cd:NativeType>int32</cd:NativeType>
                          </cd:Integer>
                        </cd:Field>
 
@@ -171,7 +171,7 @@
                          <cd:Integer>
                            <cd:Description>Velocity Z</cd:Description>
                            <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
+                           <cd:NativeType>int32</cd:NativeType>
                          </cd:Integer>
                        </cd:Field>
 
@@ -179,7 +179,7 @@
                          <cd:Integer>
                            <cd:Description>Geodetic Altitude</cd:Description>
                            <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
+                           <cd:NativeType>int32</cd:NativeType>
                          </cd:Integer>
                        </cd:Field>
 
@@ -187,7 +187,7 @@
                          <cd:Integer>
                            <cd:Description>Geodetic Argument of Latitude</cd:Description>
                            <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
+                           <cd:NativeType>int32</cd:NativeType>
                          </cd:Integer>
                        </cd:Field>
 
@@ -195,7 +195,7 @@
                          <cd:Integer>
                            <cd:Description>Geocentric Latitude</cd:Description>
                            <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
+                           <cd:NativeType>int32</cd:NativeType>
                          </cd:Integer>
                        </cd:Field>
 
@@ -223,11 +223,11 @@
                          </cd:Integer>
                        </cd:Field>
 
-                       <cd:Field name="CAL_data0_hot">
+                       <cd:Field name="CAL_data0_HOT">
                          <cd:Integer>
                            <cd:Description>PRF Parameter Number</cd:Description>
                            <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
+                           <cd:NativeType>int16</cd:NativeType>
                          </cd:Integer>
                        </cd:Field>
 
@@ -235,7 +235,7 @@
                          <cd:Integer>
                            <cd:Description>PRF Parameter Number</cd:Description>
                            <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
+                           <cd:NativeType>int16</cd:NativeType>
                          </cd:Integer>
                        </cd:Field>
 
@@ -243,7 +243,7 @@
                          <cd:Integer>
                            <cd:Description>PRF Parameter Number</cd:Description>
                            <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
+                           <cd:NativeType>int16</cd:NativeType>
                          </cd:Integer>
                        </cd:Field>
 
@@ -257,16 +257,136 @@
 
                        <cd:Field name="ATT_status_echo">
                          <cd:Integer>
-                           <cd:Description>ATT status echo</cd:Description>
+                           <cd:Description>ATT status for Echo</cd:Description>
                            <cd:BitSize>8</cd:BitSize>
                            <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="TLM_quality_status">
+                         <cd:Integer>
+                           <cd:Description>Science TLM Quality Status</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="offset_voltage_status_Ich">
+                         <cd:Integer>
+                           <cd:Description>Offset Voltage Status Ich</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="offset_voltage_status_Qch">
+                         <cd:Integer>
+                           <cd:Description>Offset Voltage Status Qch</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="RF_on_off">
+                         <cd:Integer>
+                           <cd:Description>Offset Voltage Status Qch</cd:Description>
+                           <cd:BitSize>8</cd:BitSize>
+                           <cd:NativeType>uint8</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SPU_status_T5">
+                         <cd:Integer>
+                           <cd:Description>Sample Starting Time of Doppler Reference (Log)</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SPU_status_T7">
+                         <cd:Integer>
+                           <cd:Description>Sample Starting Time of System Noise and CAL DATA#0 (Log Amp Term)</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SPU_status_T18">
+                         <cd:Integer>
+                           <cd:Description>Sample Starting Time of CAL DATA (HOT) and CAL DATA (Normal)</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SPU_status_T7_T18">
+                         <cd:Integer>
+                           <cd:Description>Sample Starting Time of CAL DATA#0 (HOT) and CAL DATA#0 (Normal)</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SPU_status_T23">
+                         <cd:Integer>
+                           <cd:Description>Sample Starting Time of Tx Monitor Signal</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SPU_status_T24">
+                         <cd:Integer>
+                           <cd:Description>Sample Starting Time of System Noise in Contingency mode</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SPU_status_T25">
+                         <cd:Integer>
+                           <cd:Description>Sample Starting Time of Doppler Reference (IQ)</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SPU_status_Rx_timing">
+                         <cd:Integer>
+                           <cd:Description>Switching Time of RX_ATT in SPU (IFU) (Dopp_REF -> Echo)</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SPU_status_IP_timing">
+                         <cd:Integer>
+                           <cd:Description>Switching Time of IP_SELECT CMD (Noise -> Echo)</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SPU_status_N_timing">
+                         <cd:Integer>
+                           <cd:Description>Switching Time of N_SOURCE CMD (HOT -> Normal)</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                       <cd:Field name="SPU_status_IQ_delay">
+                         <cd:Integer>
+                           <cd:Description>IQ Delay Time for Booster Circuit</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
                          </cd:Integer>
                        </cd:Field>
 
 
           <cd:Field name="blabla">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(235 + 1 - 12 - 10 - 4 - 21 - 24 - 12 - 12 - 29) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
 
