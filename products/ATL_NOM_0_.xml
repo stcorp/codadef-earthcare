@@ -16,10 +16,56 @@
           <cd:Field name="data_field_header">
             <cd:NamedType id="ISP_data_field_header"/>
           </cd:Field>
+          <cd:Field name="data_field">
+            <cd:Record format="binary">
+              <cd:Field name="SC_state_vector_quality">
+                <cd:Integer>
+                  <cd:Description>S/C State Vector Quality</cd:Description>
+                  <cd:BitSize>32</cd:BitSize>
+                  <cd:NativeType>uint32</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="ISP_format_version">
+                <cd:Integer>
+                  <cd:Description>ISP Format Version</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+
+              <cd:Field name="data">
+                <cd:Union format="binary">
+                  <cd:FieldExpression><![CDATA[with(k = int(../../../data_field_header/service_type), if(k==225, 0, if(k==226, if(int(../../../data_field_header/service_subtype)==1, 1, 2), -1)))]]></cd:FieldExpression>
+
+                  <cd:Field name="measurement_data">
+                    <cd:Record format="binary">
+
+                    </cd:Record>
+                  </cd:Field>
+
+                  <cd:Field name="coalignment_data">
+                    <cd:Record format="binary">
+
+                    </cd:Record>
+                  </cd:Field>
+
+                  <cd:Field name="investigation_data">
+                    <cd:Record format="binary">
+
+                    </cd:Record>
+                  </cd:Field>
+
+
+                </cd:Union>
+              </cd:Field>
+
+
+            </cd:Record>
+          </cd:Field>
 
           <cd:Field name="blabla">
               <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12) * 8]]></cd:BitSize>
+                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 6) * 8]]></cd:BitSize>
               </cd:Raw>
           </cd:Field>
 
