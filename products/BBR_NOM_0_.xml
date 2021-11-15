@@ -166,7 +166,6 @@
               </cd:Field>
             </cd:Record>
           </cd:Field>
-
           <cd:Field name="footer">
             <cd:Record format="binary">
               <cd:Field name="CRC">
@@ -178,7 +177,6 @@
               </cd:Field>
             </cd:Record>
           </cd:Field>
-
         </cd:Record>
       </cd:Field>
     </cd:Record>
