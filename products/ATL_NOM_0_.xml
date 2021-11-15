@@ -40,17 +40,54 @@
                   <cd:Field name="measurement_data">
                     <cd:Record format="binary">
 
+
+                      <cd:Field name="blabla">
+                          <cd:Raw>
+                            <cd:BitSize><![CDATA[(int(../../../../packet_header/packet_length) + 1 - 12 - 6 - 2) * 8]]></cd:BitSize>
+                          </cd:Raw>
+                      </cd:Field>
+
                     </cd:Record>
                   </cd:Field>
 
                   <cd:Field name="coalignment_data">
                     <cd:Record format="binary">
 
+                      <cd:Field name="SID">
+                        <cd:Description>Packet ID</cd:Description>
+                        <cd:Integer>
+                          <cd:BitSize>8</cd:BitSize>
+                          <cd:NativeType>int8</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+
+                      <cd:Field name="OBT">
+                        <cd:Description>On Board Time for HK acquisition</cd:Description>
+                        <cd:Integer>
+                          <cd:BitSize>56</cd:BitSize>
+                          <cd:NativeType>uint64</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+
+
+
+                      <cd:Field name="blabla">
+                          <cd:Raw>
+                            <cd:BitSize><![CDATA[(int(../../../../packet_header/packet_length) + 1 - 12 - 6 - 2 - 1 - 7) * 8]]></cd:BitSize>
+                          </cd:Raw>
+                      </cd:Field>
+
                     </cd:Record>
                   </cd:Field>
 
                   <cd:Field name="investigation_data">
                     <cd:Record format="binary">
+
+                      <cd:Field name="blabla">
+                          <cd:Raw>
+                            <cd:BitSize><![CDATA[(int(../../../../packet_header/packet_length) + 1 - 12 - 6 - 2) * 8]]></cd:BitSize>
+                          </cd:Raw>
+                      </cd:Field>
 
                     </cd:Record>
                   </cd:Field>
@@ -63,10 +100,17 @@
             </cd:Record>
           </cd:Field>
 
-          <cd:Field name="blabla">
-              <cd:Raw>
-                <cd:BitSize><![CDATA[(int(../packet_header/packet_length) + 1 - 12 - 6) * 8]]></cd:BitSize>
-              </cd:Raw>
+
+          <cd:Field name="footer">
+            <cd:Record format="binary">
+              <cd:Field name="CRC">
+                <cd:Integer>
+                  <cd:Description>Packet Error Control (CRC)</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
           </cd:Field>
 
         </cd:Record>
