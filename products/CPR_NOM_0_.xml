@@ -925,11 +925,126 @@
                          </cd:Integer>
                        </cd:Field>
 
-          <cd:Field name="blabla">
-              <cd:Raw>
-                <cd:BitSize><![CDATA[(2363 + 1 - 12 - 10 - 4 - 2) * 8]]></cd:BitSize>
-              </cd:Raw>
-          </cd:Field>
+                       <cd:Field name="average_number">
+                         <cd:Integer>
+                           <cd:Description>Average number</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>uint16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                      <cd:Field name="coherent_echo_data">
+                        <cd:Array>
+                          <cd:Dimension>218</cd:Dimension>
+                          <cd:Description>Coherent Echo Data</cd:Description>
+                          <cd:Integer>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>int16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Array>
+                      </cd:Field>
+
+                       <cd:Field name="coherent_noise_data">
+                         <cd:Integer>
+                           <cd:Description>Coherent Noise Data</cd:Description>
+                           <cd:BitSize>16</cd:BitSize>
+                           <cd:NativeType>int16</cd:NativeType>
+                         </cd:Integer>
+                       </cd:Field>
+
+                      <cd:Field name="doppler_data_real">
+                        <cd:Array>
+                          <cd:Dimension>218</cd:Dimension>
+                          <cd:Description>Doppler Data (Real)</cd:Description>
+                          <cd:Integer>
+                            <cd:BitSize>32</cd:BitSize>
+                            <cd:NativeType>int32</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Array>
+                      </cd:Field>
+
+                      <cd:Field name="doppler_data_imag">
+                        <cd:Array>
+                          <cd:Dimension>218</cd:Dimension>
+                          <cd:Description>Doppler Data (Imag)</cd:Description>
+                          <cd:Integer>
+                            <cd:BitSize>32</cd:BitSize>
+                            <cd:NativeType>int32</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Array>
+                      </cd:Field>
+
+
+                      <cd:Field name="average_number_CAL">
+                        <cd:Integer>
+                          <cd:Description>Average Number of CAL</cd:Description>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>int16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+
+                      <cd:Field name="CAL_DATA_HOT">
+                        <cd:Integer>
+                          <cd:Description>CAL DATA (HOT)</cd:Description>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>int16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+
+                      <cd:Field name="CAL_DATA_normal">
+                        <cd:Integer>
+                          <cd:Description>CAL DATA (Normal)</cd:Description>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>int16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+
+                      <cd:Field name="tx_monitor_signal">
+                        <cd:Array>
+                          <cd:Dimension>34</cd:Dimension>
+                          <cd:Description>Tx Monitor Signal</cd:Description>
+                          <cd:Integer>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>int16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Array>
+                      </cd:Field>
+
+                      <cd:Field name="doppler_reference_log">
+                        <cd:Array>
+                          <cd:Dimension>34</cd:Dimension>
+                          <cd:Description>Doppler Reference (LOG)</cd:Description>
+                          <cd:Integer>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>int16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Array>
+                      </cd:Field>
+
+                      <cd:Field name="doppler_reference_real">
+                        <cd:Integer>
+                          <cd:Description>Doppler Reference (Real)</cd:Description>
+                          <cd:BitSize>32</cd:BitSize>
+                          <cd:NativeType>int32</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+
+                      <cd:Field name="doppler_reference_imag">
+                        <cd:Integer>
+                          <cd:Description>Doppler Referenc (Imag)</cd:Description>
+                          <cd:BitSize>32</cd:BitSize>
+                          <cd:NativeType>int32</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+
+                      <cd:Field name="processing_error_status">
+                        <cd:Integer>
+                          <cd:Description>Processing Error Status</cd:Description>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+
 
                      </cd:Record>
                    </cd:Field>
