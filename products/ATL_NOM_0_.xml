@@ -303,12 +303,221 @@
                       </cd:Field>
                     </cd:Record>
                   </cd:Field>
-                  <cd:Field name="investigation_data">
+                  <cd:Field name="telemetry_data">
                     <cd:Record format="binary">
-                      <cd:Field name="blabla">
-                          <cd:Raw>
-                            <cd:BitSize><![CDATA[(int(../../../../packet_header/packet_length) + 1 - 12 - 6 - 2) * 8]]></cd:BitSize>
-                          </cd:Raw>
+                      <cd:Field name="HK_TM_SID_31">
+                        <cd:Raw>
+                          <cd:Description>Block TM1 and Block TM2 TLE</cd:Description>
+                          <cd:BitSize>1400</cd:BitSize>
+                        </cd:Raw>
+                      </cd:Field>
+                      <cd:Field name="HK_TM_SID_32">
+                        <cd:Raw>
+                          <cd:Description>Block TM3 and Block TM4 TLE</cd:Description>
+                          <cd:BitSize>1352</cd:BitSize>
+                        </cd:Raw>
+                      </cd:Field>
+                      <cd:Field name="HK_TM_SID_61">
+                        <cd:Raw>
+                          <cd:Description>Default ACDM thermistor housekeeping</cd:Description>
+                          <cd:BitSize>1712</cd:BitSize>
+                        </cd:Raw>
+                      </cd:Field>
+                      <cd:Field name="HK_TM_SID_51">
+                        <cd:Raw>
+                          <cd:Description>Block TM BSM</cd:Description>
+                          <cd:BitSize>416</cd:BitSize>
+                        </cd:Raw>
+                      </cd:Field>
+                      <cd:Field name="SID">
+                        <cd:Integer>
+                          <cd:BitSize>8</cd:BitSize>
+                          <cd:NativeType>uint8</cd:NativeType>
+                        </cd:Integer>
+                        <cd:Hidden/>
+                      </cd:Field>
+                      <cd:Field name="TM_generation_time">
+                        <cd:Integer>
+                          <cd:Description>Time of TM generation</cd:Description>
+                          <cd:BitSize>56</cd:BitSize>
+                          <cd:NativeType>uint64</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="packet_counter">
+                        <cd:Integer>
+                          <cd:Description>Packet Counter</cd:Description>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="clock_counter">
+                        <cd:Integer>
+                          <cd:Description>ACDM MCLK (48 MHz) Counter</cd:Description>
+                          <cd:BitSize>32</cd:BitSize>
+                          <cd:NativeType>uint32</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="TLE_nom_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="PLH_nom_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="RLH_nom_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="TLE_nom_voltage">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="TLE_nom_current">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="TLE_red_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="PLH_red_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="RLH_red_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="TLE_red_voltage">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="TLE_red_current">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="BSM_nom_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="BSME_nom_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="BSFE_nom_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="BSM_nom_voltage">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="BSM_nom_current">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="BSM_red_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="BSME_red_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="BSFE_red_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="BSM_red_voltage">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="BSM_red_current">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="CVE_nom_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="CVE_nom_voltage">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="CVE_nom_current">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="CVE_red_temp">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="CVE_red_voltage">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="CVE_red_current">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="spare">
+                        <cd:Raw>
+                          <cd:BitSize>736</cd:BitSize>
+                        </cd:Raw>
+                        <cd:Hidden/>
                       </cd:Field>
                     </cd:Record>
                   </cd:Field>
