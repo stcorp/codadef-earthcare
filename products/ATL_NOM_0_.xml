@@ -480,7 +480,6 @@
                           <cd:NativeType>uint32</cd:NativeType>
                         </cd:Integer>
                       </cd:Field>
-
                       <cd:Field name="IDE_packet_header">
                         <cd:Integer>
                           <cd:BitSize>16</cd:BitSize>
@@ -541,25 +540,17 @@
                           <cd:NativeType>uint16</cd:NativeType>
                         </cd:Integer>
                       </cd:Field>
-
-
-
-
-
-
-
-
-
-
-                      <cd:Field name="rest">
-                        <cd:Raw>
-                          <cd:BitSize>12480</cd:BitSize>
-                        </cd:Raw>
+                      <cd:Field name="DRD_raw_data">
+                        <cd:Array>
+                          <cd:Dimension>780</cd:Dimension>
+                          <cd:Integer>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Array>
                       </cd:Field>
-
                     </cd:Record>
                   </cd:Field>
-
                   <cd:Field name="coalignment_data">
                     <cd:Record format="binary">
                       <cd:Field name="SID">
