@@ -481,9 +481,79 @@
                         </cd:Integer>
                       </cd:Field>
 
+                      <cd:Field name="IDE_packet_header">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="IDE_sub_mode">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="N_PRF_IDE">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="IDE_PRF_number">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="pixel_index_UPD">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="measurement_validity_bits">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="CAS_data_indicator">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="background_saturation_status">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="detection_saturation_status">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+                      <cd:Field name="background_integration_time">
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Field>
+
+
+
+
+
+
+
+
+
+
                       <cd:Field name="rest">
                         <cd:Raw>
-                          <cd:BitSize>12640</cd:BitSize>
+                          <cd:BitSize>12480</cd:BitSize>
                         </cd:Raw>
                       </cd:Field>
 
