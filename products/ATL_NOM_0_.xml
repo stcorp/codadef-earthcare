@@ -37,13 +37,37 @@
                   <cd:FieldExpression><![CDATA[with(k = int(../../../data_field_header/service_type), if(k==225, 0, if(k==226, if(int(../../../data_field_header/service_subtype)==1, 1, 2), -1)))]]></cd:FieldExpression>
                   <cd:Field name="measurement_data">
                     <cd:Record format="binary">
-                      <cd:Field name="blabla">
-                          <cd:Raw>
-                            <cd:BitSize><![CDATA[(int(../../../../packet_header/packet_length) + 1 - 12 - 6 - 2) * 8]]></cd:BitSize>
-                          </cd:Raw>
+
+                      <cd:Field name="ancillary_data_count">
+                        <cd:Integer>
+                          <cd:Description>Ancillary data repetition count</cd:Description>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
                       </cd:Field>
+
+                      <cd:Field name="HR_ancillary_data">
+                        <cd:Array>
+                          <cd:Dimension><![CDATA[int(../ancillary_data_count)]]></cd:Dimension>
+                          <cd:Record>
+                            <cd:Field name="blaat">
+                              <cd:Raw>
+                                <cd:BitSize>592</cd:BitSize>
+                              </cd:Raw>
+                            </cd:Field>
+                          </cd:Record>
+                        </cd:Array>
+                      </cd:Field>
+
+                      <cd:Field name="rest">
+                        <cd:Raw>
+                          <cd:BitSize>13472</cd:BitSize>
+                        </cd:Raw>
+                      </cd:Field>
+
                     </cd:Record>
                   </cd:Field>
+
                   <cd:Field name="coalignment_data">
                     <cd:Record format="binary">
                       <cd:Field name="SID">
@@ -334,7 +358,6 @@
                           <cd:BitSize>8</cd:BitSize>
                           <cd:NativeType>uint8</cd:NativeType>
                         </cd:Integer>
-                        <cd:Hidden/>
                       </cd:Field>
                       <cd:Field name="TM_generation_time">
                         <cd:Integer>
