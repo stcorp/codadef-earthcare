@@ -37,7 +37,6 @@
                   <cd:FieldExpression><![CDATA[with(k = int(../../../data_field_header/service_type), if(k==225, 0, if(k==226, if(int(../../../data_field_header/service_subtype)==1, 1, 2), -1)))]]></cd:FieldExpression>
                   <cd:Field name="measurement_data">
                     <cd:Record format="binary">
-
                       <cd:Field name="ancillary_data_count">
                         <cd:Integer>
                           <cd:Description>Ancillary data repetition count</cd:Description>
@@ -45,15 +44,200 @@
                           <cd:NativeType>uint16</cd:NativeType>
                         </cd:Integer>
                       </cd:Field>
-
                       <cd:Field name="HR_ancillary_data">
                         <cd:Array>
                           <cd:Dimension><![CDATA[int(../ancillary_data_count)]]></cd:Dimension>
                           <cd:Record>
-                            <cd:Field name="blaat">
-                              <cd:Raw>
-                                <cd:BitSize>592</cd:BitSize>
-                              </cd:Raw>
+                            <cd:Field name="ancillary_data_number">
+                              <cd:Integer>
+                                <cd:Description>Pos in the Cycle</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="laser_shot_date">
+                              <cd:Integer>
+                                <cd:Description>Laser Shot Date</cd:Description>
+                                <cd:BitSize>56</cd:BitSize>
+                                <cd:NativeType>uint64</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="spare">
+                              <cd:Integer>
+                                <cd:Description>Spare</cd:Description>
+                                <cd:BitSize>8</cd:BitSize>
+                                <cd:NativeType>uint8</cd:NativeType>
+                              </cd:Integer>
+                              <cd:Hidden/>
+                            </cd:Field>
+                            <cd:Field name="RLH_frequency">
+                              <cd:Integer>
+                                <cd:Description>RLH Frequency</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="TXA_status">
+                              <cd:Integer>
+                                <cd:Description>TXA Status</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="PD_en_UV">
+                              <cd:Integer>
+                                <cd:Description>PD En UV</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="TLE_status">
+                              <cd:Integer>
+                                <cd:Description>TLE Status</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="RLH_status">
+                              <cd:Integer>
+                                <cd:Description>RLH Status</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="PD_en_amp">
+                              <cd:Integer>
+                                <cd:Description>PD En Amp</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="PD_CL_CL_max">
+                              <cd:Integer>
+                                <cd:Description>PD CL CL Max</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="PD_en_MO">
+                              <cd:Integer>
+                                <cd:Description>PD En MO</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="multimode_ratio">
+                              <cd:Integer>
+                                <cd:Description>Multimode Ratio</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="MO_sampled">
+                              <cd:Integer>
+                                <cd:Description>MO Sampled</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="amp_1_sampled">
+                              <cd:Integer>
+                                <cd:Description>Amp 1 Sampled</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="amp_2_sampled">
+                              <cd:Integer>
+                                <cd:Description>Amp 2 Sampled</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="cmd_rejection_status">
+                              <cd:Integer>
+                                <cd:Description>Command Rejection Status Word</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="failure_status_1">
+                              <cd:Integer>
+                                <cd:Description>Failure Status Word 1</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="failure_status_2">
+                              <cd:Integer>
+                                <cd:Description>Failure Status Word 2</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="LCLK_counter">
+                              <cd:Integer>
+                                <cd:Description>LCLK Counter</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="delay_dt0">
+                              <cd:Integer>
+                                <cd:Description>Delay "dt0"</cd:Description>
+                                <cd:BitSize>32</cd:BitSize>
+                                <cd:NativeType>uint32</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="delay_dt3_fixed">
+                              <cd:Integer>
+                                <cd:Description>Delay "dt3 Fixed"</cd:Description>
+                                <cd:BitSize>32</cd:BitSize>
+                                <cd:NativeType>uint32</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="delay_dt3_variable">
+                              <cd:Integer>
+                                <cd:Description>Delay "dt3 Variable"</cd:Description>
+                                <cd:BitSize>32</cd:BitSize>
+                                <cd:NativeType>uint32</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="delay_dt5">
+                              <cd:Integer>
+                                <cd:Description>Delay "dt5"</cd:Description>
+                                <cd:BitSize>32</cd:BitSize>
+                                <cd:NativeType>uint32</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="delay_dt6">
+                              <cd:Integer>
+                                <cd:Description>Delay "dt6"</cd:Description>
+                                <cd:BitSize>32</cd:BitSize>
+                                <cd:NativeType>uint32</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="synchro_enable">
+                              <cd:Integer>
+                                <cd:Description>Synchro enable (TXA, IDE, OGSE)</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="autocol">
+                              <cd:Integer>
+                                <cd:Description>AUTOCOL</cd:Description>
+                                <cd:BitSize>16</cd:BitSize>
+                                <cd:NativeType>uint16</cd:NativeType>
+                              </cd:Integer>
+                            </cd:Field>
+                            <cd:Field name="spare2">
+                              <cd:Integer>
+                                <cd:Description>Spare</cd:Description>
+                                <cd:BitSize>64</cd:BitSize>
+                                <cd:NativeType>uint64</cd:NativeType>
+                              </cd:Integer>
+                              <cd:Hidden/>
                             </cd:Field>
                           </cd:Record>
                         </cd:Array>
