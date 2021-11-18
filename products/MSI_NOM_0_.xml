@@ -186,7 +186,7 @@
           </cd:Field>
           <cd:Field name="data">
               <cd:Union format="binary">
-                <cd:FieldExpression><![CDATA[if(int(../../private_header/data_source) == 15, 0, 1)]]></cd:FieldExpression>
+                <cd:FieldExpression><![CDATA[if(int(../../data_header/service_type)==235, if(int(../../private_header/data_source) == 15, 0, 1), -1)]]></cd:FieldExpression>
                 <cd:Field name="aux_data">
                   <cd:Record>
                     <cd:Field name="buffer_E">

@@ -44,7 +44,7 @@
           </cd:Field>
           <cd:Field name="data">
             <cd:Union format="binary">
-              <cd:FieldExpression><![CDATA[if(int(../../data_header/service_subtype) == 65, 1, 0)]]></cd:FieldExpression>
+              <cd:FieldExpression><![CDATA[with(k = int(../../data_header/service_type), if(k==230, if(int(../../data_header/service_subtype)==1, 0, if(int(../data_header/service_subtype)==65, 1, -1)), -1))]]></cd:FieldExpression>
               <cd:Field name="processed_data">
                 <cd:Record format="binary">
                   <cd:Field name="view_parameters">
