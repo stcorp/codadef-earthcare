@@ -166,16 +166,12 @@
               </cd:Field>
             </cd:Record>
           </cd:Field>
-          <cd:Field name="footer">
-            <cd:Record format="binary">
-              <cd:Field name="CRC">
-                <cd:Integer>
-                  <cd:Description>Packet Error Control (CRC)</cd:Description>
-                  <cd:BitSize>16</cd:BitSize>
-                  <cd:NativeType>uint16</cd:NativeType>
-                </cd:Integer>
-              </cd:Field>
-            </cd:Record>
+          <cd:Field name="CRC">
+            <cd:Integer>
+              <cd:Description>Packet Error Control (CRC)</cd:Description>
+              <cd:BitSize>16</cd:BitSize>
+              <cd:NativeType>uint16</cd:NativeType>
+            </cd:Integer>
           </cd:Field>
         </cd:Record>
       </cd:Field>
