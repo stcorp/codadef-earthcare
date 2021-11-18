@@ -559,7 +559,7 @@
                     <cd:Integer>
                       <cd:Description>Packet ID</cd:Description>
                       <cd:BitSize>8</cd:BitSize>
-                      <cd:NativeType>int8</cd:NativeType>
+                      <cd:NativeType>uint8</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
                   <cd:Field name="OBT">
@@ -594,28 +594,28 @@
                     <cd:Integer>
                       <cd:Description>Laster echo centroid (sub-pixel) position X</cd:Description>
                       <cd:BitSize>32</cd:BitSize>
-                      <cd:NativeType>int32</cd:NativeType>
+                      <cd:NativeType>uint32</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
                   <cd:Field name="centroid_y">
                     <cd:Integer>
                       <cd:Description>Laster echo centroid (sub-pixel) position Y</cd:Description>
                       <cd:BitSize>32</cd:BitSize>
-                      <cd:NativeType>int32</cd:NativeType>
+                      <cd:NativeType>uint32</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
                   <cd:Field name="BSM_setpoint_cmd_x">
                     <cd:Integer>
                       <cd:Description>Saturated command to BSM (X axis)</cd:Description>
                       <cd:BitSize>16</cd:BitSize>
-                      <cd:NativeType>int16</cd:NativeType>
+                      <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
                   <cd:Field name="BSM_setpoint_cmd_y">
                     <cd:Integer>
                       <cd:Description>Saturated command to BSM (Y axis)</cd:Description>
                       <cd:BitSize>16</cd:BitSize>
-                      <cd:NativeType>int16</cd:NativeType>
+                      <cd:NativeType>uint16</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
                   <cd:Field name="detection_saturation_status">
@@ -664,21 +664,21 @@
                     <cd:Integer>
                       <cd:Description>Calculated control error on X axis</cd:Description>
                       <cd:BitSize>32</cd:BitSize>
-                      <cd:NativeType>int32</cd:NativeType>
+                      <cd:NativeType>uint32</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
                   <cd:Field name="control_error_y">
                     <cd:Integer>
                       <cd:Description>Calculated control error on Y axis</cd:Description>
                       <cd:BitSize>32</cd:BitSize>
-                      <cd:NativeType>int32</cd:NativeType>
+                      <cd:NativeType>uint32</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
                   <cd:Field name="control_error_norm">
                     <cd:Integer>
                       <cd:Description>Root sum square control error</cd:Description>
                       <cd:BitSize>32</cd:BitSize>
-                      <cd:NativeType>int32</cd:NativeType>
+                      <cd:NativeType>uint32</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
                   <cd:Field name="control_error_quality">
@@ -699,14 +699,14 @@
                     <cd:Integer>
                       <cd:Description>Calculated BSM pointing Setpoint X</cd:Description>
                       <cd:BitSize>32</cd:BitSize>
-                      <cd:NativeType>int32</cd:NativeType>
+                      <cd:NativeType>uint32</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
                   <cd:Field name="calc_BSM_setpoint_y">
                     <cd:Integer>
                       <cd:Description>Calculated BSM pointing Setpoint Y</cd:Description>
                       <cd:BitSize>32</cd:BitSize>
-                      <cd:NativeType>int32</cd:NativeType>
+                      <cd:NativeType>uint32</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
                   <cd:Field name="BSA_mode">
@@ -727,14 +727,14 @@
                     <cd:Integer>
                       <cd:Description>Tracking point on the CAS detector (X axis)</cd:Description>
                       <cd:BitSize>32</cd:BitSize>
-                      <cd:NativeType>int32</cd:NativeType>
+                      <cd:NativeType>uint32</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
                   <cd:Field name="tracking_point_y">
                     <cd:Integer>
                       <cd:Description>Tracking point on the CAS detector (Y axis)</cd:Description>
                       <cd:BitSize>32</cd:BitSize>
-                      <cd:NativeType>int32</cd:NativeType>
+                      <cd:NativeType>uint32</cd:NativeType>
                     </cd:Integer>
                   </cd:Field>
                   <cd:Field name="coalignment_function_mode">
