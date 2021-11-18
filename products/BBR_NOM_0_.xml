@@ -13,10 +13,10 @@
           <cd:Field name="packet_header">
             <cd:NamedType id="ISP_packet_header"/>
           </cd:Field>
-          <cd:Field name="data_field_header">
+          <cd:Field name="data_header">
             <cd:NamedType id="ISP_data_field_header"/>
           </cd:Field>
-          <cd:Field name="data_field">
+          <cd:Field name="private_header">
             <cd:Record format="binary">
               <cd:Field name="SC_state_vector_quality">
                 <cd:Integer>
@@ -40,131 +40,131 @@
                 </cd:Integer>
                 <cd:Hidden/>
               </cd:Field>
-              <cd:Field name="data">
-                <cd:Union format="binary">
-                  <cd:FieldExpression><![CDATA[if(int(../../../data_field_header/service_subtype) == 65, 1, 0)]]></cd:FieldExpression>
-                  <cd:Field name="data">
-                    <cd:Record format="binary">
-                      <cd:Field name="view_parameters">
-                        <cd:Array>
-                          <cd:Description>View parameters for each acquisition</cd:Description>
-                          <cd:Dimension>8</cd:Dimension>
-                          <cd:NamedType id="ISP_BBR_view_parameters"/>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="delimiter_1">
-                        <cd:Integer>
-                          <cd:Description>Fixed Field Delimiter</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                        <cd:Hidden/>
-                      </cd:Field>
-                      <cd:Field name="view_processed">
-                        <cd:Array>
-                          <cd:Description>View Processed Science and HK for each acquisition</cd:Description>
-                          <cd:Dimension>8</cd:Dimension>
-                          <cd:Record format="binary">
-                            <cd:Field name="aft_voltage">
-                              <cd:NamedType id="asymptotic_detector_voltage"/>
-                            </cd:Field>
-                            <cd:Field name="nadir_voltage">
-                              <cd:NamedType id="asymptotic_detector_voltage"/>
-                            </cd:Field>
-                            <cd:Field name="fore_voltage">
-                              <cd:NamedType id="asymptotic_detector_voltage"/>
-                            </cd:Field>
-                            <cd:Field name="mpd_aft_output">
-                              <cd:NamedType id="RGB16"/>
-                            </cd:Field>
-                            <cd:Field name="mpd_nadir_output">
-                              <cd:NamedType id="RGB16"/>
-                            </cd:Field>
-                            <cd:Field name="mpd_fore_output">
-                              <cd:NamedType id="RGB16"/>
-                            </cd:Field>
-                            <cd:Field name="spare">
-                              <cd:NamedType id="RGB16"/>
-                            </cd:Field>
-                          </cd:Record>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="OU">
-                        <cd:NamedType id="ISP_BBR_OU"/>
-                      </cd:Field>
-                      <cd:Field name="ICU">
-                        <cd:NamedType id="ISP_BBR_ICU"/>
-                      </cd:Field>
-                      <cd:Field name="HK">
-                        <cd:NamedType id="ISP_BBR_HK"/>
-                      </cd:Field>
-                    </cd:Record>
-                  </cd:Field>
-                  <cd:Field name="raw_data">
-                    <cd:Record format="binary">
-                      <cd:Field name="view_parameters">
-                        <cd:NamedType id="ISP_BBR_view_parameters"/>
-                      </cd:Field>
-                      <cd:Field name="delimiter_1">
-                        <cd:Integer>
-                          <cd:Description>Fixed Field Delimiter</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                        <cd:Hidden/>
-                      </cd:Field>
-                      <cd:Field name="detector_voltage">
-                        <cd:Array>
-                          <cd:Dimension>78</cd:Dimension>
-                          <cd:Array>
-                            <cd:Dimension>32</cd:Dimension>
-                            <cd:Integer>
-                              <cd:Description>Raw subsampled detector voltage</cd:Description>
-                              <cd:BitSize>12</cd:BitSize>
-                              <cd:NativeType>uint16</cd:NativeType>
-                            </cd:Integer>
-                          </cd:Array>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="view_processed">
-                        <cd:Record format="binary">
-                         <cd:Field name="aft_voltage">
-                            <cd:NamedType id="asymptotic_detector_voltage"/>
-                          </cd:Field>
-                          <cd:Field name="nadir_voltage">
-                            <cd:NamedType id="asymptotic_detector_voltage"/>
-                          </cd:Field>
-                          <cd:Field name="fore_voltage">
-                            <cd:NamedType id="asymptotic_detector_voltage"/>
-                          </cd:Field>
-                          <cd:Field name="mpd_aft_output">
-                            <cd:NamedType id="RGB16"/>
-                          </cd:Field>
-                          <cd:Field name="mpd_nadir_output">
-                            <cd:NamedType id="RGB16"/>
-                          </cd:Field>
-                          <cd:Field name="mpd_fore_output">
-                            <cd:NamedType id="RGB16"/>
-                          </cd:Field>
-                          <cd:Field name="spare">
-                            <cd:NamedType id="RGB16"/>
-                          </cd:Field>
-                        </cd:Record>
-                      </cd:Field>
-                      <cd:Field name="OU">
-                        <cd:NamedType id="ISP_BBR_OU"/>
-                      </cd:Field>
-                      <cd:Field name="ICU">
-                        <cd:NamedType id="ISP_BBR_ICU"/>
-                      </cd:Field>
-                      <cd:Field name="HK">
-                        <cd:NamedType id="ISP_BBR_HK"/>
-                      </cd:Field>
-                    </cd:Record>
-                  </cd:Field>
-                </cd:Union>
-              </cd:Field>
             </cd:Record>
+          </cd:Field>
+          <cd:Field name="data">
+            <cd:Union format="binary">
+              <cd:FieldExpression><![CDATA[if(int(../../data_header/service_subtype) == 65, 1, 0)]]></cd:FieldExpression>
+              <cd:Field name="processed_data">
+                <cd:Record format="binary">
+                  <cd:Field name="view_parameters">
+                    <cd:Array>
+                      <cd:Description>View parameters for each acquisition</cd:Description>
+                      <cd:Dimension>8</cd:Dimension>
+                      <cd:NamedType id="ISP_BBR_view_parameters"/>
+                    </cd:Array>
+                  </cd:Field>
+                  <cd:Field name="delimiter_1">
+                    <cd:Integer>
+                      <cd:Description>Fixed Field Delimiter</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                    <cd:Hidden/>
+                  </cd:Field>
+                  <cd:Field name="view_processed">
+                    <cd:Array>
+                      <cd:Description>View Processed Science and HK for each acquisition</cd:Description>
+                      <cd:Dimension>8</cd:Dimension>
+                      <cd:Record format="binary">
+                        <cd:Field name="aft_voltage">
+                          <cd:NamedType id="asymptotic_detector_voltage"/>
+                        </cd:Field>
+                        <cd:Field name="nadir_voltage">
+                          <cd:NamedType id="asymptotic_detector_voltage"/>
+                        </cd:Field>
+                        <cd:Field name="fore_voltage">
+                          <cd:NamedType id="asymptotic_detector_voltage"/>
+                        </cd:Field>
+                        <cd:Field name="mpd_aft_output">
+                          <cd:NamedType id="RGB16"/>
+                        </cd:Field>
+                        <cd:Field name="mpd_nadir_output">
+                          <cd:NamedType id="RGB16"/>
+                        </cd:Field>
+                        <cd:Field name="mpd_fore_output">
+                          <cd:NamedType id="RGB16"/>
+                        </cd:Field>
+                        <cd:Field name="spare">
+                          <cd:NamedType id="RGB16"/>
+                        </cd:Field>
+                      </cd:Record>
+                    </cd:Array>
+                  </cd:Field>
+                  <cd:Field name="OU">
+                    <cd:NamedType id="ISP_BBR_OU"/>
+                  </cd:Field>
+                  <cd:Field name="ICU">
+                    <cd:NamedType id="ISP_BBR_ICU"/>
+                  </cd:Field>
+                  <cd:Field name="HK">
+                    <cd:NamedType id="ISP_BBR_HK"/>
+                  </cd:Field>
+                </cd:Record>
+              </cd:Field>
+              <cd:Field name="raw_data">
+                <cd:Record format="binary">
+                  <cd:Field name="view_parameters">
+                    <cd:NamedType id="ISP_BBR_view_parameters"/>
+                  </cd:Field>
+                  <cd:Field name="delimiter_1">
+                    <cd:Integer>
+                      <cd:Description>Fixed Field Delimiter</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                    <cd:Hidden/>
+                  </cd:Field>
+                  <cd:Field name="detector_voltage">
+                    <cd:Array>
+                      <cd:Dimension>78</cd:Dimension>
+                      <cd:Array>
+                        <cd:Dimension>32</cd:Dimension>
+                        <cd:Integer>
+                          <cd:Description>Raw subsampled detector voltage</cd:Description>
+                          <cd:BitSize>12</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Array>
+                    </cd:Array>
+                  </cd:Field>
+                  <cd:Field name="view_processed">
+                    <cd:Record format="binary">
+                     <cd:Field name="aft_voltage">
+                        <cd:NamedType id="asymptotic_detector_voltage"/>
+                      </cd:Field>
+                      <cd:Field name="nadir_voltage">
+                        <cd:NamedType id="asymptotic_detector_voltage"/>
+                      </cd:Field>
+                      <cd:Field name="fore_voltage">
+                        <cd:NamedType id="asymptotic_detector_voltage"/>
+                      </cd:Field>
+                      <cd:Field name="mpd_aft_output">
+                        <cd:NamedType id="RGB16"/>
+                      </cd:Field>
+                      <cd:Field name="mpd_nadir_output">
+                        <cd:NamedType id="RGB16"/>
+                      </cd:Field>
+                      <cd:Field name="mpd_fore_output">
+                        <cd:NamedType id="RGB16"/>
+                      </cd:Field>
+                      <cd:Field name="spare">
+                        <cd:NamedType id="RGB16"/>
+                      </cd:Field>
+                    </cd:Record>
+                  </cd:Field>
+                  <cd:Field name="OU">
+                    <cd:NamedType id="ISP_BBR_OU"/>
+                  </cd:Field>
+                  <cd:Field name="ICU">
+                    <cd:NamedType id="ISP_BBR_ICU"/>
+                  </cd:Field>
+                  <cd:Field name="HK">
+                    <cd:NamedType id="ISP_BBR_HK"/>
+                  </cd:Field>
+                </cd:Record>
+              </cd:Field>
+            </cd:Union>
           </cd:Field>
           <cd:Field name="CRC">
             <cd:Integer>

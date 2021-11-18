@@ -13,12 +13,12 @@
           <cd:Field name="packet_header">
             <cd:NamedType id="ISP_packet_header"/>
           </cd:Field>
-          <cd:Field name="data_field_header">
+          <cd:Field name="data_header">
             <cd:NamedType id="ISP_data_field_header"/>
           </cd:Field>
-          <cd:Field name="data_field">
-             <cd:Record format="binary">
-                <cd:Field name="SC_state_vector_quality">
+          <cd:Field name="private_header">
+            <cd:Record format="binary">
+               <cd:Field name="SC_state_vector_quality">
                   <cd:Integer>
                     <cd:Description>S/C State Vector Quality</cd:Description>
                     <cd:BitSize>32</cd:BitSize>
@@ -182,77 +182,77 @@
                   </cd:Integer>
                   <cd:Hidden/>
                 </cd:Field>
-                <cd:Field name="data">
-                  <cd:Union format="binary">
-                    <cd:FieldExpression><![CDATA[if(int(../../data_source) == 15, 0, 1)]]></cd:FieldExpression>
-                    <cd:Field name="aux_data">
-                      <cd:Record>
-                        <cd:Field name="buffer_E">
-                          <cd:Array>
-                            <cd:Dimension>64</cd:Dimension>
-                            <cd:Integer>
-                              <cd:Description>Buffer E (ADC1)</cd:Description>
-                              <cd:BitSize>16</cd:BitSize>
-                              <cd:NativeType>uint16</cd:NativeType>
-                            </cd:Integer>
-                          </cd:Array>
-                        </cd:Field>
-                        <cd:Field name="buffer_F">
-                          <cd:Array>
-                            <cd:Dimension>64</cd:Dimension>
-                            <cd:Integer>
-                              <cd:Description>Buffer F (ADC2)</cd:Description>
-                              <cd:BitSize>16</cd:BitSize>
-                              <cd:NativeType>uint16</cd:NativeType>
-                            </cd:Integer>
-                          </cd:Array>
-                        </cd:Field>
-                        <cd:Field name="buffer_G">
-                          <cd:Array>
-                            <cd:Dimension>64</cd:Dimension>
-                            <cd:Integer>
-                              <cd:Description>Buffer G (ADC3)</cd:Description>
-                              <cd:BitSize>16</cd:BitSize>
-                              <cd:NativeType>uint16</cd:NativeType>
-                            </cd:Integer>
-                          </cd:Array>
-                        </cd:Field>
-                        <cd:Field name="buffer_H">
-                          <cd:Array>
-                            <cd:Dimension>64</cd:Dimension>
-                            <cd:Integer>
-                              <cd:Description>Buffer H</cd:Description>
-                              <cd:BitSize>16</cd:BitSize>
-                              <cd:NativeType>uint16</cd:NativeType>
-                            </cd:Integer>
-                          </cd:Array>
-                        </cd:Field>
-                        <cd:Field name="spare">
-                          <cd:Array>
-                            <cd:Dimension>128</cd:Dimension>
-                            <cd:Integer>
-                              <cd:Description>Spare</cd:Description>
-                              <cd:BitSize>16</cd:BitSize>
-                              <cd:NativeType>uint16</cd:NativeType>
-                            </cd:Integer>
-                          </cd:Array>
-                          <cd:Hidden/>
-                        </cd:Field>
-                      </cd:Record>
-                    </cd:Field>
-                    <cd:Field name="pixel_data">
+             </cd:Record>
+          </cd:Field>
+          <cd:Field name="data">
+              <cd:Union format="binary">
+                <cd:FieldExpression><![CDATA[if(int(../../private_header/data_source) == 15, 0, 1)]]></cd:FieldExpression>
+                <cd:Field name="aux_data">
+                  <cd:Record>
+                    <cd:Field name="buffer_E">
                       <cd:Array>
-                        <cd:Dimension>384</cd:Dimension>
+                        <cd:Dimension>64</cd:Dimension>
                         <cd:Integer>
-                          <cd:Description>Pixel Data</cd:Description>
+                          <cd:Description>Buffer E (ADC1)</cd:Description>
                           <cd:BitSize>16</cd:BitSize>
                           <cd:NativeType>uint16</cd:NativeType>
                         </cd:Integer>
                       </cd:Array>
                     </cd:Field>
-                  </cd:Union>
+                    <cd:Field name="buffer_F">
+                      <cd:Array>
+                        <cd:Dimension>64</cd:Dimension>
+                        <cd:Integer>
+                          <cd:Description>Buffer F (ADC2)</cd:Description>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Array>
+                    </cd:Field>
+                    <cd:Field name="buffer_G">
+                      <cd:Array>
+                        <cd:Dimension>64</cd:Dimension>
+                        <cd:Integer>
+                          <cd:Description>Buffer G (ADC3)</cd:Description>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Array>
+                    </cd:Field>
+                    <cd:Field name="buffer_H">
+                      <cd:Array>
+                        <cd:Dimension>64</cd:Dimension>
+                        <cd:Integer>
+                          <cd:Description>Buffer H</cd:Description>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Array>
+                    </cd:Field>
+                    <cd:Field name="spare">
+                      <cd:Array>
+                        <cd:Dimension>128</cd:Dimension>
+                        <cd:Integer>
+                          <cd:Description>Spare</cd:Description>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Array>
+                      <cd:Hidden/>
+                    </cd:Field>
+                  </cd:Record>
                 </cd:Field>
-             </cd:Record>
+                <cd:Field name="pixel_data">
+                  <cd:Array>
+                    <cd:Dimension>384</cd:Dimension>
+                    <cd:Integer>
+                      <cd:Description>Pixel Data</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Array>
+                </cd:Field>
+              </cd:Union>
           </cd:Field>
           <cd:Field name="CRC">
             <cd:Integer>

@@ -13,10 +13,10 @@
           <cd:Field name="packet_header">
             <cd:NamedType id="ISP_packet_header"/>
           </cd:Field>
-          <cd:Field name="data_field_header">
+          <cd:Field name="data_header">
             <cd:NamedType id="ISP_data_field_header"/>
           </cd:Field>
-          <cd:Field name="data_field">
+          <cd:Field name="private_header">
              <cd:Record format="binary">
                <cd:Field name="SC_state_vector_quality">
                  <cd:Integer>
@@ -39,892 +39,892 @@
                    <cd:NativeType>uint32</cd:NativeType>
                  </cd:Integer>
                </cd:Field>
-               <cd:Field name="data">
-                 <cd:Union format="binary">
-                   <cd:FieldExpression><![CDATA[if(int(../../../data_field_header/service_subtype) == 1, 0, 1)]]></cd:FieldExpression>
-                   <cd:Field name="status_data">
-                     <cd:Record format="binary">
-                       <cd:Field name="EC_coarse_time">
-                         <cd:Integer>
-                           <cd:Description>EC Coarse Time</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="CPR_fine_time">
-                         <cd:Integer>
-                           <cd:Description>CPR Fine Time</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="CPR_offset_time">
-                         <cd:Integer>
-                           <cd:Description>CPR Offset Time</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="operational_mode">
-                         <cd:Integer>
-                           <cd:Description>Operational Mode</cd:Description>
-                           <cd:BitSize>4</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="obs_sub_mode">
-                         <cd:Integer>
-                           <cd:Description>Obs Sub Mode</cd:Description>
-                           <cd:BitSize>3</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="transition_status">
-                         <cd:Integer>
-                           <cd:Description>Transition Status</cd:Description>
-                           <cd:BitSize>1</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SC_state_vector_quality">
-                         <cd:Integer>
-                           <cd:Description>S/C State Vector Quality</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="coarse_time">
-                         <cd:Integer>
-                           <cd:Description>Coarse satellite orbital time (local)</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="spare">
-                         <cd:Integer>
-                           <cd:Description>Spare</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                         <cd:Hidden/>
-                       </cd:Field>
-                       <cd:Field name="fine_time">
-                         <cd:Integer>
-                           <cd:Description>Fine satellite orbital time (local)</cd:Description>
-                           <cd:BitSize>24</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="pos_X">
-                         <cd:Integer>
-                           <cd:Description>Position X</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="pos_Y">
-                         <cd:Integer>
-                           <cd:Description>Position Y</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="pos_Z">
-                         <cd:Integer>
-                           <cd:Description>Position Z</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="velocity_X">
-                         <cd:Integer>
-                           <cd:Description>Velocity X</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>int32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="velocity_Y">
-                         <cd:Integer>
-                           <cd:Description>Velocity Y</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>int32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="velocity_Z">
-                         <cd:Integer>
-                           <cd:Description>Velocity Z</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>int32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="geodetic_altitude">
-                         <cd:Integer>
-                           <cd:Description>Geodetic Altitude</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>int32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="geodetic_latitude_argument">
-                         <cd:Integer>
-                           <cd:Description>Geodetic Argument of Latitude</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>int32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="geocentric_latitude">
-                         <cd:Integer>
-                           <cd:Description>Geocentric Latitude</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>int32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="PRF_table_number">
-                         <cd:Integer>
-                           <cd:Description>PRF Table Number</cd:Description>
-                           <cd:BitSize>4</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="PRF_parameter_number">
-                         <cd:Integer>
-                           <cd:Description>PRF Parameter Number</cd:Description>
-                           <cd:BitSize>12</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="PRI">
-                         <cd:Integer>
-                           <cd:Description>PRF Parameter Number</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="CAL_data0_HOT">
-                         <cd:Integer>
-                           <cd:Description>PRF Parameter Number</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="CAL_data0_normal">
-                         <cd:Integer>
-                           <cd:Description>PRF Parameter Number</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="CAL_data0_log_amp_temp">
-                         <cd:Integer>
-                           <cd:Description>PRF Parameter Number</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="ATT_status_doppler_REF">
-                         <cd:Integer>
-                           <cd:Description>ATT status for Doppler REF</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="ATT_status_echo">
-                         <cd:Integer>
-                           <cd:Description>ATT status for Echo</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="TLM_quality_status">
-                         <cd:Integer>
-                           <cd:Description>Science TLM Quality Status</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="offset_voltage_status_Ich">
-                         <cd:Integer>
-                           <cd:Description>Offset Voltage Status Ich</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="offset_voltage_status_Qch">
-                         <cd:Integer>
-                           <cd:Description>Offset Voltage Status Qch</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="RF_on_off">
-                         <cd:Integer>
-                           <cd:Description>RF ON/OFF</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SPU_status_T5">
-                         <cd:Integer>
-                           <cd:Description>Sample Starting Time of Doppler Reference (Log)</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SPU_status_T7">
-                         <cd:Integer>
-                           <cd:Description>Sample Starting Time of System Noise and CAL DATA#0 (Log Amp Term)</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SPU_status_T18">
-                         <cd:Integer>
-                           <cd:Description>Sample Starting Time of CAL DATA (HOT) and CAL DATA (Normal)</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SPU_status_T7_T18">
-                         <cd:Integer>
-                           <cd:Description>Sample Starting Time of CAL DATA#0 (HOT) and CAL DATA#0 (Normal)</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SPU_status_T23">
-                         <cd:Integer>
-                           <cd:Description>Sample Starting Time of Tx Monitor Signal</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SPU_status_T24">
-                         <cd:Integer>
-                           <cd:Description>Sample Starting Time of System Noise in Contingency mode</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SPU_status_T25">
-                         <cd:Integer>
-                           <cd:Description>Sample Starting Time of Doppler Reference (IQ)</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SPU_status_Rx_timing">
-                         <cd:Integer>
-                           <cd:Description>Switching Time of RX_ATT in SPU (IFU) (Dopp_REF -> Echo)</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SPU_status_IP_timing">
-                         <cd:Integer>
-                           <cd:Description>Switching Time of IP_SELECT CMD (Noise -> Echo)</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SPU_status_N_timing">
-                         <cd:Integer>
-                           <cd:Description>Switching Time of N_SOURCE CMD (HOT -> Normal)</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SPU_status_IQ_delay">
-                         <cd:Integer>
-                           <cd:Description>IQ Delay Time for Booster Circuit</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="data_sample_num">
-                         <cd:Integer>
-                           <cd:Description>PRF Parameter: Data Sample Number</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="RCV_A_temp">
-                         <cd:Integer>
-                           <cd:Description>Redundant RCV Temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="RCV_B_temp">
-                         <cd:Integer>
-                           <cd:Description>Nominal RCV Temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="noise_diode_A_temp">
-                         <cd:Integer>
-                           <cd:Description>Redundant Noise Diode Temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="noise_diode_B_temp">
-                         <cd:Integer>
-                           <cd:Description>Nominal Noise Diode Temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="QOF_detector_1_temp">
-                         <cd:Integer>
-                           <cd:Description>MD1 Tx</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="QOF_detector_2_temp">
-                         <cd:Integer>
-                           <cd:Description>MD1 Tx</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="QOF_temp_1">
-                         <cd:Integer>
-                           <cd:Description>QOFE</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="QOF_temp_2">
-                         <cd:Integer>
-                           <cd:Description>Sub-Reflector</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="QOF_temp_3">
-                         <cd:Integer>
-                           <cd:Description>FH Tx - Main</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="QOF_temp_4">
-                         <cd:Integer>
-                           <cd:Description>FH Tx - Red</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="QOF_temp_5">
-                         <cd:Integer>
-                           <cd:Description>QOF TRP</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="STR_temp_3">
-                         <cd:Integer>
-                           <cd:Description>TRUSS -Y</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="STR_temp_4">
-                         <cd:Integer>
-                           <cd:Description>TRUSS +Y</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="STR_temp_5">
-                         <cd:Integer>
-                           <cd:Description>DPM +Y</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="STR_temp_6">
-                         <cd:Integer>
-                           <cd:Description>HPT</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="HPT_body_current">
-                         <cd:Integer>
-                           <cd:Description>HPT-A(-B) Body Current</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="HPT_beam_current">
-                         <cd:Integer>
-                           <cd:Description>HPT-A(-B) BEAM Current</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="HPT_status">
-                         <cd:Integer>
-                           <cd:Description>HPT Status</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="LPE_status">
-                         <cd:Integer>
-                           <cd:Description>LPE-A(-B) Status</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="QOF_status">
-                         <cd:Integer>
-                           <cd:Description>QOF Status</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="doppler_on_off">
-                         <cd:Integer>
-                           <cd:Description>Doppler ON/OFF</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="LOG_detector_temp">
-                         <cd:Integer>
-                           <cd:Description>SPU (IFU) LOG Detector temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="IQ_detector_temp">
-                         <cd:Integer>
-                           <cd:Description>SPU (IFU) IQ Detector temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="IQ_ADC_temp">
-                         <cd:Integer>
-                           <cd:Description>SPU IQ AD Converter temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="component_select_status_SPU">
-                         <cd:Integer>
-                           <cd:Description>Component Select Table Status SPU Select</cd:Description>
-                           <cd:BitSize>1</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="component_select_status_component">
-                         <cd:Integer>
-                           <cd:Description>Component Select Table Status Component Select</cd:Description>
-                           <cd:BitSize>7</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="offset_function_status">
-                         <cd:Integer>
-                           <cd:Description>Offset Function Status</cd:Description>
-                           <cd:BitSize>1</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="offset_temp_select_status">
-                         <cd:Integer>
-                           <cd:Description>Offset Function Status: Offset Temp Select Status</cd:Description>
-                           <cd:BitSize>2</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="spare2">
-                         <cd:Integer>
-                           <cd:Description>Spare</cd:Description>
-                           <cd:BitSize>5</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                         <cd:Hidden/>
-                       </cd:Field>
-                       <cd:Field name="avg_0_noise_diode">
-                         <cd:Integer>
-                           <cd:Description>Average number of #0 Noise Diode</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="avg_0_log_amp_term">
-                         <cd:Integer>
-                           <cd:Description>Average number of #0 Log Amp Term</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="avg_system_noise">
-                         <cd:Integer>
-                           <cd:Description>Average number of System Noise</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="avg_pulse_pair">
-                         <cd:Integer>
-                           <cd:Description>Average number of Pulse Pair</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="datapos_echo_log">
-                         <cd:Integer>
-                           <cd:Description>Data position of Echo Log</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="datapos_echo_pulse_pair">
-                         <cd:Integer>
-                           <cd:Description>Data position of Echo Pulse Pair</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="datapos_system_noise">
-                         <cd:Integer>
-                           <cd:Description>Data position of System Noise</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="datapos_noise_diode">
-                         <cd:Integer>
-                           <cd:Description>Data position of Noise Diode</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="datapos_system_log_amp_term">
-                         <cd:Integer>
-                           <cd:Description>Data position of Log Amp Term</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="datapos_doppler_ref_log">
-                         <cd:Integer>
-                           <cd:Description>Data position of Doppler Ref Log</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="datapos_Tx_monitor">
-                         <cd:Integer>
-                           <cd:Description>Data position of Tx Monitor</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="obs_height_selection_table_version">
-                         <cd:Integer>
-                           <cd:Description>Observation height selection Table Version</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="PRF_table_version">
-                         <cd:Integer>
-                           <cd:Description>PRF Table Version</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="SPU_variable_table_version">
-                         <cd:Integer>
-                           <cd:Description>SPU Variable Table Version</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="dynamic_offset_table_version">
-                         <cd:Integer>
-                           <cd:Description>Dynamic Offset Table Version</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="data_position_table_version">
-                         <cd:Integer>
-                           <cd:Description>Data Position Table Version</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="program_version">
-                         <cd:Integer>
-                           <cd:Description>Program Version</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="fixed_offset_voltage_status_Ich">
-                         <cd:Integer>
-                           <cd:Description>Fixed Offset Voltage Status Ich</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="fixed_offset_voltage_status_Qch">
-                         <cd:Integer>
-                           <cd:Description>Fixed Offset Voltage Status Qch</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="LPE_A_temp">
-                         <cd:Integer>
-                           <cd:Description>Redundant LPE temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="LPE_B_temp">
-                         <cd:Integer>
-                           <cd:Description>Nominal LPE temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="LPT_A_temp">
-                         <cd:Integer>
-                           <cd:Description>Redundant LPT temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="LPT_B_temp">
-                         <cd:Integer>
-                           <cd:Description>Nominal LPT temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="EIK_A_temp">
-                         <cd:Integer>
-                           <cd:Description>Redundant HPT EIK temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="EIK_B_temp">
-                         <cd:Integer>
-                           <cd:Description>Nominal HPT EIK temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="MREF_center_temp">
-                         <cd:Integer>
-                           <cd:Description>MRF Center temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="MREF_upper_temp">
-                         <cd:Integer>
-                           <cd:Description>MRF Upper temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="MREF_lower_temp">
-                         <cd:Integer>
-                           <cd:Description>MRF Lower temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="MREF_left_temp">
-                         <cd:Integer>
-                           <cd:Description>MRF Left temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="MREF_right_temp">
-                         <cd:Integer>
-                           <cd:Description>MRF Right temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="EPC_A_temp">
-                         <cd:Integer>
-                           <cd:Description>Redundant HPT EPC temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="EPC_B_temp">
-                         <cd:Integer>
-                           <cd:Description>Nominal HPT EPC temperature</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="PHS_status">
-                         <cd:Integer>
-                           <cd:Description>SPU Phase Shifter Status (for internal CAL)</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="ATT_status_3">
-                         <cd:Integer>
-                           <cd:Description>SPU Calibration ATT Status 3 (for internal CAL)</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="ATT_status_2">
-                         <cd:Integer>
-                           <cd:Description>SPU Calibration ATT Status 2 (for internal CAL)</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="ATT_status_1">
-                         <cd:Integer>
-                           <cd:Description>SPU Calibration ATT Status 1 (for internal CAL)</cd:Description>
-                           <cd:BitSize>8</cd:BitSize>
-                           <cd:NativeType>uint8</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                     </cd:Record>
-                   </cd:Field>
-                   <cd:Field name="data">
-                     <cd:Record format="binary">
-                       <cd:Field name="frame_number">
-                         <cd:Integer>
-                           <cd:Description>Frame number</cd:Description>
-                           <cd:BitSize>32</cd:BitSize>
-                           <cd:NativeType>uint32</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                       <cd:Field name="average_number">
-                         <cd:Integer>
-                           <cd:Description>Average number</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>uint16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                      <cd:Field name="coherent_echo_data">
-                        <cd:Array>
-                          <cd:Dimension>218</cd:Dimension>
-                          <cd:Description>Coherent Echo Data</cd:Description>
-                          <cd:Integer>
-                            <cd:BitSize>16</cd:BitSize>
-                            <cd:NativeType>int16</cd:NativeType>
-                          </cd:Integer>
-                        </cd:Array>
-                      </cd:Field>
-                       <cd:Field name="coherent_noise_data">
-                         <cd:Integer>
-                           <cd:Description>Coherent Noise Data</cd:Description>
-                           <cd:BitSize>16</cd:BitSize>
-                           <cd:NativeType>int16</cd:NativeType>
-                         </cd:Integer>
-                       </cd:Field>
-                      <cd:Field name="doppler_data_real">
-                        <cd:Array>
-                          <cd:Dimension>218</cd:Dimension>
-                          <cd:Description>Doppler Data (Real)</cd:Description>
-                          <cd:Integer>
-                            <cd:BitSize>32</cd:BitSize>
-                            <cd:NativeType>int32</cd:NativeType>
-                          </cd:Integer>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="doppler_data_imag">
-                        <cd:Array>
-                          <cd:Dimension>218</cd:Dimension>
-                          <cd:Description>Doppler Data (Imag)</cd:Description>
-                          <cd:Integer>
-                            <cd:BitSize>32</cd:BitSize>
-                            <cd:NativeType>int32</cd:NativeType>
-                          </cd:Integer>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="average_number_CAL">
-                        <cd:Integer>
-                          <cd:Description>Average Number of CAL</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>int16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="CAL_DATA_HOT">
-                        <cd:Integer>
-                          <cd:Description>CAL DATA (HOT)</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>int16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="CAL_DATA_normal">
-                        <cd:Integer>
-                          <cd:Description>CAL DATA (Normal)</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>int16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="tx_monitor_signal">
-                        <cd:Array>
-                          <cd:Dimension>34</cd:Dimension>
-                          <cd:Description>Tx Monitor Signal</cd:Description>
-                          <cd:Integer>
-                            <cd:BitSize>16</cd:BitSize>
-                            <cd:NativeType>int16</cd:NativeType>
-                          </cd:Integer>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="doppler_reference_log">
-                        <cd:Array>
-                          <cd:Dimension>34</cd:Dimension>
-                          <cd:Description>Doppler Reference (LOG)</cd:Description>
-                          <cd:Integer>
-                            <cd:BitSize>16</cd:BitSize>
-                            <cd:NativeType>int16</cd:NativeType>
-                          </cd:Integer>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="doppler_reference_real">
-                        <cd:Integer>
-                          <cd:Description>Doppler Reference (Real)</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>int32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="doppler_reference_imag">
-                        <cd:Integer>
-                          <cd:Description>Doppler Referenc (Imag)</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>int32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="processing_error_status">
-                        <cd:Integer>
-                          <cd:Description>Processing Error Status</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                     </cd:Record>
-                   </cd:Field>
-                 </cd:Union>
-               </cd:Field>
             </cd:Record>
           </cd:Field>
+           <cd:Field name="data">
+             <cd:Union format="binary">
+               <cd:FieldExpression><![CDATA[if(int(../../data_header/service_subtype) == 1, 0, 1)]]></cd:FieldExpression>
+               <cd:Field name="status">
+                 <cd:Record format="binary">
+                   <cd:Field name="EC_coarse_time">
+                     <cd:Integer>
+                       <cd:Description>EC Coarse Time</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>uint32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="CPR_fine_time">
+                     <cd:Integer>
+                       <cd:Description>CPR Fine Time</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>uint32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="CPR_offset_time">
+                     <cd:Integer>
+                       <cd:Description>CPR Offset Time</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>uint32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="operational_mode">
+                     <cd:Integer>
+                       <cd:Description>Operational Mode</cd:Description>
+                       <cd:BitSize>4</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="obs_sub_mode">
+                     <cd:Integer>
+                       <cd:Description>Obs Sub Mode</cd:Description>
+                       <cd:BitSize>3</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="transition_status">
+                     <cd:Integer>
+                       <cd:Description>Transition Status</cd:Description>
+                       <cd:BitSize>1</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SC_state_vector_quality">
+                     <cd:Integer>
+                       <cd:Description>S/C State Vector Quality</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>uint32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="coarse_time">
+                     <cd:Integer>
+                       <cd:Description>Coarse satellite orbital time (local)</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>uint32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="spare">
+                     <cd:Integer>
+                       <cd:Description>Spare</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                     <cd:Hidden/>
+                   </cd:Field>
+                   <cd:Field name="fine_time">
+                     <cd:Integer>
+                       <cd:Description>Fine satellite orbital time (local)</cd:Description>
+                       <cd:BitSize>24</cd:BitSize>
+                       <cd:NativeType>uint32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="pos_X">
+                     <cd:Integer>
+                       <cd:Description>Position X</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>uint32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="pos_Y">
+                     <cd:Integer>
+                       <cd:Description>Position Y</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>uint32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="pos_Z">
+                     <cd:Integer>
+                       <cd:Description>Position Z</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>uint32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="velocity_X">
+                     <cd:Integer>
+                       <cd:Description>Velocity X</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>int32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="velocity_Y">
+                     <cd:Integer>
+                       <cd:Description>Velocity Y</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>int32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="velocity_Z">
+                     <cd:Integer>
+                       <cd:Description>Velocity Z</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>int32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="geodetic_altitude">
+                     <cd:Integer>
+                       <cd:Description>Geodetic Altitude</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>int32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="geodetic_latitude_argument">
+                     <cd:Integer>
+                       <cd:Description>Geodetic Argument of Latitude</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>int32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="geocentric_latitude">
+                     <cd:Integer>
+                       <cd:Description>Geocentric Latitude</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>int32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="PRF_table_number">
+                     <cd:Integer>
+                       <cd:Description>PRF Table Number</cd:Description>
+                       <cd:BitSize>4</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="PRF_parameter_number">
+                     <cd:Integer>
+                       <cd:Description>PRF Parameter Number</cd:Description>
+                       <cd:BitSize>12</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="PRI">
+                     <cd:Integer>
+                       <cd:Description>PRF Parameter Number</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="CAL_data0_HOT">
+                     <cd:Integer>
+                       <cd:Description>PRF Parameter Number</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="CAL_data0_normal">
+                     <cd:Integer>
+                       <cd:Description>PRF Parameter Number</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="CAL_data0_log_amp_temp">
+                     <cd:Integer>
+                       <cd:Description>PRF Parameter Number</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="ATT_status_doppler_REF">
+                     <cd:Integer>
+                       <cd:Description>ATT status for Doppler REF</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="ATT_status_echo">
+                     <cd:Integer>
+                       <cd:Description>ATT status for Echo</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="TLM_quality_status">
+                     <cd:Integer>
+                       <cd:Description>Science TLM Quality Status</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="offset_voltage_status_Ich">
+                     <cd:Integer>
+                       <cd:Description>Offset Voltage Status Ich</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="offset_voltage_status_Qch">
+                     <cd:Integer>
+                       <cd:Description>Offset Voltage Status Qch</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="RF_on_off">
+                     <cd:Integer>
+                       <cd:Description>RF ON/OFF</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SPU_status_T5">
+                     <cd:Integer>
+                       <cd:Description>Sample Starting Time of Doppler Reference (Log)</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SPU_status_T7">
+                     <cd:Integer>
+                       <cd:Description>Sample Starting Time of System Noise and CAL DATA#0 (Log Amp Term)</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SPU_status_T18">
+                     <cd:Integer>
+                       <cd:Description>Sample Starting Time of CAL DATA (HOT) and CAL DATA (Normal)</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SPU_status_T7_T18">
+                     <cd:Integer>
+                       <cd:Description>Sample Starting Time of CAL DATA#0 (HOT) and CAL DATA#0 (Normal)</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SPU_status_T23">
+                     <cd:Integer>
+                       <cd:Description>Sample Starting Time of Tx Monitor Signal</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SPU_status_T24">
+                     <cd:Integer>
+                       <cd:Description>Sample Starting Time of System Noise in Contingency mode</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SPU_status_T25">
+                     <cd:Integer>
+                       <cd:Description>Sample Starting Time of Doppler Reference (IQ)</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SPU_status_Rx_timing">
+                     <cd:Integer>
+                       <cd:Description>Switching Time of RX_ATT in SPU (IFU) (Dopp_REF -> Echo)</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SPU_status_IP_timing">
+                     <cd:Integer>
+                       <cd:Description>Switching Time of IP_SELECT CMD (Noise -> Echo)</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SPU_status_N_timing">
+                     <cd:Integer>
+                       <cd:Description>Switching Time of N_SOURCE CMD (HOT -> Normal)</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SPU_status_IQ_delay">
+                     <cd:Integer>
+                       <cd:Description>IQ Delay Time for Booster Circuit</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="data_sample_num">
+                     <cd:Integer>
+                       <cd:Description>PRF Parameter: Data Sample Number</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="RCV_A_temp">
+                     <cd:Integer>
+                       <cd:Description>Redundant RCV Temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="RCV_B_temp">
+                     <cd:Integer>
+                       <cd:Description>Nominal RCV Temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="noise_diode_A_temp">
+                     <cd:Integer>
+                       <cd:Description>Redundant Noise Diode Temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="noise_diode_B_temp">
+                     <cd:Integer>
+                       <cd:Description>Nominal Noise Diode Temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="QOF_detector_1_temp">
+                     <cd:Integer>
+                       <cd:Description>MD1 Tx</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="QOF_detector_2_temp">
+                     <cd:Integer>
+                       <cd:Description>MD1 Tx</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="QOF_temp_1">
+                     <cd:Integer>
+                       <cd:Description>QOFE</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="QOF_temp_2">
+                     <cd:Integer>
+                       <cd:Description>Sub-Reflector</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="QOF_temp_3">
+                     <cd:Integer>
+                       <cd:Description>FH Tx - Main</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="QOF_temp_4">
+                     <cd:Integer>
+                       <cd:Description>FH Tx - Red</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="QOF_temp_5">
+                     <cd:Integer>
+                       <cd:Description>QOF TRP</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="STR_temp_3">
+                     <cd:Integer>
+                       <cd:Description>TRUSS -Y</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="STR_temp_4">
+                     <cd:Integer>
+                       <cd:Description>TRUSS +Y</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="STR_temp_5">
+                     <cd:Integer>
+                       <cd:Description>DPM +Y</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="STR_temp_6">
+                     <cd:Integer>
+                       <cd:Description>HPT</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="HPT_body_current">
+                     <cd:Integer>
+                       <cd:Description>HPT-A(-B) Body Current</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="HPT_beam_current">
+                     <cd:Integer>
+                       <cd:Description>HPT-A(-B) BEAM Current</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="HPT_status">
+                     <cd:Integer>
+                       <cd:Description>HPT Status</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="LPE_status">
+                     <cd:Integer>
+                       <cd:Description>LPE-A(-B) Status</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="QOF_status">
+                     <cd:Integer>
+                       <cd:Description>QOF Status</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="doppler_on_off">
+                     <cd:Integer>
+                       <cd:Description>Doppler ON/OFF</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="LOG_detector_temp">
+                     <cd:Integer>
+                       <cd:Description>SPU (IFU) LOG Detector temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="IQ_detector_temp">
+                     <cd:Integer>
+                       <cd:Description>SPU (IFU) IQ Detector temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="IQ_ADC_temp">
+                     <cd:Integer>
+                       <cd:Description>SPU IQ AD Converter temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="component_select_status_SPU">
+                     <cd:Integer>
+                       <cd:Description>Component Select Table Status SPU Select</cd:Description>
+                       <cd:BitSize>1</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="component_select_status_component">
+                     <cd:Integer>
+                       <cd:Description>Component Select Table Status Component Select</cd:Description>
+                       <cd:BitSize>7</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="offset_function_status">
+                     <cd:Integer>
+                       <cd:Description>Offset Function Status</cd:Description>
+                       <cd:BitSize>1</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="offset_temp_select_status">
+                     <cd:Integer>
+                       <cd:Description>Offset Function Status: Offset Temp Select Status</cd:Description>
+                       <cd:BitSize>2</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="spare2">
+                     <cd:Integer>
+                       <cd:Description>Spare</cd:Description>
+                       <cd:BitSize>5</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                     <cd:Hidden/>
+                   </cd:Field>
+                   <cd:Field name="avg_0_noise_diode">
+                     <cd:Integer>
+                       <cd:Description>Average number of #0 Noise Diode</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="avg_0_log_amp_term">
+                     <cd:Integer>
+                       <cd:Description>Average number of #0 Log Amp Term</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="avg_system_noise">
+                     <cd:Integer>
+                       <cd:Description>Average number of System Noise</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="avg_pulse_pair">
+                     <cd:Integer>
+                       <cd:Description>Average number of Pulse Pair</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="datapos_echo_log">
+                     <cd:Integer>
+                       <cd:Description>Data position of Echo Log</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="datapos_echo_pulse_pair">
+                     <cd:Integer>
+                       <cd:Description>Data position of Echo Pulse Pair</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="datapos_system_noise">
+                     <cd:Integer>
+                       <cd:Description>Data position of System Noise</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="datapos_noise_diode">
+                     <cd:Integer>
+                       <cd:Description>Data position of Noise Diode</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="datapos_system_log_amp_term">
+                     <cd:Integer>
+                       <cd:Description>Data position of Log Amp Term</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="datapos_doppler_ref_log">
+                     <cd:Integer>
+                       <cd:Description>Data position of Doppler Ref Log</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="datapos_Tx_monitor">
+                     <cd:Integer>
+                       <cd:Description>Data position of Tx Monitor</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="obs_height_selection_table_version">
+                     <cd:Integer>
+                       <cd:Description>Observation height selection Table Version</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="PRF_table_version">
+                     <cd:Integer>
+                       <cd:Description>PRF Table Version</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="SPU_variable_table_version">
+                     <cd:Integer>
+                       <cd:Description>SPU Variable Table Version</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="dynamic_offset_table_version">
+                     <cd:Integer>
+                       <cd:Description>Dynamic Offset Table Version</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="data_position_table_version">
+                     <cd:Integer>
+                       <cd:Description>Data Position Table Version</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="program_version">
+                     <cd:Integer>
+                       <cd:Description>Program Version</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="fixed_offset_voltage_status_Ich">
+                     <cd:Integer>
+                       <cd:Description>Fixed Offset Voltage Status Ich</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="fixed_offset_voltage_status_Qch">
+                     <cd:Integer>
+                       <cd:Description>Fixed Offset Voltage Status Qch</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="LPE_A_temp">
+                     <cd:Integer>
+                       <cd:Description>Redundant LPE temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="LPE_B_temp">
+                     <cd:Integer>
+                       <cd:Description>Nominal LPE temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="LPT_A_temp">
+                     <cd:Integer>
+                       <cd:Description>Redundant LPT temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="LPT_B_temp">
+                     <cd:Integer>
+                       <cd:Description>Nominal LPT temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="EIK_A_temp">
+                     <cd:Integer>
+                       <cd:Description>Redundant HPT EIK temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="EIK_B_temp">
+                     <cd:Integer>
+                       <cd:Description>Nominal HPT EIK temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="MREF_center_temp">
+                     <cd:Integer>
+                       <cd:Description>MRF Center temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="MREF_upper_temp">
+                     <cd:Integer>
+                       <cd:Description>MRF Upper temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="MREF_lower_temp">
+                     <cd:Integer>
+                       <cd:Description>MRF Lower temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="MREF_left_temp">
+                     <cd:Integer>
+                       <cd:Description>MRF Left temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="MREF_right_temp">
+                     <cd:Integer>
+                       <cd:Description>MRF Right temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="EPC_A_temp">
+                     <cd:Integer>
+                       <cd:Description>Redundant HPT EPC temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="EPC_B_temp">
+                     <cd:Integer>
+                       <cd:Description>Nominal HPT EPC temperature</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="PHS_status">
+                     <cd:Integer>
+                       <cd:Description>SPU Phase Shifter Status (for internal CAL)</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="ATT_status_3">
+                     <cd:Integer>
+                       <cd:Description>SPU Calibration ATT Status 3 (for internal CAL)</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="ATT_status_2">
+                     <cd:Integer>
+                       <cd:Description>SPU Calibration ATT Status 2 (for internal CAL)</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="ATT_status_1">
+                     <cd:Integer>
+                       <cd:Description>SPU Calibration ATT Status 1 (for internal CAL)</cd:Description>
+                       <cd:BitSize>8</cd:BitSize>
+                       <cd:NativeType>uint8</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                 </cd:Record>
+               </cd:Field>
+               <cd:Field name="data">
+                 <cd:Record format="binary">
+                   <cd:Field name="frame_number">
+                     <cd:Integer>
+                       <cd:Description>Frame number</cd:Description>
+                       <cd:BitSize>32</cd:BitSize>
+                       <cd:NativeType>uint32</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                   <cd:Field name="average_number">
+                     <cd:Integer>
+                       <cd:Description>Average number</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>uint16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                  <cd:Field name="coherent_echo_data">
+                    <cd:Array>
+                      <cd:Dimension>218</cd:Dimension>
+                      <cd:Description>Coherent Echo Data</cd:Description>
+                      <cd:Integer>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>int16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Array>
+                  </cd:Field>
+                   <cd:Field name="coherent_noise_data">
+                     <cd:Integer>
+                       <cd:Description>Coherent Noise Data</cd:Description>
+                       <cd:BitSize>16</cd:BitSize>
+                       <cd:NativeType>int16</cd:NativeType>
+                     </cd:Integer>
+                   </cd:Field>
+                  <cd:Field name="doppler_data_real">
+                    <cd:Array>
+                      <cd:Dimension>218</cd:Dimension>
+                      <cd:Description>Doppler Data (Real)</cd:Description>
+                      <cd:Integer>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>int32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Array>
+                  </cd:Field>
+                  <cd:Field name="doppler_data_imag">
+                    <cd:Array>
+                      <cd:Dimension>218</cd:Dimension>
+                      <cd:Description>Doppler Data (Imag)</cd:Description>
+                      <cd:Integer>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>int32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Array>
+                  </cd:Field>
+                  <cd:Field name="average_number_CAL">
+                    <cd:Integer>
+                      <cd:Description>Average Number of CAL</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>int16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="CAL_DATA_HOT">
+                    <cd:Integer>
+                      <cd:Description>CAL DATA (HOT)</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>int16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="CAL_DATA_normal">
+                    <cd:Integer>
+                      <cd:Description>CAL DATA (Normal)</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>int16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="tx_monitor_signal">
+                    <cd:Array>
+                      <cd:Dimension>34</cd:Dimension>
+                      <cd:Description>Tx Monitor Signal</cd:Description>
+                      <cd:Integer>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>int16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Array>
+                  </cd:Field>
+                  <cd:Field name="doppler_reference_log">
+                    <cd:Array>
+                      <cd:Dimension>34</cd:Dimension>
+                      <cd:Description>Doppler Reference (LOG)</cd:Description>
+                      <cd:Integer>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>int16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Array>
+                  </cd:Field>
+                  <cd:Field name="doppler_reference_real">
+                    <cd:Integer>
+                      <cd:Description>Doppler Reference (Real)</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>int32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="doppler_reference_imag">
+                    <cd:Integer>
+                      <cd:Description>Doppler Referenc (Imag)</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>int32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="processing_error_status">
+                    <cd:Integer>
+                      <cd:Description>Processing Error Status</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                 </cd:Record>
+               </cd:Field>
+             </cd:Union>
+           </cd:Field>
           <cd:Field name="CRC">
             <cd:Integer>
               <cd:Description>Packet Error Control (CRC)</cd:Description>

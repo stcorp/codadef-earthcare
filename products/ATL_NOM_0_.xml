@@ -13,10 +13,10 @@
           <cd:Field name="packet_header">
             <cd:NamedType id="ISP_packet_header"/>
           </cd:Field>
-          <cd:Field name="data_field_header">
+          <cd:Field name="data_header">
             <cd:NamedType id="ISP_data_field_header"/>
           </cd:Field>
-          <cd:Field name="data_field">
+          <cd:Field name="private_header">
             <cd:Record format="binary">
               <cd:Field name="SC_state_vector_quality">
                 <cd:Integer>
@@ -32,1004 +32,1004 @@
                   <cd:NativeType>uint16</cd:NativeType>
                 </cd:Integer>
               </cd:Field>
-              <cd:Field name="data">
-                <cd:Union format="binary">
-                  <cd:FieldExpression><![CDATA[with(k = int(../../../data_field_header/service_type), if(k==225, 0, if(k==226, if(int(../../../data_field_header/service_subtype)==1, 1, 2), -1)))]]></cd:FieldExpression>
-                  <cd:Field name="measurement_data">
-                    <cd:Record format="binary">
-                      <cd:Field name="ancillary_data_count">
-                        <cd:Integer>
-                          <cd:Description>Ancillary data repetition count</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="HR_ancillary_data">
-                        <cd:Array>
-                          <cd:Dimension><![CDATA[int(../ancillary_data_count)]]></cd:Dimension>
-                          <cd:Record>
-                            <cd:Field name="ancillary_data_number">
-                              <cd:Integer>
-                                <cd:Description>Pos in the Cycle</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="laser_shot_date">
-                              <cd:Integer>
-                                <cd:Description>Laser Shot Date</cd:Description>
-                                <cd:BitSize>56</cd:BitSize>
-                                <cd:NativeType>uint64</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="spare">
-                              <cd:Integer>
-                                <cd:Description>Spare</cd:Description>
-                                <cd:BitSize>8</cd:BitSize>
-                                <cd:NativeType>uint8</cd:NativeType>
-                              </cd:Integer>
-                              <cd:Hidden/>
-                            </cd:Field>
-                            <cd:Field name="RLH_frequency">
-                              <cd:Integer>
-                                <cd:Description>RLH Frequency</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="TXA_status">
-                              <cd:Integer>
-                                <cd:Description>TXA Status</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="PD_en_UV">
-                              <cd:Integer>
-                                <cd:Description>PD En UV</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="TLE_status">
-                              <cd:Integer>
-                                <cd:Description>TLE Status</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="RLH_status">
-                              <cd:Integer>
-                                <cd:Description>RLH Status</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="PD_en_amp">
-                              <cd:Integer>
-                                <cd:Description>PD En Amp</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="PD_CL_CL_max">
-                              <cd:Integer>
-                                <cd:Description>PD CL CL Max</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="PD_en_MO">
-                              <cd:Integer>
-                                <cd:Description>PD En MO</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="multimode_ratio">
-                              <cd:Integer>
-                                <cd:Description>Multimode Ratio</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="MO_sampled">
-                              <cd:Integer>
-                                <cd:Description>MO Sampled</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="amp_1_sampled">
-                              <cd:Integer>
-                                <cd:Description>Amp 1 Sampled</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="amp_2_sampled">
-                              <cd:Integer>
-                                <cd:Description>Amp 2 Sampled</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="cmd_rejection_status">
-                              <cd:Integer>
-                                <cd:Description>Command Rejection Status Word</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="failure_status_1">
-                              <cd:Integer>
-                                <cd:Description>Failure Status Word 1</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="failure_status_2">
-                              <cd:Integer>
-                                <cd:Description>Failure Status Word 2</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="LCLK_counter">
-                              <cd:Integer>
-                                <cd:Description>LCLK Counter</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="delay_dt0">
-                              <cd:Integer>
-                                <cd:Description>Delay "dt0"</cd:Description>
-                                <cd:BitSize>32</cd:BitSize>
-                                <cd:NativeType>uint32</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="delay_dt3_fixed">
-                              <cd:Integer>
-                                <cd:Description>Delay "dt3 Fixed"</cd:Description>
-                                <cd:BitSize>32</cd:BitSize>
-                                <cd:NativeType>uint32</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="delay_dt3_variable">
-                              <cd:Integer>
-                                <cd:Description>Delay "dt3 Variable"</cd:Description>
-                                <cd:BitSize>32</cd:BitSize>
-                                <cd:NativeType>uint32</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="delay_dt5">
-                              <cd:Integer>
-                                <cd:Description>Delay "dt5"</cd:Description>
-                                <cd:BitSize>32</cd:BitSize>
-                                <cd:NativeType>uint32</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="delay_dt6">
-                              <cd:Integer>
-                                <cd:Description>Delay "dt6"</cd:Description>
-                                <cd:BitSize>32</cd:BitSize>
-                                <cd:NativeType>uint32</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="synchro_enable">
-                              <cd:Integer>
-                                <cd:Description>Synchro enable (TXA, IDE, OGSE)</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="autocol">
-                              <cd:Integer>
-                                <cd:Description>AUTOCOL</cd:Description>
-                                <cd:BitSize>16</cd:BitSize>
-                                <cd:NativeType>uint16</cd:NativeType>
-                              </cd:Integer>
-                            </cd:Field>
-                            <cd:Field name="spare2">
-                              <cd:Integer>
-                                <cd:Description>Spare</cd:Description>
-                                <cd:BitSize>64</cd:BitSize>
-                                <cd:NativeType>uint64</cd:NativeType>
-                              </cd:Integer>
-                              <cd:Hidden/>
-                            </cd:Field>
-                          </cd:Record>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="SID">
-                        <cd:Integer>
-                          <cd:Description>SID</cd:Description>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="OBT">
-                        <cd:Integer>
-                          <cd:BitSize>56</cd:BitSize>
-                          <cd:NativeType>uint64</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="TXA_mode">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="IDE_mode">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="INS_mode">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="ATL_mode">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSA_mode">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="validity">
-                        <cd:Integer>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="spare">
-                        <cd:Integer>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                        <cd:Hidden/>
-                      </cd:Field>
-                      <cd:Field name="mode_transition_status">
-                        <cd:Integer>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="status">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="current_procedure">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="calibration_step">
-                        <cd:Integer>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="calibration_setpoint_1">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="calibration_setpoint_2">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="last_event_ID">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="spare2">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                        <cd:Hidden/>
-                      </cd:Field>
-                      <cd:Field name="M1_mirror_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BKGE_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="E_BEX_A_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="E_BEX_B_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSM_command_x">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSM_command_y">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="spare3">
-                        <cd:Integer>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>uint32</cd:NativeType>
-                        </cd:Integer>
-                        <cd:Hidden/>
-                      </cd:Field>
-                      <cd:Field name="centroid_X">
-                        <cd:Integer>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>uint32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="centroid_Y">
-                        <cd:Integer>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>uint32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="SNR_estimator_status">
-                        <cd:Integer>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="estimated_SNR">
-                        <cd:Integer>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>uint32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="control_error_norm">
-                        <cd:Integer>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>uint32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="image_quality_status">
-                        <cd:Integer>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="duration_out_status">
-                        <cd:Integer>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="control_error_indicator">
-                        <cd:Integer>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="control_error_out_status">
-                        <cd:Integer>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="frequency_compensation">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="PPS_fine_time">
-                        <cd:Integer>
-                          <cd:BitSize>24</cd:BitSize>
-                          <cd:NativeType>uint32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="working_laser_frequency">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="spare4">
-                        <cd:Raw>
-                          <cd:BitSize>128</cd:BitSize>
-                        </cd:Raw>
-                        <cd:Hidden/>
-                      </cd:Field>
-                      <cd:Field name="DRD_reception_date">
-                        <cd:Integer>
-                          <cd:BitSize>56</cd:BitSize>
-                          <cd:NativeType>uint64</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="DRD_packet_counter">
-                        <cd:Integer>
-                          <cd:BitSize>24</cd:BitSize>
-                          <cd:NativeType>uint32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="IDE_packet_header">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="IDE_sub_mode">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="N_PRF_IDE">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="IDE_PRF_number">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="pixel_index_UPD">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="measurement_validity_bits">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="CAS_data_indicator">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="background_saturation_status">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="detection_saturation_status">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="background_integration_time">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="DRD_raw_data">
-                        <cd:Array>
-                          <cd:Dimension>780</cd:Dimension>
+            </cd:Record>
+          </cd:Field>
+          <cd:Field name="data">
+            <cd:Union format="binary">
+              <cd:FieldExpression><![CDATA[with(k = int(../../data_header/service_type), if(k==225, 0, if(k==226, if(int(../../data_header/service_subtype)==1, 1, 2), -1)))]]></cd:FieldExpression>
+              <cd:Field name="measurement_data">
+                <cd:Record format="binary">
+                  <cd:Field name="ancillary_data_count">
+                    <cd:Integer>
+                      <cd:Description>Ancillary data repetition count</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="HR_ancillary_data">
+                    <cd:Array>
+                      <cd:Dimension><![CDATA[int(../ancillary_data_count)]]></cd:Dimension>
+                      <cd:Record>
+                        <cd:Field name="ancillary_data_number">
                           <cd:Integer>
+                            <cd:Description>Pos in the Cycle</cd:Description>
                             <cd:BitSize>16</cd:BitSize>
                             <cd:NativeType>uint16</cd:NativeType>
                           </cd:Integer>
-                        </cd:Array>
-                      </cd:Field>
-                    </cd:Record>
+                        </cd:Field>
+                        <cd:Field name="laser_shot_date">
+                          <cd:Integer>
+                            <cd:Description>Laser Shot Date</cd:Description>
+                            <cd:BitSize>56</cd:BitSize>
+                            <cd:NativeType>uint64</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="spare">
+                          <cd:Integer>
+                            <cd:Description>Spare</cd:Description>
+                            <cd:BitSize>8</cd:BitSize>
+                            <cd:NativeType>uint8</cd:NativeType>
+                          </cd:Integer>
+                          <cd:Hidden/>
+                        </cd:Field>
+                        <cd:Field name="RLH_frequency">
+                          <cd:Integer>
+                            <cd:Description>RLH Frequency</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="TXA_status">
+                          <cd:Integer>
+                            <cd:Description>TXA Status</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="PD_en_UV">
+                          <cd:Integer>
+                            <cd:Description>PD En UV</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="TLE_status">
+                          <cd:Integer>
+                            <cd:Description>TLE Status</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="RLH_status">
+                          <cd:Integer>
+                            <cd:Description>RLH Status</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="PD_en_amp">
+                          <cd:Integer>
+                            <cd:Description>PD En Amp</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="PD_CL_CL_max">
+                          <cd:Integer>
+                            <cd:Description>PD CL CL Max</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="PD_en_MO">
+                          <cd:Integer>
+                            <cd:Description>PD En MO</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="multimode_ratio">
+                          <cd:Integer>
+                            <cd:Description>Multimode Ratio</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="MO_sampled">
+                          <cd:Integer>
+                            <cd:Description>MO Sampled</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="amp_1_sampled">
+                          <cd:Integer>
+                            <cd:Description>Amp 1 Sampled</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="amp_2_sampled">
+                          <cd:Integer>
+                            <cd:Description>Amp 2 Sampled</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="cmd_rejection_status">
+                          <cd:Integer>
+                            <cd:Description>Command Rejection Status Word</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="failure_status_1">
+                          <cd:Integer>
+                            <cd:Description>Failure Status Word 1</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="failure_status_2">
+                          <cd:Integer>
+                            <cd:Description>Failure Status Word 2</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="LCLK_counter">
+                          <cd:Integer>
+                            <cd:Description>LCLK Counter</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="delay_dt0">
+                          <cd:Integer>
+                            <cd:Description>Delay "dt0"</cd:Description>
+                            <cd:BitSize>32</cd:BitSize>
+                            <cd:NativeType>uint32</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="delay_dt3_fixed">
+                          <cd:Integer>
+                            <cd:Description>Delay "dt3 Fixed"</cd:Description>
+                            <cd:BitSize>32</cd:BitSize>
+                            <cd:NativeType>uint32</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="delay_dt3_variable">
+                          <cd:Integer>
+                            <cd:Description>Delay "dt3 Variable"</cd:Description>
+                            <cd:BitSize>32</cd:BitSize>
+                            <cd:NativeType>uint32</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="delay_dt5">
+                          <cd:Integer>
+                            <cd:Description>Delay "dt5"</cd:Description>
+                            <cd:BitSize>32</cd:BitSize>
+                            <cd:NativeType>uint32</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="delay_dt6">
+                          <cd:Integer>
+                            <cd:Description>Delay "dt6"</cd:Description>
+                            <cd:BitSize>32</cd:BitSize>
+                            <cd:NativeType>uint32</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="synchro_enable">
+                          <cd:Integer>
+                            <cd:Description>Synchro enable (TXA, IDE, OGSE)</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="autocol">
+                          <cd:Integer>
+                            <cd:Description>AUTOCOL</cd:Description>
+                            <cd:BitSize>16</cd:BitSize>
+                            <cd:NativeType>uint16</cd:NativeType>
+                          </cd:Integer>
+                        </cd:Field>
+                        <cd:Field name="spare2">
+                          <cd:Integer>
+                            <cd:Description>Spare</cd:Description>
+                            <cd:BitSize>64</cd:BitSize>
+                            <cd:NativeType>uint64</cd:NativeType>
+                          </cd:Integer>
+                          <cd:Hidden/>
+                        </cd:Field>
+                      </cd:Record>
+                    </cd:Array>
                   </cd:Field>
-                  <cd:Field name="coalignment_data">
-                    <cd:Record format="binary">
-                      <cd:Field name="SID">
-                        <cd:Integer>
-                          <cd:Description>Packet ID</cd:Description>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>int8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="OBT">
-                        <cd:Integer>
-                          <cd:Description>On Board Time for HK acquisition</cd:Description>
-                          <cd:BitSize>56</cd:BitSize>
-                          <cd:NativeType>uint64</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="summed_images">
-                        <cd:Integer>
-                          <cd:Description>The number of received CAS images which have been summed</cd:Description>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="Mav">
-                        <cd:Integer>
-                          <cd:Description>The number of images which must be received from IDE to be averaged by ACDM before applying the centroiding algorithms</cd:Description>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="CAS_temp">
-                        <cd:Integer>
-                          <cd:Description>Thermal Control Header Temperature Monitor 25</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="centroid_x">
-                        <cd:Integer>
-                          <cd:Description>Laster echo centroid (sub-pixel) position X</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>int32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="centroid_y">
-                        <cd:Integer>
-                          <cd:Description>Laster echo centroid (sub-pixel) position Y</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>int32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSM_setpoint_cmd_x">
-                        <cd:Integer>
-                          <cd:Description>Saturated command to BSM (X axis)</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>int16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSM_setpoint_cmd_y">
-                        <cd:Integer>
-                          <cd:Description>Saturated command to BSM (Y axis)</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>int16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="detection_saturation_status">
-                        <cd:Integer>
-                          <cd:Description>Indication whether or not saturation has occurred in the echo images (for the last received CAS image)</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="background_saturation_status">
-                        <cd:Integer>
-                          <cd:Description>Indication whether or not saturation has occurred in the backeground images (for the last received CAS image)</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="image_quality_indicator">
-                        <cd:Integer>
-                          <cd:Description>Indication whether or not enough images have been summed for averaging</cd:Description>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="centroid_quality_failure">
-                        <cd:Integer>
-                          <cd:Description>Centroid quality failure duration exceeded</cd:Description>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="SNR_estimate">
-                        <cd:Integer>
-                          <cd:Description>Indication whether or not the image signal-to-noise ratio is high enough for centroiding</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>uint32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="configuration_control_register">
-                        <cd:Integer>
-                          <cd:Description>ATLID Configuration Control Register: chosen BSM is indicated by bit 0 (0: redundant, 1: nominal)</cd:Description>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="control_error_x">
-                        <cd:Integer>
-                          <cd:Description>Calculated control error on X axis</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>int32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="control_error_y">
-                        <cd:Integer>
-                          <cd:Description>Calculated control error on Y axis</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>int32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="control_error_norm">
-                        <cd:Integer>
-                          <cd:Description>Root sum square control error</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>int32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="control_error_quality">
-                        <cd:Integer>
-                          <cd:Description>Control error threshold duration has been exceeded</cd:Description>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="control_quality_failure">
-                        <cd:Integer>
-                          <cd:Description>Control error quality failure duration has been been exceeded</cd:Description>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="calc_BSM_setpoint_x">
-                        <cd:Integer>
-                          <cd:Description>Calculated BSM pointing Setpoint X</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>int32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="calc_BSM_setpoint_y">
-                        <cd:Integer>
-                          <cd:Description>Calculated BSM pointing Setpoint Y</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>int32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSA_mode">
-                        <cd:Integer>
-                          <cd:Description>Current BSA Mode: copy of loaded mode</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="accumulation_threshold">
-                        <cd:Integer>
-                          <cd:Description>Summed image threshold (minimum average number)</cd:Description>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="tracking_point_x">
-                        <cd:Integer>
-                          <cd:Description>Tracking point on the CAS detector (X axis)</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>int32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="tracking_point_y">
-                        <cd:Integer>
-                          <cd:Description>Tracking point on the CAS detector (Y axis)</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>int32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="coalignment_function_mode">
-                        <cd:Integer>
-                          <cd:Description>Active co-alignment function mode</cd:Description>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="spare">
-                          <cd:Raw>
-                          <cd:Description>Spare</cd:Description>
-                            <cd:BitSize>248</cd:BitSize>
-                          </cd:Raw>
-                      </cd:Field>
-                      <cd:Field name="CAS_image_background_1">
-                        <cd:Array>
-                          <cd:Description>CAS Image Background 1</cd:Description>
-                          <cd:Dimension>52</cd:Dimension>
-                          <cd:Integer>
-                            <cd:BitSize>32</cd:BitSize>
-                            <cd:NativeType>uint32</cd:NativeType>
-                          </cd:Integer>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="CAS_image_echo">
-                        <cd:Array>
-                          <cd:Description>CAS Image Echo</cd:Description>
-                          <cd:Dimension>52</cd:Dimension>
-                          <cd:Integer>
-                            <cd:BitSize>32</cd:BitSize>
-                            <cd:NativeType>uint32</cd:NativeType>
-                          </cd:Integer>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="CAS_image_background_2">
-                        <cd:Array>
-                          <cd:Description>CAS Image Background 2</cd:Description>
-                          <cd:Dimension>52</cd:Dimension>
-                          <cd:Integer>
-                            <cd:BitSize>32</cd:BitSize>
-                            <cd:NativeType>uint32</cd:NativeType>
-                          </cd:Integer>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="CAS_image_min">
-                        <cd:Array>
-                          <cd:Description>CAS Image Min</cd:Description>
-                          <cd:Dimension>52</cd:Dimension>
-                          <cd:Integer>
-                            <cd:BitSize>32</cd:BitSize>
-                            <cd:NativeType>uint32</cd:NativeType>
-                          </cd:Integer>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="CAS_image_max">
-                        <cd:Array>
-                          <cd:Description>CAS Image Max</cd:Description>
-                          <cd:Dimension>52</cd:Dimension>
-                          <cd:Integer>
-                            <cd:BitSize>32</cd:BitSize>
-                            <cd:NativeType>uint32</cd:NativeType>
-                          </cd:Integer>
-                        </cd:Array>
-                      </cd:Field>
-                      <cd:Field name="CAS_image_SD">
-                        <cd:Array>
-                          <cd:Description>CAS Image SD</cd:Description>
-                          <cd:Dimension>52</cd:Dimension>
-                          <cd:Integer>
-                            <cd:BitSize>32</cd:BitSize>
-                            <cd:NativeType>uint32</cd:NativeType>
-                          </cd:Integer>
-                        </cd:Array>
-                      </cd:Field>
-                    </cd:Record>
+                  <cd:Field name="SID">
+                    <cd:Integer>
+                      <cd:Description>SID</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
                   </cd:Field>
-                  <cd:Field name="telemetry_data">
-                    <cd:Record format="binary">
-                      <cd:Field name="HK_TM_SID_31">
-                        <cd:Raw>
-                          <cd:Description>Block TM1 and Block TM2 TLE</cd:Description>
-                          <cd:BitSize>1400</cd:BitSize>
-                        </cd:Raw>
-                      </cd:Field>
-                      <cd:Field name="HK_TM_SID_32">
-                        <cd:Raw>
-                          <cd:Description>Block TM3 and Block TM4 TLE</cd:Description>
-                          <cd:BitSize>1352</cd:BitSize>
-                        </cd:Raw>
-                      </cd:Field>
-                      <cd:Field name="HK_TM_SID_61">
-                        <cd:Raw>
-                          <cd:Description>Default ACDM thermistor housekeeping</cd:Description>
-                          <cd:BitSize>1712</cd:BitSize>
-                        </cd:Raw>
-                      </cd:Field>
-                      <cd:Field name="HK_TM_SID_51">
-                        <cd:Raw>
-                          <cd:Description>Block TM BSM</cd:Description>
-                          <cd:BitSize>416</cd:BitSize>
-                        </cd:Raw>
-                      </cd:Field>
-                      <cd:Field name="SID">
-                        <cd:Integer>
-                          <cd:BitSize>8</cd:BitSize>
-                          <cd:NativeType>uint8</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="TM_generation_time">
-                        <cd:Integer>
-                          <cd:Description>Time of TM generation</cd:Description>
-                          <cd:BitSize>56</cd:BitSize>
-                          <cd:NativeType>uint64</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="packet_counter">
-                        <cd:Integer>
-                          <cd:Description>Packet Counter</cd:Description>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="clock_counter">
-                        <cd:Integer>
-                          <cd:Description>ACDM MCLK (48 MHz) Counter</cd:Description>
-                          <cd:BitSize>32</cd:BitSize>
-                          <cd:NativeType>uint32</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="TLE_nom_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="PLH_nom_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="RLH_nom_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="TLE_nom_voltage">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="TLE_nom_current">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="TLE_red_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="PLH_red_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="RLH_red_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="TLE_red_voltage">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="TLE_red_current">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSM_nom_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSME_nom_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSFE_nom_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSM_nom_voltage">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSM_nom_current">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSM_red_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSME_red_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSFE_red_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSM_red_voltage">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="BSM_red_current">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="CVE_nom_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="CVE_nom_voltage">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="CVE_nom_current">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="CVE_red_temp">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="CVE_red_voltage">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="CVE_red_current">
-                        <cd:Integer>
-                          <cd:BitSize>16</cd:BitSize>
-                          <cd:NativeType>uint16</cd:NativeType>
-                        </cd:Integer>
-                      </cd:Field>
-                      <cd:Field name="spare">
-                        <cd:Raw>
-                          <cd:BitSize>736</cd:BitSize>
-                        </cd:Raw>
-                        <cd:Hidden/>
-                      </cd:Field>
-                    </cd:Record>
+                  <cd:Field name="OBT">
+                    <cd:Integer>
+                      <cd:BitSize>56</cd:BitSize>
+                      <cd:NativeType>uint64</cd:NativeType>
+                    </cd:Integer>
                   </cd:Field>
-                </cd:Union>
+                  <cd:Field name="TXA_mode">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="IDE_mode">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="INS_mode">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="ATL_mode">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSA_mode">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="validity">
+                    <cd:Integer>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="spare">
+                    <cd:Integer>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                    <cd:Hidden/>
+                  </cd:Field>
+                  <cd:Field name="mode_transition_status">
+                    <cd:Integer>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="status">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="current_procedure">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="calibration_step">
+                    <cd:Integer>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="calibration_setpoint_1">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="calibration_setpoint_2">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="last_event_ID">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="spare2">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                    <cd:Hidden/>
+                  </cd:Field>
+                  <cd:Field name="M1_mirror_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BKGE_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="E_BEX_A_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="E_BEX_B_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSM_command_x">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSM_command_y">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="spare3">
+                    <cd:Integer>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>uint32</cd:NativeType>
+                    </cd:Integer>
+                    <cd:Hidden/>
+                  </cd:Field>
+                  <cd:Field name="centroid_X">
+                    <cd:Integer>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>uint32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="centroid_Y">
+                    <cd:Integer>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>uint32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="SNR_estimator_status">
+                    <cd:Integer>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="estimated_SNR">
+                    <cd:Integer>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>uint32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="control_error_norm">
+                    <cd:Integer>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>uint32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="image_quality_status">
+                    <cd:Integer>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="duration_out_status">
+                    <cd:Integer>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="control_error_indicator">
+                    <cd:Integer>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="control_error_out_status">
+                    <cd:Integer>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="frequency_compensation">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="PPS_fine_time">
+                    <cd:Integer>
+                      <cd:BitSize>24</cd:BitSize>
+                      <cd:NativeType>uint32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="working_laser_frequency">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="spare4">
+                    <cd:Raw>
+                      <cd:BitSize>128</cd:BitSize>
+                    </cd:Raw>
+                    <cd:Hidden/>
+                  </cd:Field>
+                  <cd:Field name="DRD_reception_date">
+                    <cd:Integer>
+                      <cd:BitSize>56</cd:BitSize>
+                      <cd:NativeType>uint64</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="DRD_packet_counter">
+                    <cd:Integer>
+                      <cd:BitSize>24</cd:BitSize>
+                      <cd:NativeType>uint32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="IDE_packet_header">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="IDE_sub_mode">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="N_PRF_IDE">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="IDE_PRF_number">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="pixel_index_UPD">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="measurement_validity_bits">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="CAS_data_indicator">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="background_saturation_status">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="detection_saturation_status">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="background_integration_time">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="DRD_raw_data">
+                    <cd:Array>
+                      <cd:Dimension>780</cd:Dimension>
+                      <cd:Integer>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Array>
+                  </cd:Field>
+                </cd:Record>
               </cd:Field>
-            </cd:Record>
+              <cd:Field name="coalignment_data">
+                <cd:Record format="binary">
+                  <cd:Field name="SID">
+                    <cd:Integer>
+                      <cd:Description>Packet ID</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>int8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="OBT">
+                    <cd:Integer>
+                      <cd:Description>On Board Time for HK acquisition</cd:Description>
+                      <cd:BitSize>56</cd:BitSize>
+                      <cd:NativeType>uint64</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="summed_images">
+                    <cd:Integer>
+                      <cd:Description>The number of received CAS images which have been summed</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="Mav">
+                    <cd:Integer>
+                      <cd:Description>The number of images which must be received from IDE to be averaged by ACDM before applying the centroiding algorithms</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="CAS_temp">
+                    <cd:Integer>
+                      <cd:Description>Thermal Control Header Temperature Monitor 25</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="centroid_x">
+                    <cd:Integer>
+                      <cd:Description>Laster echo centroid (sub-pixel) position X</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>int32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="centroid_y">
+                    <cd:Integer>
+                      <cd:Description>Laster echo centroid (sub-pixel) position Y</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>int32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSM_setpoint_cmd_x">
+                    <cd:Integer>
+                      <cd:Description>Saturated command to BSM (X axis)</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>int16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSM_setpoint_cmd_y">
+                    <cd:Integer>
+                      <cd:Description>Saturated command to BSM (Y axis)</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>int16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="detection_saturation_status">
+                    <cd:Integer>
+                      <cd:Description>Indication whether or not saturation has occurred in the echo images (for the last received CAS image)</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="background_saturation_status">
+                    <cd:Integer>
+                      <cd:Description>Indication whether or not saturation has occurred in the backeground images (for the last received CAS image)</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="image_quality_indicator">
+                    <cd:Integer>
+                      <cd:Description>Indication whether or not enough images have been summed for averaging</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="centroid_quality_failure">
+                    <cd:Integer>
+                      <cd:Description>Centroid quality failure duration exceeded</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="SNR_estimate">
+                    <cd:Integer>
+                      <cd:Description>Indication whether or not the image signal-to-noise ratio is high enough for centroiding</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>uint32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="configuration_control_register">
+                    <cd:Integer>
+                      <cd:Description>ATLID Configuration Control Register: chosen BSM is indicated by bit 0 (0: redundant, 1: nominal)</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="control_error_x">
+                    <cd:Integer>
+                      <cd:Description>Calculated control error on X axis</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>int32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="control_error_y">
+                    <cd:Integer>
+                      <cd:Description>Calculated control error on Y axis</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>int32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="control_error_norm">
+                    <cd:Integer>
+                      <cd:Description>Root sum square control error</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>int32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="control_error_quality">
+                    <cd:Integer>
+                      <cd:Description>Control error threshold duration has been exceeded</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="control_quality_failure">
+                    <cd:Integer>
+                      <cd:Description>Control error quality failure duration has been been exceeded</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="calc_BSM_setpoint_x">
+                    <cd:Integer>
+                      <cd:Description>Calculated BSM pointing Setpoint X</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>int32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="calc_BSM_setpoint_y">
+                    <cd:Integer>
+                      <cd:Description>Calculated BSM pointing Setpoint Y</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>int32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSA_mode">
+                    <cd:Integer>
+                      <cd:Description>Current BSA Mode: copy of loaded mode</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="accumulation_threshold">
+                    <cd:Integer>
+                      <cd:Description>Summed image threshold (minimum average number)</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="tracking_point_x">
+                    <cd:Integer>
+                      <cd:Description>Tracking point on the CAS detector (X axis)</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>int32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="tracking_point_y">
+                    <cd:Integer>
+                      <cd:Description>Tracking point on the CAS detector (Y axis)</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>int32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="coalignment_function_mode">
+                    <cd:Integer>
+                      <cd:Description>Active co-alignment function mode</cd:Description>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="spare">
+                      <cd:Raw>
+                      <cd:Description>Spare</cd:Description>
+                        <cd:BitSize>248</cd:BitSize>
+                      </cd:Raw>
+                  </cd:Field>
+                  <cd:Field name="CAS_image_background_1">
+                    <cd:Array>
+                      <cd:Description>CAS Image Background 1</cd:Description>
+                      <cd:Dimension>52</cd:Dimension>
+                      <cd:Integer>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Array>
+                  </cd:Field>
+                  <cd:Field name="CAS_image_echo">
+                    <cd:Array>
+                      <cd:Description>CAS Image Echo</cd:Description>
+                      <cd:Dimension>52</cd:Dimension>
+                      <cd:Integer>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Array>
+                  </cd:Field>
+                  <cd:Field name="CAS_image_background_2">
+                    <cd:Array>
+                      <cd:Description>CAS Image Background 2</cd:Description>
+                      <cd:Dimension>52</cd:Dimension>
+                      <cd:Integer>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Array>
+                  </cd:Field>
+                  <cd:Field name="CAS_image_min">
+                    <cd:Array>
+                      <cd:Description>CAS Image Min</cd:Description>
+                      <cd:Dimension>52</cd:Dimension>
+                      <cd:Integer>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Array>
+                  </cd:Field>
+                  <cd:Field name="CAS_image_max">
+                    <cd:Array>
+                      <cd:Description>CAS Image Max</cd:Description>
+                      <cd:Dimension>52</cd:Dimension>
+                      <cd:Integer>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Array>
+                  </cd:Field>
+                  <cd:Field name="CAS_image_SD">
+                    <cd:Array>
+                      <cd:Description>CAS Image SD</cd:Description>
+                      <cd:Dimension>52</cd:Dimension>
+                      <cd:Integer>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Array>
+                  </cd:Field>
+                </cd:Record>
+              </cd:Field>
+              <cd:Field name="telemetry_data">
+                <cd:Record format="binary">
+                  <cd:Field name="HK_TM_SID_31">
+                    <cd:Raw>
+                      <cd:Description>Block TM1 and Block TM2 TLE</cd:Description>
+                      <cd:BitSize>1400</cd:BitSize>
+                    </cd:Raw>
+                  </cd:Field>
+                  <cd:Field name="HK_TM_SID_32">
+                    <cd:Raw>
+                      <cd:Description>Block TM3 and Block TM4 TLE</cd:Description>
+                      <cd:BitSize>1352</cd:BitSize>
+                    </cd:Raw>
+                  </cd:Field>
+                  <cd:Field name="HK_TM_SID_61">
+                    <cd:Raw>
+                      <cd:Description>Default ACDM thermistor housekeeping</cd:Description>
+                      <cd:BitSize>1712</cd:BitSize>
+                    </cd:Raw>
+                  </cd:Field>
+                  <cd:Field name="HK_TM_SID_51">
+                    <cd:Raw>
+                      <cd:Description>Block TM BSM</cd:Description>
+                      <cd:BitSize>416</cd:BitSize>
+                    </cd:Raw>
+                  </cd:Field>
+                  <cd:Field name="SID">
+                    <cd:Integer>
+                      <cd:BitSize>8</cd:BitSize>
+                      <cd:NativeType>uint8</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="TM_generation_time">
+                    <cd:Integer>
+                      <cd:Description>Time of TM generation</cd:Description>
+                      <cd:BitSize>56</cd:BitSize>
+                      <cd:NativeType>uint64</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="packet_counter">
+                    <cd:Integer>
+                      <cd:Description>Packet Counter</cd:Description>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="clock_counter">
+                    <cd:Integer>
+                      <cd:Description>ACDM MCLK (48 MHz) Counter</cd:Description>
+                      <cd:BitSize>32</cd:BitSize>
+                      <cd:NativeType>uint32</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="TLE_nom_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="PLH_nom_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="RLH_nom_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="TLE_nom_voltage">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="TLE_nom_current">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="TLE_red_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="PLH_red_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="RLH_red_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="TLE_red_voltage">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="TLE_red_current">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSM_nom_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSME_nom_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSFE_nom_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSM_nom_voltage">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSM_nom_current">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSM_red_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSME_red_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSFE_red_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSM_red_voltage">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="BSM_red_current">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="CVE_nom_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="CVE_nom_voltage">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="CVE_nom_current">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="CVE_red_temp">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="CVE_red_voltage">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="CVE_red_current">
+                    <cd:Integer>
+                      <cd:BitSize>16</cd:BitSize>
+                      <cd:NativeType>uint16</cd:NativeType>
+                    </cd:Integer>
+                  </cd:Field>
+                  <cd:Field name="spare">
+                    <cd:Raw>
+                      <cd:BitSize>736</cd:BitSize>
+                    </cd:Raw>
+                    <cd:Hidden/>
+                  </cd:Field>
+                </cd:Record>
+              </cd:Field>
+            </cd:Union>
           </cd:Field>
           <cd:Field name="CRC">
             <cd:Integer>
