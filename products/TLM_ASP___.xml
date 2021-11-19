@@ -68,13 +68,6 @@
                       </cd:Integer>
                     </cd:Field>
 
-                    <cd:Field name="SN_V_RMODE">
-                      <cd:Integer>
-                        <cd:BitSize>8</cd:BitSize>
-                        <cd:NativeType>uint8</cd:NativeType>
-                      </cd:Integer>
-                    </cd:Field>
-
                     <cd:Field name="serial_number">
                       <cd:Integer>
                         <cd:Description>Serial Number</cd:Description>
@@ -123,11 +116,42 @@
                       </cd:Integer>
                     </cd:Field>
 
+                    <cd:Field name="NU3">
+                      <cd:Integer>
+                        <cd:BitSize>1</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+                    <cd:Field name="NSM">
+                      <cd:Integer>
+                        <cd:Description>Navigation Solution Method</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+                    <cd:Field name="quality_index">
+                      <cd:Integer>
+                        <cd:Description>Quality Index</cd:Description>
+                        <cd:BitSize>12</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+                    <cd:Field name="GDOP">
+                      <cd:Integer>
+                        <cd:Description>Geometrical dilution of precision</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
 
 
                     <cd:Field name="rest">
                       <cd:Raw>
-                        <cd:BitSize><![CDATA[(int(../../../packet_header/packet_length)+1-12-2-1-16)*8]]></cd:BitSize>
+                        <cd:BitSize><![CDATA[(int(../../../packet_header/packet_length)+1-12-2-1-19)*8]]></cd:BitSize>
                       </cd:Raw>
                     </cd:Field>
 
