@@ -20,6 +20,7 @@
             <cd:Record format="binary">
               <cd:Field name="SID">
                 <cd:Integer>
+                  <cd:Description>Structure Identifier</cd:Description>
                   <cd:BitSize>8</cd:BitSize>
                   <cd:NativeType>uint8</cd:NativeType>
                 </cd:Integer>
@@ -42,7 +43,6 @@
 
                 </cd:Field>
 
-
                 <cd:Field name="nav_sol">
                   <cd:Record format="binary">
                     <cd:Field name="filler">
@@ -52,9 +52,82 @@
                       <cd:Hidden/>
                     </cd:Field>
 
+                    <cd:Field name="frontend_temp">
+                      <cd:Integer>
+                        <cd:Description>Structure Identifier</cd:Description>
+                        <cd:BitSize>8</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+                    <cd:Field name="ID">
+                      <cd:Integer>
+                        <cd:Description>Internal use only</cd:Description>
+                        <cd:BitSize>8</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+                    <cd:Field name="SN_V_RMODE">
+                      <cd:Integer>
+                        <cd:BitSize>8</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+                    <cd:Field name="serial_number">
+                      <cd:Integer>
+                        <cd:Description>Serial Number</cd:Description>
+                        <cd:BitSize>4</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+                    <cd:Field name="data_valid">
+                      <cd:Integer>
+                        <cd:Description>Data valid flag</cd:Description>
+                        <cd:BitSize>1</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+                    <cd:Field name="receiver_mode">
+                      <cd:Integer>
+                        <cd:Description>ReceiverMode</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+                    <cd:Field name="number_of_records">
+                      <cd:Integer>
+                        <cd:Description>Number of records in data block</cd:Description>
+                        <cd:BitSize>8</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+                    <cd:Field name="GPS_seconds">
+                      <cd:Integer>
+                        <cd:Description>GPS time (seconds)</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+                    <cd:Field name="GPS_subsec">
+                      <cd:Integer>
+                        <cd:Description>GPS time (sub-seconds)</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+
+
+
                     <cd:Field name="rest">
                       <cd:Raw>
-                        <cd:BitSize><![CDATA[(int(../../../packet_header/packet_length)+1-12-2-1-3)*8]]></cd:BitSize>
+                        <cd:BitSize><![CDATA[(int(../../../packet_header/packet_length)+1-12-2-1-16)*8]]></cd:BitSize>
                       </cd:Raw>
                     </cd:Field>
 
