@@ -139,7 +139,7 @@
                       <cd:Integer>
                         <cd:Description>Maximum user range accuracy</cd:Description>
                         <cd:BitSize>5</cd:BitSize>
-                        <cd:NativeType>uint8</cd:NativeType>
+                        <cd:NativeType>int8</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="max_fit">
@@ -167,42 +167,42 @@
                       <cd:Integer>
                         <cd:Description>X-coordinate</cd:Description>
                         <cd:BitSize>48</cd:BitSize>
-                        <cd:NativeType>uint64</cd:NativeType>
+                        <cd:NativeType>int64</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="position_y">
                       <cd:Integer>
                         <cd:Description>Y-coordinate</cd:Description>
                         <cd:BitSize>48</cd:BitSize>
-                        <cd:NativeType>uint64</cd:NativeType>
+                        <cd:NativeType>int64</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="position_z">
                       <cd:Integer>
                         <cd:Description>Z-coordinate</cd:Description>
                         <cd:BitSize>48</cd:BitSize>
-                        <cd:NativeType>uint64</cd:NativeType>
+                        <cd:NativeType>int64</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="velocity_x">
                       <cd:Integer>
                         <cd:Description>X-velocity</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="velocity_y">
                       <cd:Integer>
                         <cd:Description>Y-velocity</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="velocity_z">
                       <cd:Integer>
                         <cd:Description>Y-velocity</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="PDOP">
@@ -223,84 +223,84 @@
                       <cd:Integer>
                         <cd:Description>Position error in X direction</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="delta_y">
                       <cd:Integer>
                         <cd:Description>Position error in Y direction</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="delta_z">
                       <cd:Integer>
                         <cd:Description>Position error in Z direction</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="delta_t">
                       <cd:Integer>
                         <cd:Description>GNSS system time error</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="delta_v_x">
                       <cd:Integer>
                         <cd:Description>Velocity error in X direction</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="delta_v_y">
                       <cd:Integer>
                         <cd:Description>Velocity error in Y direction</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="delta_v_z">
                       <cd:Integer>
                         <cd:Description>Velocity error in Z direction</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="delta_f">
                       <cd:Integer>
                         <cd:Description>Receiver clock frequency error</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="height">
                       <cd:Integer>
                         <cd:Description>Height above reference ellipsoid</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="vertical_speed">
                       <cd:Integer>
                         <cd:Description>Vertical speed</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="longitude">
                       <cd:Integer>
                         <cd:Description>Longitude</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                     <cd:Field name="latitude">
                       <cd:Integer>
                         <cd:Description>Longitude</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
-                        <cd:NativeType>uint32</cd:NativeType>
+                        <cd:NativeType>int32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
                   </cd:Record>
