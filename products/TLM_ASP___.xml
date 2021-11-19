@@ -33,16 +33,16 @@
                 <cd:Field name="tm_adb">
                   <cd:Record format="binary">
 
+
                     <cd:Field name="rest">
                       <cd:Raw>
                         <cd:BitSize><![CDATA[(int(../../../packet_header/packet_length)+1-12-2-1)*8]]></cd:BitSize>
                       </cd:Raw>
                     </cd:Field>
 
+
                   </cd:Record>
-
                 </cd:Field>
-
                 <cd:Field name="nav_sol">
                   <cd:Record format="binary">
                     <cd:Field name="filler">
@@ -163,66 +163,150 @@
                         <cd:NativeType>uint8</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-                    <cd:Field name="position_X">
+                    <cd:Field name="position_x">
                       <cd:Integer>
                         <cd:Description>X-coordinate</cd:Description>
                         <cd:BitSize>48</cd:BitSize>
                         <cd:NativeType>uint64</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-                    <cd:Field name="position_Y">
+                    <cd:Field name="position_y">
                       <cd:Integer>
                         <cd:Description>Y-coordinate</cd:Description>
                         <cd:BitSize>48</cd:BitSize>
                         <cd:NativeType>uint64</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-                    <cd:Field name="position_Z">
+                    <cd:Field name="position_z">
                       <cd:Integer>
                         <cd:Description>Z-coordinate</cd:Description>
                         <cd:BitSize>48</cd:BitSize>
                         <cd:NativeType>uint64</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-                    <cd:Field name="velocity_X">
+                    <cd:Field name="velocity_x">
                       <cd:Integer>
                         <cd:Description>X-velocity</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
                         <cd:NativeType>uint32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-                    <cd:Field name="velocity_Y">
+                    <cd:Field name="velocity_y">
                       <cd:Integer>
                         <cd:Description>Y-velocity</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
                         <cd:NativeType>uint32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-                    <cd:Field name="velocity_Z">
+                    <cd:Field name="velocity_z">
                       <cd:Integer>
                         <cd:Description>Y-velocity</cd:Description>
                         <cd:BitSize>32</cd:BitSize>
                         <cd:NativeType>uint32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-
-
-                    <cd:Field name="rest">
-                      <cd:Raw>
-                        <cd:BitSize><![CDATA[(int(../../../packet_header/packet_length)+1-12-2-1-21-30)*8]]></cd:BitSize>
-                      </cd:Raw>
+                    <cd:Field name="PDOP">
+                      <cd:Integer>
+                        <cd:Description>Precision dilution of precision</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
                     </cd:Field>
-
-
+                    <cd:Field name="TDOP">
+                      <cd:Integer>
+                        <cd:Description>Time dilution of precision</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="delta_x">
+                      <cd:Integer>
+                        <cd:Description>Position error in X direction</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="delta_y">
+                      <cd:Integer>
+                        <cd:Description>Position error in Y direction</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="delta_z">
+                      <cd:Integer>
+                        <cd:Description>Position error in Z direction</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="delta_t">
+                      <cd:Integer>
+                        <cd:Description>GNSS system time error</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="delta_v_x">
+                      <cd:Integer>
+                        <cd:Description>Velocity error in X direction</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="delta_v_y">
+                      <cd:Integer>
+                        <cd:Description>Velocity error in Y direction</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="delta_v_z">
+                      <cd:Integer>
+                        <cd:Description>Velocity error in Z direction</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="delta_f">
+                      <cd:Integer>
+                        <cd:Description>Receiver clock frequency error</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="height">
+                      <cd:Integer>
+                        <cd:Description>Height above reference ellipsoid</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="vertical_speed">
+                      <cd:Integer>
+                        <cd:Description>Vertical speed</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="longitude">
+                      <cd:Integer>
+                        <cd:Description>Longitude</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="latitude">
+                      <cd:Integer>
+                        <cd:Description>Longitude</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
                   </cd:Record>
                 </cd:Field>
               </cd:Union>
           </cd:Field>
-
-
-
-
-
           <cd:Field name="CRC">
             <cd:Integer>
               <cd:Description>Packet Error Control (CRC)</cd:Description>
