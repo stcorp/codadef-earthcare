@@ -51,7 +51,6 @@
                       </cd:Raw>
                       <cd:Hidden/>
                     </cd:Field>
-
                     <cd:Field name="frontend_temp">
                       <cd:Integer>
                         <cd:Description>Structure Identifier</cd:Description>
@@ -59,7 +58,6 @@
                         <cd:NativeType>uint8</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-
                     <cd:Field name="ID">
                       <cd:Integer>
                         <cd:Description>Internal use only</cd:Description>
@@ -67,7 +65,6 @@
                         <cd:NativeType>uint8</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-
                     <cd:Field name="serial_number">
                       <cd:Integer>
                         <cd:Description>Serial Number</cd:Description>
@@ -75,7 +72,6 @@
                         <cd:NativeType>uint8</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-
                     <cd:Field name="data_valid">
                       <cd:Integer>
                         <cd:Description>Data valid flag</cd:Description>
@@ -83,7 +79,6 @@
                         <cd:NativeType>uint8</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-
                     <cd:Field name="receiver_mode">
                       <cd:Integer>
                         <cd:Description>ReceiverMode</cd:Description>
@@ -91,7 +86,6 @@
                         <cd:NativeType>uint8</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-
                     <cd:Field name="number_of_records">
                       <cd:Integer>
                         <cd:Description>Number of records in data block</cd:Description>
@@ -99,7 +93,6 @@
                         <cd:NativeType>uint8</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-
                     <cd:Field name="GPS_seconds">
                       <cd:Integer>
                         <cd:Description>GPS time (seconds)</cd:Description>
@@ -107,7 +100,6 @@
                         <cd:NativeType>uint32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-
                     <cd:Field name="GPS_subsec">
                       <cd:Integer>
                         <cd:Description>GPS time (sub-seconds)</cd:Description>
@@ -115,14 +107,13 @@
                         <cd:NativeType>uint32</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-
                     <cd:Field name="NU3">
                       <cd:Integer>
                         <cd:BitSize>1</cd:BitSize>
                         <cd:NativeType>uint8</cd:NativeType>
                       </cd:Integer>
+                      <cd:Hidden/>
                     </cd:Field>
-
                     <cd:Field name="NSM">
                       <cd:Integer>
                         <cd:Description>Navigation Solution Method</cd:Description>
@@ -130,7 +121,6 @@
                         <cd:NativeType>uint8</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-
                     <cd:Field name="quality_index">
                       <cd:Integer>
                         <cd:Description>Quality Index</cd:Description>
@@ -138,7 +128,6 @@
                         <cd:NativeType>uint16</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-
                     <cd:Field name="GDOP">
                       <cd:Integer>
                         <cd:Description>Geometrical dilution of precision</cd:Description>
@@ -146,12 +135,81 @@
                         <cd:NativeType>uint16</cd:NativeType>
                       </cd:Integer>
                     </cd:Field>
-
+                    <cd:Field name="max_URA">
+                      <cd:Integer>
+                        <cd:Description>Maximum user range accuracy</cd:Description>
+                        <cd:BitSize>5</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="max_fit">
+                      <cd:Integer>
+                        <cd:Description>Maximum curve fit interval taken from all SVs used in current navigation solution</cd:Description>
+                        <cd:BitSize>4</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="NU4">
+                      <cd:Integer>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                      <cd:Hidden/>
+                    </cd:Field>
+                    <cd:Field name="number_of_SVs">
+                      <cd:Integer>
+                        <cd:Description>Number of SVs contributing to the Navigation Solution</cd:Description>
+                        <cd:BitSize>4</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="position_X">
+                      <cd:Integer>
+                        <cd:Description>X-coordinate</cd:Description>
+                        <cd:BitSize>48</cd:BitSize>
+                        <cd:NativeType>uint64</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="position_Y">
+                      <cd:Integer>
+                        <cd:Description>Y-coordinate</cd:Description>
+                        <cd:BitSize>48</cd:BitSize>
+                        <cd:NativeType>uint64</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="position_Z">
+                      <cd:Integer>
+                        <cd:Description>Z-coordinate</cd:Description>
+                        <cd:BitSize>48</cd:BitSize>
+                        <cd:NativeType>uint64</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="velocity_X">
+                      <cd:Integer>
+                        <cd:Description>X-velocity</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="velocity_Y">
+                      <cd:Integer>
+                        <cd:Description>Y-velocity</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="velocity_Z">
+                      <cd:Integer>
+                        <cd:Description>Y-velocity</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
 
 
                     <cd:Field name="rest">
                       <cd:Raw>
-                        <cd:BitSize><![CDATA[(int(../../../packet_header/packet_length)+1-12-2-1-19)*8]]></cd:BitSize>
+                        <cd:BitSize><![CDATA[(int(../../../packet_header/packet_length)+1-12-2-1-21-30)*8]]></cd:BitSize>
                       </cd:Raw>
                     </cd:Field>
 
