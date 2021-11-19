@@ -32,15 +32,132 @@
                 <cd:FieldExpression><![CDATA[with(k=int(../../private_header/SID), if(k==105, 0, if(k==213, 1, -1)))]]></cd:FieldExpression>
                 <cd:Field name="tm_adb">
                   <cd:Record format="binary">
-
-
-                    <cd:Field name="rest">
-                      <cd:Raw>
-                        <cd:BitSize><![CDATA[(int(../../../packet_header/packet_length)+1-12-2-1)*8]]></cd:BitSize>
-                      </cd:Raw>
+                    <cd:Field name="qv1">
+                      <cd:Integer>
+                        <cd:Description>Vector part of attitude quaternion, X component</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
                     </cd:Field>
-
-
+                    <cd:Field name="qv2">
+                      <cd:Integer>
+                        <cd:Description>Vector part of attitude quaternion, Y component</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="qv3">
+                      <cd:Integer>
+                        <cd:Description>Vector part of attitude quaternion, Z component</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="qs">
+                      <cd:Integer>
+                        <cd:Description>Scalar part of attitude quaternion</cd:Description>
+                        <cd:BitSize>32</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="rate_x">
+                      <cd:Integer>
+                        <cd:Description>Angular rate in BRF</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="rate_y">
+                      <cd:Integer>
+                        <cd:Description>Angular rate in BRF</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="rate_z">
+                      <cd:Integer>
+                        <cd:Description>Angular rate in BRF</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="integration_timestamp">
+                      <cd:Integer>
+                        <cd:Description>Timestamp of the center of integration associated with the attitude</cd:Description>
+                        <cd:BitSize>48</cd:BitSize>
+                        <cd:NativeType>uint64</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="julian_date">
+                      <cd:Integer>
+                        <cd:Description>Julian date used for precession correction (if enabled)</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="velocity_x">
+                      <cd:Integer>
+                        <cd:Description>If aberration correction is enabled: X coordinate of velocity vector (in SCI)</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="velocity_y">
+                      <cd:Integer>
+                        <cd:Description>If aberration correction is enabled: Y coordinate of velocity vector (in SCI)</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="velocity_z">
+                      <cd:Integer>
+                        <cd:Description>If aberration correction is enabled: Z coordinate of velocity vector (in SCI)</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="attitude_quality">
+                      <cd:Integer>
+                        <cd:Description>Attitude Quality</cd:Description>
+                        <cd:BitSize>3</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="precession_correction_enabled">
+                      <cd:Integer>
+                        <cd:Description>If set to 1: precession correction has been applied</cd:Description>
+                        <cd:BitSize>1</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="aberration_correction_enabled">
+                      <cd:Integer>
+                        <cd:Description>If set to 1: aberration correction has been applied</cd:Description>
+                        <cd:BitSize>1</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="rate_quality">
+                      <cd:Integer>
+                        <cd:Description>Rate Quality</cd:Description>
+                        <cd:BitSize>2</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="rate_information_valid">
+                      <cd:Integer>
+                        <cd:Description>If set to 1: the rate information is valid (i.e. derived from current measurements)</cd:Description>
+                        <cd:BitSize>1</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="attitude_quality_index">
+                      <cd:Integer>
+                        <cd:Description>Sum of single-star qualities of attitude stars</cd:Description>
+                        <cd:BitSize>8</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
                   </cd:Record>
                 </cd:Field>
                 <cd:Field name="nav_sol">
