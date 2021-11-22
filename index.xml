@@ -1,6 +1,51 @@
 <?xml version="1.0"?>
 <cd:ProductClass xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" name="EARTHCARE" last-modified="2021-11-18">
   <cd:Description>EarthCARE products</cd:Description>
+  <cd:ProductType name="ATL_NOM_0_">
+    <cd:Description>Annotated ATL Instrument Source Packets</cd:Description>
+    <cd:ProductDefinition id="ATL_NOM_0_" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
+        <cd:MatchFilename offset="9">ATL_NOM_0_</cd:MatchFilename>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="BBR_NOM_0_">
+    <cd:Description>Annotated BBR Instrument Source Packets</cd:Description>
+    <cd:ProductDefinition id="BBR_NOM_0_" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
+        <cd:MatchFilename offset="9">BBR_NOM_0_</cd:MatchFilename>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="CPR_NOM_0_">
+    <cd:Description>Annotated CPR Instrument Source Packets</cd:Description>
+    <cd:ProductDefinition id="CPR_NOM_0_" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
+        <cd:MatchFilename offset="9">CPR_NOM_0_</cd:MatchFilename>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="MSI_NOM_0_">
+    <cd:Description>Annotated MSI Instrument Source Packets</cd:Description>
+    <cd:ProductDefinition id="MSI_NOM_0_" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
+        <cd:MatchFilename offset="9">MSI_NOM_0_</cd:MatchFilename>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="TLM_ASP___">
+    <cd:Description>Annotated Telemetry Packets</cd:Description>
+    <cd:ProductDefinition id="TLM_ASP___" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
+        <cd:MatchFilename offset="9">TLM_ASP___</cd:MatchFilename>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
   <cd:ProductType name="ATL_AER_2A">
     <cd:Description>ATLID aerosol parameters</cd:Description>
     <cd:ProductDefinition id="ATL_AER_2A" format="hdf5" version="0">
@@ -248,51 +293,6 @@
       <cd:DetectionRule>
         <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
         <cd:MatchExpression>substr(9,10,filename())=="BMA_FLX_2B"</cd:MatchExpression>
-      </cd:DetectionRule>
-    </cd:ProductDefinition>
-  </cd:ProductType>
-  <cd:ProductType name="MSI_NOM_0_">
-    <cd:Description>Annotated MSI Instrument Source Packets</cd:Description>
-    <cd:ProductDefinition id="MSI_NOM_0_" format="binary" version="0">
-      <cd:DetectionRule>
-        <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
-        <cd:MatchFilename offset="9">MSI_NOM_0_</cd:MatchFilename>
-      </cd:DetectionRule>
-    </cd:ProductDefinition>
-  </cd:ProductType>
-  <cd:ProductType name="BBR_NOM_0_">
-    <cd:Description>Annotated BBR Instrument Source Packets</cd:Description>
-    <cd:ProductDefinition id="BBR_NOM_0_" format="binary" version="0">
-      <cd:DetectionRule>
-        <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
-        <cd:MatchFilename offset="9">BBR_NOM_0_</cd:MatchFilename>
-      </cd:DetectionRule>
-    </cd:ProductDefinition>
-  </cd:ProductType>
-  <cd:ProductType name="ATL_NOM_0_">
-    <cd:Description>Annotated ATL Instrument Source Packets</cd:Description>
-    <cd:ProductDefinition id="ATL_NOM_0_" format="binary" version="0">
-      <cd:DetectionRule>
-        <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
-        <cd:MatchFilename offset="9">ATL_NOM_0_</cd:MatchFilename>
-      </cd:DetectionRule>
-    </cd:ProductDefinition>
-  </cd:ProductType>
-  <cd:ProductType name="CPR_NOM_0_">
-    <cd:Description>Annotated CPR Instrument Source Packets</cd:Description>
-    <cd:ProductDefinition id="CPR_NOM_0_" format="binary" version="0">
-      <cd:DetectionRule>
-        <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
-        <cd:MatchFilename offset="9">CPR_NOM_0_</cd:MatchFilename>
-      </cd:DetectionRule>
-    </cd:ProductDefinition>
-  </cd:ProductType>
-  <cd:ProductType name="">
-    <cd:Description></cd:Description>
-    <cd:ProductDefinition id="TLM_ASP___" format="binary" version="0">
-      <cd:DetectionRule>
-        <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
-        <cd:MatchFilename offset="9">TLM_ASP___</cd:MatchFilename>
       </cd:DetectionRule>
     </cd:ProductDefinition>
   </cd:ProductType>
