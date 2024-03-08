@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<cd:ProductClass xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" name="EARTHCARE" last-modified="2021-11-22">
+<cd:ProductClass xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" name="EARTHCARE" last-modified="2024-03-08">
   <cd:Description>EarthCARE products</cd:Description>
   <cd:ProductType name="ATL_NOM_0_">
     <cd:Description>Annotated ATL Instrument Source Packets</cd:Description>
@@ -34,6 +34,15 @@
       <cd:DetectionRule>
         <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
         <cd:MatchFilename offset="9">MSI_NOM_0_</cd:MatchFilename>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="TLM_NOM_0_">
+    <cd:Description>Annotated Telemetry Packets</cd:Description>
+    <cd:ProductDefinition id="TLM_ASP___" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchFilename offset="0">ECA_</cd:MatchFilename>
+        <cd:MatchFilename offset="9">TLM_NOM_0_</cd:MatchFilename>
       </cd:DetectionRule>
     </cd:ProductDefinition>
   </cd:ProductType>
@@ -255,16 +264,6 @@
       </cd:DetectionRule>
     </cd:ProductDefinition>
   </cd:ProductType>
-  <cd:ProductType name="ACM_3D__2B">
-    <cd:Description>3D scene construction</cd:Description>
-    <cd:ProductDefinition id="ACM_3D__2B" format="hdf5" version="0">
-      <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
-      <cd:DetectionRule>
-        <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
-        <cd:MatchExpression>substr(9,10,filename())=="ACM_3D__2B"</cd:MatchExpression>
-      </cd:DetectionRule>
-    </cd:ProductDefinition>
-  </cd:ProductType>
   <cd:ProductType name="ACM_RT__2B">
     <cd:Description>Broadband radiances and fluxes from radiative transfer models</cd:Description>
     <cd:ProductDefinition id="ACM_RT__2B" format="hdf5" version="0">
@@ -272,6 +271,16 @@
       <cd:DetectionRule>
         <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
         <cd:MatchExpression>substr(9,10,filename())=="ACM_RT__2B"</cd:MatchExpression>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="ALL_3D__2B">
+    <cd:Description>3D scene construction</cd:Description>
+    <cd:ProductDefinition id="ALL_3D__2B" format="hdf5" version="0">
+      <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
+        <cd:MatchExpression>substr(9,10,filename())=="ALL_3D__2B"</cd:MatchExpression>
       </cd:DetectionRule>
     </cd:ProductDefinition>
   </cd:ProductType>
