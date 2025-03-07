@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<cd:ProductClass xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" name="EARTHCARE" last-modified="2024-03-08">
+<cd:ProductClass xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" name="EARTHCARE" last-modified="2025-03-07">
   <cd:Description>EarthCARE products</cd:Description>
   <cd:ProductType name="ATL_NOM_0_">
     <cd:Description>Annotated ATL Instrument Source Packets</cd:Description>
@@ -65,6 +65,26 @@
       </cd:DetectionRule>
     </cd:ProductDefinition>
   </cd:ProductType>
+  <cd:ProductType name="BBR_NOM_1B">
+    <cd:Description>BBR L1 Nominal Product</cd:Description>
+    <cd:ProductDefinition id="BBR_NOM_1B" format="hdf5" version="0">
+      <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
+        <cd:MatchExpression>substr(9,10,filename())=="BBR_NOM_1B"</cd:MatchExpression>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="BBR_SNG_1B">
+    <cd:Description>BBR L1 Single Pixel Product</cd:Description>
+    <cd:ProductDefinition id="BBR_SNG_1B" format="hdf5" version="0">
+      <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
+        <cd:MatchExpression>substr(9,10,filename())=="BBR_SNG_1B"</cd:MatchExpression>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
   <cd:ProductType name="MSI_NOM_1B">
     <cd:Description>MSI L1B Nominal Product</cd:Description>
     <cd:ProductDefinition id="MSI_NOM_1B" format="hdf5" version="0">
@@ -90,7 +110,28 @@
     <cd:ProductDefinition id="CPR_NOM_1B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
-        <cd:MatchExpression>substr(0,16,filename())=="ECA_J_CPR_NOM_1B"</cd:MatchExpression>
+        <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
+        <cd:MatchExpression>substr(9,10,filename())=="CPR_NOM_1B"</cd:MatchExpression>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="AUX_JSG_1D">
+    <cd:Description>Joint Standard Grid product</cd:Description>
+    <cd:ProductDefinition id="AUX_JSG_1D" format="hdf5" version="0">
+      <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
+        <cd:MatchExpression>substr(9,10,filename())=="AUX_JSG_1D"</cd:MatchExpression>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="AUX_MET_1D">
+    <cd:Description>ECMWF meteorological fields product</cd:Description>
+    <cd:ProductDefinition id="AUX_MET_1D" format="hdf5" version="0">
+      <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
+        <cd:MatchExpression>substr(9,10,filename())=="AUX_MET_1D"</cd:MatchExpression>
       </cd:DetectionRule>
     </cd:ProductDefinition>
   </cd:ProductType>
