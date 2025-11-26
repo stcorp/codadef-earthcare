@@ -56,7 +56,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="ATL_NOM_1B">
-    <cd:Description>ATLID L1 Nominal Product</cd:Description>
+    <cd:Description>ESA ATLID L1 Nominal Product</cd:Description>
     <cd:ProductDefinition id="ATL_NOM_1B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -66,7 +66,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="BBR_NOM_1B">
-    <cd:Description>BBR L1 Nominal Product</cd:Description>
+    <cd:Description>ESA BBR L1 Nominal Product</cd:Description>
     <cd:ProductDefinition id="BBR_NOM_1B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -76,7 +76,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="BBR_SNG_1B">
-    <cd:Description>BBR L1 Single Pixel Product</cd:Description>
+    <cd:Description>ESA BR L1 Single Pixel Product</cd:Description>
     <cd:ProductDefinition id="BBR_SNG_1B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -86,7 +86,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="MSI_NOM_1B">
-    <cd:Description>MSI L1B Nominal Product</cd:Description>
+    <cd:Description>ESA MSI L1B Nominal Product</cd:Description>
     <cd:ProductDefinition id="MSI_NOM_1B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -96,7 +96,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="MSI_RGR_1C">
-    <cd:Description>MSI L1C Regridded Product</cd:Description>
+    <cd:Description>ESA MSI L1C Regridded Product</cd:Description>
     <cd:ProductDefinition id="MSI_RGR_1C" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -106,7 +106,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="CPR_NOM_1B">
-    <cd:Description>CPR L1b Nominal Product</cd:Description>
+    <cd:Description>JAXA CPR L1b Nominal Product</cd:Description>
     <cd:ProductDefinition id="CPR_NOM_1B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -116,7 +116,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="AUX_JSG_1D">
-    <cd:Description>Joint Standard Grid product</cd:Description>
+    <cd:Description>ESA Joint Standard Grid product</cd:Description>
     <cd:ProductDefinition id="AUX_JSG_1D" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -126,7 +126,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="AUX_MET_1D">
-    <cd:Description>ECMWF meteorological fields product</cd:Description>
+    <cd:Description>ESA ECMWF meteorological fields product</cd:Description>
     <cd:ProductDefinition id="AUX_MET_1D" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -136,7 +136,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="ATL_AER_2A">
-    <cd:Description>ATLID aerosol parameters</cd:Description>
+    <cd:Description>ESA ATLID aerosol parameters</cd:Description>
     <cd:ProductDefinition id="ATL_AER_2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -146,7 +146,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="ATL_ALD_2A">
-    <cd:Description>ATLID aerosol layer descriptors</cd:Description>
+    <cd:Description>ESA ATLID aerosol layer descriptors</cd:Description>
     <cd:ProductDefinition id="ATL_ALD_2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -156,7 +156,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="ATL_CTH_2A">
-    <cd:Description>ATLID cloud top height</cd:Description>
+    <cd:Description>ESA ATLID cloud top height</cd:Description>
     <cd:ProductDefinition id="ATL_CTH_2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -166,7 +166,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="ATL_EBD_2A">
-    <cd:Description>ATLID extinction, backscatter and depolarisation</cd:Description>
+    <cd:Description>ESA ATLID extinction, backscatter and depolarisation</cd:Description>
     <cd:ProductDefinition id="ATL_EBD_2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -176,7 +176,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="ATL_FM__2A">
-    <cd:Description>ATLID feature mask</cd:Description>
+    <cd:Description>ESA ATLID feature mask</cd:Description>
     <cd:ProductDefinition id="ATL_FM__2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -186,7 +186,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="ATL_ICE_2A">
-    <cd:Description>ATLID ice parameters</cd:Description>
+    <cd:Description>ESA ATLID ice parameters</cd:Description>
     <cd:ProductDefinition id="ATL_ICE_2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -196,7 +196,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="ATL_TC__2A">
-    <cd:Description>ATLID target classification</cd:Description>
+    <cd:Description>ESA ATLID target classification</cd:Description>
     <cd:ProductDefinition id="ATL_TC__2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -205,8 +205,18 @@
       </cd:DetectionRule>
     </cd:ProductDefinition>
   </cd:ProductType>
+  <cd:ProductType name="ATL_CLA_2A">
+    <cd:Description>JAXA ATLID One-sensor Cloud and Aerosol Product</cd:Description>
+    <cd:ProductDefinition id="ATL_CLA_2A" format="hdf5" version="0">
+      <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
+        <cd:MatchExpression>substr(9,10,filename())=="ATL_CLA_2A"</cd:MatchExpression>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
   <cd:ProductType name="MSI_CM__2A">
-    <cd:Description>MSI cloud mask</cd:Description>
+    <cd:Description>ESA MSI cloud mask</cd:Description>
     <cd:ProductDefinition id="MSI_CM__2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -216,7 +226,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="MSI_COP_2A">
-    <cd:Description>MSI cloud optical properties</cd:Description>
+    <cd:Description>ESA MSI cloud optical properties</cd:Description>
     <cd:ProductDefinition id="MSI_COP_2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -226,7 +236,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="MSI_AOT_2A">
-    <cd:Description>MSI Aerosol optical thickness</cd:Description>
+    <cd:Description>ESA MSI Aerosol optical thickness</cd:Description>
     <cd:ProductDefinition id="MSI_AOT_2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -235,8 +245,18 @@
       </cd:DetectionRule>
     </cd:ProductDefinition>
   </cd:ProductType>
+  <cd:ProductType name="MSI_CLP_2A">
+    <cd:Description>JAXA MSI One-sensor Cloud Product</cd:Description>
+    <cd:ProductDefinition id="MSI_CLP_2A" format="hdf5" version="0">
+      <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
+        <cd:MatchExpression>substr(9,10,filename())=="MSI_CLP_2A"</cd:MatchExpression>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
   <cd:ProductType name="CPR_APC_2A">
-    <cd:Description>CPR antenna pointing correction</cd:Description>
+    <cd:Description>ESA CPR antenna pointing correction</cd:Description>
     <cd:ProductDefinition id="CPR_APC_2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -246,7 +266,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="CPR_FMR_2A">
-    <cd:Description>CPR feature mask and radar reflectivity</cd:Description>
+    <cd:Description>ESA CPR feature mask and radar reflectivity</cd:Description>
     <cd:ProductDefinition id="CPR_FMR_2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -256,7 +276,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="CPR_CD__2A">
-    <cd:Description>CPR Cloud Doppler parameters</cd:Description>
+    <cd:Description>ESA CPR Cloud Doppler parameters</cd:Description>
     <cd:ProductDefinition id="CPR_CD__2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -266,7 +286,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="CPR_TC__2A">
-    <cd:Description>CPR target classification</cd:Description>
+    <cd:Description>ESA CPR target classification</cd:Description>
     <cd:ProductDefinition id="CPR_TC__2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -276,7 +296,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="CPR_CLD_2A">
-    <cd:Description>CPR cloud parameters</cd:Description>
+    <cd:Description>ESA CPR cloud parameters</cd:Description>
     <cd:ProductDefinition id="CPR_CLD_2A" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -285,8 +305,28 @@
       </cd:DetectionRule>
     </cd:ProductDefinition>
   </cd:ProductType>
+  <cd:ProductType name="CPR_ECO_2A">
+    <cd:Description>JAXA CPR One-sensor Echo Product</cd:Description>
+    <cd:ProductDefinition id="CPR_ECO_2A" format="hdf5" version="0">
+      <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
+        <cd:MatchExpression>substr(9,10,filename())=="CPR_ECO_2A"</cd:MatchExpression>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="CPR_CLP_2A">
+    <cd:Description>JAXA CPR One-sensor Cloud Product</cd:Description>
+    <cd:ProductDefinition id="CPR_CLP_2A" format="hdf5" version="0">
+      <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
+        <cd:MatchExpression>substr(9,10,filename())=="CPR_CLP_2A"</cd:MatchExpression>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
   <cd:ProductType name="AC__TC__2B">
-    <cd:Description>ATLID/CPR target classification</cd:Description>
+    <cd:Description>ESA ATLID/CPR target classification</cd:Description>
     <cd:ProductDefinition id="AC__TC__2B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -295,8 +335,18 @@
       </cd:DetectionRule>
     </cd:ProductDefinition>
   </cd:ProductType>
+  <cd:ProductType name="AC__CLP_2B">
+    <cd:Description>JAXA CPR-ATLID Synergy Cloud Product</cd:Description>
+    <cd:ProductDefinition id="AC__CLP_2B" format="hdf5" version="0">
+      <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
+      <cd:DetectionRule>
+        <cd:MatchExpression>substr(0,3,filename())=="ECA"</cd:MatchExpression>
+        <cd:MatchExpression>substr(9,10,filename())=="AC__CLP_2B"</cd:MatchExpression>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
   <cd:ProductType name="ACM_CAP_2B">
-    <cd:Description>ATLID/CPR/MSI cloud and aerosol properties</cd:Description>
+    <cd:Description>ESA ATLID/CPR/MSI cloud and aerosol properties</cd:Description>
     <cd:ProductDefinition id="ACM_CAP_2B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -306,7 +356,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="ACM_COM_2B">
-    <cd:Description>ATLID/CPR/MSI composite product</cd:Description>
+    <cd:Description>ESA ATLID/CPR/MSI composite product</cd:Description>
     <cd:ProductDefinition id="ACM_COM_2B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -316,7 +366,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="ACM_RT__2B">
-    <cd:Description>Broadband radiances and fluxes from radiative transfer models</cd:Description>
+    <cd:Description>ESA Broadband radiances and fluxes from radiative transfer models</cd:Description>
     <cd:ProductDefinition id="ACM_RT__2B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -326,7 +376,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="ALL_3D__2B">
-    <cd:Description>3D scene construction</cd:Description>
+    <cd:Description>ESA 3D scene construction</cd:Description>
     <cd:ProductDefinition id="ALL_3D__2B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -336,7 +386,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="ALL_DF__2B">
-    <cd:Description>Radiative closure assessment</cd:Description>
+    <cd:Description>ESA Radiative closure assessment</cd:Description>
     <cd:ProductDefinition id="ALL_DF__2B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -346,7 +396,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="AM__MO__2B">
-    <cd:Description>ATLID/MSI merged observations</cd:Description>
+    <cd:Description>ESA ATLID/MSI merged observations</cd:Description>
     <cd:ProductDefinition id="AM__MO__2B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -356,7 +406,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="AM__CTH_2B">
-    <cd:Description>ATLID/MSI cloud top height</cd:Description>
+    <cd:Description>ESA ATLID/MSI cloud top height</cd:Description>
     <cd:ProductDefinition id="AM__CTH_2B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -366,7 +416,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="AM__ACD_2B">
-    <cd:Description>ATLID/MSI aerosol column descriptor</cd:Description>
+    <cd:Description>ESA ATLID/MSI aerosol column descriptor</cd:Description>
     <cd:ProductDefinition id="AM__ACD_2B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -376,7 +426,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="BM__RAD_2B">
-    <cd:Description>BBR radiances (using MSI for corrections)</cd:Description>
+    <cd:Description>ESA BBR radiances (using MSI for corrections)</cd:Description>
     <cd:ProductDefinition id="BM__RAD_2B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
@@ -386,7 +436,7 @@
     </cd:ProductDefinition>
   </cd:ProductType>
   <cd:ProductType name="BMA_FLX_2B">
-    <cd:Description>BBR fluxes (using MSI and ATLID for corrections)</cd:Description>
+    <cd:Description>ESA BBR fluxes (using MSI and ATLID for corrections)</cd:Description>
     <cd:ProductDefinition id="BMA_FLX_2B" format="hdf5" version="0">
       <cd:Description>The format definition for this product is taken from the HDF5 file itself.</cd:Description>
       <cd:DetectionRule>
